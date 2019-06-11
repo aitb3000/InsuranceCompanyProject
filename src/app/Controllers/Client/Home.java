@@ -125,7 +125,6 @@ public class Home implements Initializable {
         {
             ex.printStackTrace();
         }
-
     }
 
     @FXML

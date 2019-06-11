@@ -76,9 +76,10 @@ public class Insurances implements Initializable {
             insurance.setInsuranceId((String) row[0]);
             insurance.setInsuranceName((String) row[1]);
             ((Client)Main.AppUser).ClientInsurances.add(insurance);
-            AllInsurances.add(insurance);
+
         }
 
+        AllInsurances.addAll(((Client)Main.AppUser).ClientInsurances);
 
         tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
         tcName.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());

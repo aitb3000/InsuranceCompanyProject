@@ -24,13 +24,8 @@ public class loggerAPI {
 
         try
         {
-            fileWriter = new FileWriter(loggerFileName);
+            fileWriter = new FileWriter(loggerFileName,true);
             bufferedWriter = new BufferedWriter(fileWriter);
-
-            //temp
-            WriteLog("dodo", "dodo", "dodo was here!.");
-            WriteLog("dodo", "dodo", "dodo was here!.");
-
         }
         catch (IOException ex)
         {
@@ -52,7 +47,7 @@ public class loggerAPI {
             StringBuilder newLog = new StringBuilder();
             newLog.append(GetDate());
             newLog.append(className + "\t");
-            newLog.append(User + "\t");
+            newLog.append(User + " ");
             newLog.append(msg);
             newLog.append("\n");
             bufferedWriter.write(newLog.toString());

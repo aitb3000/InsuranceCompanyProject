@@ -13,18 +13,23 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="576.0" style="-fx-background-color: #05071F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Login">
    <children>
-      <Label fx:id="lblWrongUser" layoutX="195.0" layoutY="109.0" text="*Username and/or Password wrong" textFill="#e7e5e5" />
-      <VBox layoutX="123.0" layoutY="122.0" prefHeight="118.0" prefWidth="333.0">
+      <ImageView fitHeight="276.0" fitWidth="463.0" layoutX="63.0" layoutY="-72.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../content/images/logos/logo_transparent.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblWrongUser" layoutX="194.0" layoutY="139.0" text="*Username and/or Password wrong" textFill="#e7e5e5" />
+      <VBox layoutX="122.0" layoutY="158.0" prefHeight="123.0" prefWidth="333.0" spacing="10.0">
          <children>
             <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="227.0" spacing="20.0">
                <children>
-                  <Label text="Username:" textFill="#e7e5e5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Username:" textFill="#e7e5e5" />
                   <TextField fx:id="txtUsername" onKeyPressed="#LoginAction" promptText="Username" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="227.0" spacing="20.0">
                <children>
-                  <Label text="Password:" textFill="#e7e5e5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Password:" textFill="#e7e5e5" />
                   <PasswordField fx:id="txtPassword" onKeyPressed="#LoginAction" promptText="Password" />
                </children>
             </HBox>
@@ -34,7 +39,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../content/images/icons8_Sign_Out_32px.png" />
+                              <Image url="@../../content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -46,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../content/images/icons8_Sign_Out_32px.png" />
+                              <Image url="@../../content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -58,10 +63,5 @@
             </HBox>
          </children>
       </VBox>
-      <ImageView fitHeight="276.0" fitWidth="463.0" layoutX="57.0" layoutY="-90.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../content/images/logos/logo_transparent.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

@@ -5,8 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Insurance
 {
     private SimpleStringProperty insuranceId = new SimpleStringProperty(this, "insuranceId");
-
     private SimpleStringProperty insuranceName = new SimpleStringProperty(this, "insuranceName");
+    private SimpleStringProperty insuranceStatus = new SimpleStringProperty(this, "insuranceName");
 
 
 
@@ -33,5 +33,17 @@ public class Insurance
 
     public void setInsuranceId(String insuranceId) {
         this.insuranceId.set(insuranceId);
+    }
+
+    public String getInsuranceStatus() {
+        return insuranceStatus.get();
+    }
+
+    public SimpleStringProperty insuranceStatusProperty() {
+        return insuranceStatus;
+    }
+
+    public void setInsuranceStatus(String insuranceStatus) {
+        this.insuranceStatus.set(insuranceStatus);
     }
 }

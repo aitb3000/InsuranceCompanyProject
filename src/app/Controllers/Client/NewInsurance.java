@@ -1,17 +1,36 @@
 package app.Controllers.Client;
 
 import app.Main;
+import app.Models.Insurance;
 import app.connection.sqlConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.ResourceBundle;
 
-public class NewInsurance {
+public class NewInsurance implements Initializable {
 
+    private ObservableList<Insurance> Insurances;
+    private ArrayList<Insurance> AL_Insurances = new ArrayList<>();
     @FXML
     private Pane pnlNewInsurance;
 
@@ -31,7 +50,7 @@ public class NewInsurance {
     private TextField txtLastName;
 
     @FXML
-    private ChoiceBox<?> cbInsurance;
+    private ChoiceBox<Insurance> cbInsurance;
 
     @FXML
     private Button btnSendNew;
@@ -46,12 +65,88 @@ public class NewInsurance {
         txtFirstName.setText(Main.AppUser.getFirstName());
         txtLastName.setText(Main.AppUser.getLastName());
         txtId.setText(Main.AppUser.getId());
+        lblNewInsuranceCheckLField.setVisible(false);
     }
 
     @FXML
     void SendNewInsuranceForm(ActionEvent event)
     {
-        sqlConnection.getInstance().SendQuery("");
+        if (CheckFields())
+        {
+            lblNewInsuranceCheckLField.setVisible(false);
+            sqlConnection.getInstance().SendQuery("");
+        }
+        else
+        {
+            lblNewInsuranceCheckLField.setVisible(true);
+        }
+
     }
 
+    private boolean CheckFields()
+    {
+        if ((txtId.getText().isEmpty()) || (txtId.getText().length() !=9))
+            return false;
+        if ((txtLastName.getText().isEmpty()) || (txtFirstName.getText().isEmpty()))
+            return false;
+        return true;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        lblClientName.setText(Main.AppUser.getUserName());
+        lblNewInsuranceCheckLField.setVisible(false);
+        GetInsuranceFromXML();
+    }
+
+    private void GetInsuranceFromXML()
+    {
+        if ((Insurances!=null) && (!Insurances.isEmpty()))
+            Insurances.clear();
+        if (!AL_Insurances.isEmpty())
+            AL_Insurances.clear();
+        if (!cbInsurance.getItems().isEmpty())
+            cbInsurance.getItems().clear();
+
+
+
+
+        try {
+            InputStream inputFile = Main.class.getResourceAsStream("/content/data/config.fml");
+            //File inputFile = new File(path);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+            doc.getDocumentElement().normalize();
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("Insurance");
+            System.out.println("----------------------------");
+
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+
+                Node nNode = nList.item(temp);
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    Insurance insurance = new Insurance();
+                    insurance.setInsuranceId(eElement.getAttribute("InsuranceType"));
+                    insurance.setInsuranceName(eElement.getElementsByTagName("InsuranceName").item(0).getTextContent());
+                    AL_Insurances.add(insurance);
+                    System.out.println("Insurance Type Number : "
+                            + eElement.getAttribute("InsuranceType"));
+                    System.out.println("Insurance Type Name : "
+                            + eElement
+                            .getElementsByTagName("InsuranceName")
+                            .item(0)
+                            .getTextContent());
+                }
+            }
+            Insurances = FXCollections.observableArrayList(AL_Insurances);
+            cbInsurance.setItems(Insurances);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

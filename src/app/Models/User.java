@@ -11,55 +11,6 @@ public abstract class User {
     private SimpleStringProperty Phone = new SimpleStringProperty(this, "phone");
     private SimpleStringProperty Status = new SimpleStringProperty(this, "status");
 
-
-
-    public String getFirstName() {
-
-        return FirstName.get();
-    }
-
-    public void setFirstName(String name)
-    {
-        FirstName.set(name);
-    }
-
-    public String getLastName() {
-
-        return LastName.get();
-    }
-
-    public void setLastName(String name) {
-        LastName.set(name);
-    }
-
-    public String getUserName() {
-        return  (FirstName.get() + " " + LastName.get());
-    }
-
-    public String getAddress() {
-        return Address.get();
-    }
-
-    public void setAddress(String address) {
-        Address.set(address);
-    }
-
-    public String getPhone() {
-        return Phone.get();
-    }
-
-    public void setPhone(String phone) {
-        Phone.set(phone);
-    }
-
-    public String getStatus() {
-        return Status.get();
-    }
-
-    public void setStatus(String status) {
-        Status.set(status);
-    }
-
     public String getId() {
         return Id.get();
     }
@@ -70,5 +21,70 @@ public abstract class User {
 
     public void setId(String id) {
         this.Id.set(id);
+    }
+
+    public String getFirstName() {
+        return FirstName.get();
+    }
+
+    public SimpleStringProperty firstNameProperty() {
+        return FirstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.FirstName.set(firstName);
+    }
+
+    public String getLastName() {
+        return LastName.get();
+    }
+
+    public SimpleStringProperty lastNameProperty() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.LastName.set(lastName);
+    }
+
+    public String getAddress() {
+        return Address.get();
+    }
+
+    public SimpleStringProperty addressProperty() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        this.Address.set(address);
+    }
+
+    public String getPhone() {
+        return Phone.get();
+    }
+
+    public SimpleStringProperty phoneProperty() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        this.Phone.set(phone);
+    }
+
+    public String getStatus() {
+        return Status.get();
+    }
+
+    public SimpleStringProperty statusProperty() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        this.Status.set(status);
+    }
+
+    public String getUserName()
+    {
+        return getFirstName() + " " + getLastName();
     }
 }

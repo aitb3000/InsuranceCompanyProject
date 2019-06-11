@@ -29,7 +29,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../content/images/icons8_Sign_Out_32px.png" />
+                              <Image url="@../../../content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -48,7 +48,7 @@
       </AnchorPane>
       <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="750.0" layoutY="52.0" onMouseClicked="#MouseSearchInsurance" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../content/images/icons8_Search_52px.png" />
+            <Image url="@../../../content/images/icons/icons8_Search_52px.png" />
          </image>
       </ImageView>
    </children>
