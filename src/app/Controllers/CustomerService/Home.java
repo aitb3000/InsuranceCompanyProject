@@ -17,15 +17,10 @@ import java.util.ResourceBundle;
 
 public class Home implements Initializable {
 
-    private Pane paneCustomers;
-    private Pane paneOrders;
+    private Pane paneClaims;
     private Pane paneOverview;
     private Pane paneSettings;
-    private Pane paneNewInsurance;
 
-
-    @FXML
-    private Button btnNewInsurance;
 
     @FXML
     private Label txtUserFullName;
@@ -34,10 +29,7 @@ public class Home implements Initializable {
     private Button btnOverview;
 
     @FXML
-    private Button btnOrders;
-
-    @FXML
-    private Button btnCustomers;
+    private Button btnNewClaim;
 
     @FXML
     private Button btnSettings;
@@ -56,65 +48,30 @@ public class Home implements Initializable {
         txtUserFullName.setText(Main.AppUser.getUserName());
 
         try {
-            paneCustomers = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Customers.fxml"));
-            paneNewInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/NewInsurance.fxml"));
-            paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Overview.fxml"));
-            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Settings.fxml"));
-            paneOrders  = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Orders.fxml"));
-            spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings,paneOrders);
+            paneClaims = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Claims.fxml"));
+            paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Overview.fxml"));
+            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Settings.fxml"));
+            spHome.getChildren().addAll(paneOverview, paneClaims, paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
         {
             ex.printStackTrace();
         }
-
-
-//        Node[] nodes = new Node[10];
-//        for (int i = 0; i < nodes.length; i++) {
-//            try {
-//
-//                final int j = i;
-//                nodes[i] = FXMLLoader.load(getClass().getResource("/app/temp/Item.fxml"));
-//
-//                //give the items some effect
-//
-//                nodes[i].setOnMouseEntered(event -> {
-//                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
-//                });
-//                nodes[i].setOnMouseExited(event -> {
-//                    nodes[j].setStyle("-fx-background-color : #02030A");
-//                });
-//                pnItems.getChildren().add(nodes[i]);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
     }
 
 
     public void handleClicks(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == btnCustomers) {
+        if (actionEvent.getSource() == btnNewClaim) {
             //paneCustomers.setStyle("-fx-background-color : #1620A1");
-            paneCustomers.toFront();
-        }
-        if (actionEvent.getSource() == btnOrders) {
-            //paneOrders.setStyle("-fx-background-color : #53639F");
-            paneOrders.toFront();
+            paneClaims.toFront();
         }
         if (actionEvent.getSource() == btnOverview) {
             //paneOverview.setStyle("-fx-background-color : #02030A");
             paneOverview.toFront();
         }
-        if(actionEvent.getSource()==btnSettings)
-        {
+        if(actionEvent.getSource()==btnSettings) {
             //paneOrders.setStyle("-fx-background-color : #464F67");
-            paneOrders.toFront();
-        }
-        if(actionEvent.getSource()==btnNewInsurance)
-        {
-            //paneNewInsurance.setStyle("-fx-background-color : #53639F");
-            paneNewInsurance.toFront();
+            paneSettings.toFront();
         }
     }
 

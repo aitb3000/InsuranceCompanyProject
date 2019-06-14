@@ -32,6 +32,7 @@ public class sqlConnection {
     public User Connect(String Username, String Password)
     {
         User user = null;
+
         try {
             connection = DriverManager.getConnection(connectionString);
             String schema = connection.getSchema();

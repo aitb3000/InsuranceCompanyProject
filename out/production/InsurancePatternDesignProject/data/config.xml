@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+<class>
+    <Insurance InsuranceType = "1">
+        <InsuranceName>Car</InsuranceName>
+    </Insurance>
+
+    <Insurance InsuranceType = "2">
+        <InsuranceName>House</InsuranceName>
+    </Insurance>
+
+    <Insurance InsuranceType = "3">
+        <InsuranceName>Life</InsuranceName>
+    </Insurance>
+
+    <Insurance InsuranceType = "4">
+        <InsuranceName>LostJob</InsuranceName>
+    </Insurance>
+</class>

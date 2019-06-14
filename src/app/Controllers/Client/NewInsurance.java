@@ -1,6 +1,7 @@
 package app.Controllers.Client;
 
 import app.Main;
+import app.Models.Client;
 import app.Models.Insurance;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
@@ -21,16 +22,17 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class NewInsurance implements Initializable {
 
-    private ObservableList<Insurance> Insurances;
+    private ObservableList<String> Insurances;
+    private ArrayList<String> AL_Insurances_string = new ArrayList<>();
     private ArrayList<Insurance> AL_Insurances = new ArrayList<>();
+
     @FXML
     private Pane pnlNewInsurance;
 
@@ -50,7 +52,7 @@ public class NewInsurance implements Initializable {
     private TextField txtLastName;
 
     @FXML
-    private ChoiceBox<Insurance> cbInsurance;
+    private ChoiceBox<String> cbInsurance;
 
     @FXML
     private Button btnSendNew;
@@ -97,6 +99,9 @@ public class NewInsurance implements Initializable {
         lblClientName.setText(Main.AppUser.getUserName());
         lblNewInsuranceCheckLField.setVisible(false);
         GetInsuranceFromXML();
+        txtId.setText(Main.AppUser.getId());
+        txtFirstName.setText(Main.AppUser.getFirstName());
+        txtLastName.setText(Main.AppUser.getLastName());
     }
 
     private void GetInsuranceFromXML()
@@ -108,11 +113,10 @@ public class NewInsurance implements Initializable {
         if (!cbInsurance.getItems().isEmpty())
             cbInsurance.getItems().clear();
 
-
-
-
         try {
-            InputStream inputFile = Main.class.getResourceAsStream("/content/data/config.fml");
+            ClassLoader classLoader = getClass().getClassLoader();
+            InputStream inputFile = classLoader.getResourceAsStream("data/config.xml");
+
             //File inputFile = new File(path);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -134,6 +138,7 @@ public class NewInsurance implements Initializable {
                     insurance.setInsuranceId(eElement.getAttribute("InsuranceType"));
                     insurance.setInsuranceName(eElement.getElementsByTagName("InsuranceName").item(0).getTextContent());
                     AL_Insurances.add(insurance);
+                    AL_Insurances_string.add(insurance.getInsuranceName());
                     System.out.println("Insurance Type Number : "
                             + eElement.getAttribute("InsuranceType"));
                     System.out.println("Insurance Type Name : "
@@ -143,8 +148,9 @@ public class NewInsurance implements Initializable {
                             .getTextContent());
                 }
             }
-            Insurances = FXCollections.observableArrayList(AL_Insurances);
+            Insurances = FXCollections.observableArrayList(AL_Insurances_string);
             cbInsurance.setItems(Insurances);
+            inputFile.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

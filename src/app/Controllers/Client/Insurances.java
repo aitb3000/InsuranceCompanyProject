@@ -2,6 +2,7 @@ package app.Controllers.Client;
 
 import app.Main;
 import app.Models.Client;
+import app.Models.ClientInsurance;
 import app.Models.Insurance;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
@@ -20,15 +21,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
 public class Insurances implements Initializable {
 
-    private ObservableList<Insurance> AllInsurances = FXCollections.observableArrayList();
-    private FilteredList<Insurance> DataTable = new FilteredList<Insurance>(AllInsurances);
+    private ObservableList<ClientInsurance> AllInsurances = FXCollections.observableArrayList();
+    private FilteredList<ClientInsurance> DataTable = new FilteredList<ClientInsurance>(AllInsurances);
 
     @FXML
     private Pane pnlInsurences;
@@ -37,13 +37,13 @@ public class Insurances implements Initializable {
     private TextField txtSearchInsurance;
 
     @FXML
-    private TableView<Insurance> tvInsurence;
+    private TableView<ClientInsurance> tvInsurence;
 
     @FXML
-    private TableColumn<Insurance, String> tcId;
+    private TableColumn<ClientInsurance, String> tcId;
 
     @FXML
-    private TableColumn<Insurance, String> tcName;
+    private TableColumn<ClientInsurance, String> tcName;
 
     @FXML
     private Button btnShowAll;
@@ -72,16 +72,17 @@ public class Insurances implements Initializable {
 
         for (Object[] row : results)
         {
-            Insurance insurance = new Insurance();
-            insurance.setInsuranceId((String) row[0]);
+            ClientInsurance insurance = new ClientInsurance();
+            insurance.setInsuranceType((String) row[0]);
             insurance.setInsuranceName((String) row[1]);
+            insurance.setInsuranceStatus((String) row[2]);
             ((Client)Main.AppUser).ClientInsurances.add(insurance);
 
         }
 
-        AllInsurances.addAll(((Client)Main.AppUser).ClientInsurances);
+        AllInsurances.addAll(((Client) Main.AppUser).ClientInsurances);
 
-        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
+        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceTypeProperty());
         tcName.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
 
         tvInsurence.setItems(DataTable);
@@ -106,7 +107,7 @@ public class Insurances implements Initializable {
 
     private void SearchAndShowInsurance(String insurance)
     {
-        Predicate<Insurance> containText = insu -> insu.getInsuranceName().contains(insurance);
+        Predicate<ClientInsurance> containText = insu -> insu.getInsuranceName().contains(insurance);
         DataTable.setPredicate(containText);
     }
 
