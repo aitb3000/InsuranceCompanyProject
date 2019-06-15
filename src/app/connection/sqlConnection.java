@@ -1,17 +1,21 @@
 package app.connection;
 
-import app.Models.Client;
-import app.Models.Salesman;
-import app.Models.User;
+import app.Models.*;
 
+import java.io.Console;
 import java.sql.*;
 import java.util.ArrayList;
 
 
 public class sqlConnection {
+
     private static sqlConnection ourInstance = new sqlConnection();
     private Connection connection;
     private String connectionString;
+    private ResultSet resultSet = null;
+    private ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
+    private ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
+
 
     public static sqlConnection getInstance() {
         return ourInstance;
@@ -37,26 +41,31 @@ public class sqlConnection {
             connection = DriverManager.getConnection(connectionString);
             String schema = connection.getSchema();
             String selectSql = "SELECT * FROM [dbo].[users] WHERE [dbo].[users].[userId] ='" + Username + "' AND [dbo].[users].[userPassword] ='"+Password+"'";
-
+            System.out.println("Connect() - " + selectSql);
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(selectSql)) {
 
                 if (resultSet.next())
                 {
-                    if (resultSet.getBoolean("insurance"))
+                    switch(User.getTypeUser(resultSet.getByte("userType")))
                     {
-                        user = new Salesman();
-                        user.setId(Username);
-                        user.setFirstName(resultSet.getString("userFirstName"));
-                        user.setLastName(resultSet.getString("userLastName"));
-                        user.setAddress(resultSet.getString("userAddress"));
-                        user.setPhone(resultSet.getString("userPhone"));
-                        user.setStatus(resultSet.getString("userStatus"));
+
+                        case eClient:
+                            user = new Client();
+                            break;
+
+                        case eSalesman:
+                            user = new Salesman();
+                            break;
+
+                        case eCustomerService:
+                            user = new CustomerService();
+                            break;
                     }
-                    else
+
+                    if (user != null)
                     {
-                        user = new Client();
-                        user.setId(Username);
+                        user.setId(resultSet.getString("userId"));
                         user.setFirstName(resultSet.getString("userFirstName"));
                         user.setLastName(resultSet.getString("userLastName"));
                         user.setAddress(resultSet.getString("userAddress"));
@@ -93,28 +102,106 @@ public class sqlConnection {
         }
     }
 
-    public ArrayList<Object[]> GetData(String sqlQuery) {
-        ResultSet resultSet = null;
-        ArrayList<Object[]> results = new ArrayList<Object[]>();
+    public ArrayList<ClientInsurance> GetClientInsurances(String sqlQuery) {
+        System.out.println("GetClientInsurances() - " + sqlQuery);
+        resultSet = null;
+        ClientInsuranceResults.clear();
+
         try {
             Statement statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlQuery);
-            int nCol = resultSet.getMetaData().getColumnCount();
+
             while (resultSet.next())
             {
-                Object[] row = new Object[nCol];
-                for(int i = 0 ; i < nCol ; i++)
-                {
-                    Object obj = resultSet.getObject(i);
-                    row[i] = obj;
-                }
-                results.add(row);
+                ClientInsurance clientInsurance = new ClientInsurance();
+                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("iid")));
+                clientInsurance.setUcId(resultSet.getString("ucid"));
+                clientInsurance.setUsId(resultSet.getString("usid"));
+                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("itype")));
+                clientInsurance.setInsuranceName(resultSet.getString("iname"));
+                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("istatus"))));
+                ClientInsuranceResults.add(clientInsurance);
             }
         }
         catch (SQLException ex)
         {
             ex.printStackTrace();
         }
-        return results;
+        return ClientInsuranceResults;
+    }
+
+
+    public ArrayList<ClientInsurance> GetDataClientInsurances(String sqlQuery)
+    {
+        System.out.println("GetDataClientInsurances() - " + sqlQuery);
+        resultSet = null;
+        ClientInsuranceResults.clear();
+
+        try {
+            Statement statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next())
+            {
+                ClientInsurance clientInsurance = new ClientInsurance();
+                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("iid")));
+                clientInsurance.setUcId(resultSet.getString("ucid"));
+                clientInsurance.setUsId(resultSet.getString("usid"));
+
+                clientInsurance.setUcId(resultSet.getString("userId"));
+                clientInsurance.setUcFname(resultSet.getString("userFirstName"));
+                clientInsurance.setUcLname(resultSet.getString("userLastName"));
+                clientInsurance.setUcStatus(resultSet.getString("userStatus"));
+
+                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("itype")));
+                clientInsurance.setInsuranceName(resultSet.getString("iname"));
+                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("istatus"))));
+
+
+                ClientInsuranceResults.add(clientInsurance);
+            }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+        return ClientInsuranceResults;
+    }
+
+
+    public ArrayList<ClientInsuranceClaim> GetDataClientInsuranceClaim(String sqlQuery)
+    {
+        resultSet = null;
+        ClientInsuranceClaimResults.clear();
+
+        try {
+            Statement statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next())
+            {
+                ClientInsuranceClaim clientInsuranceClaim = new ClientInsuranceClaim();
+                clientInsuranceClaim.setInsuranceName(String.valueOf(resultSet.getInt("iname")));
+                clientInsuranceClaim.setInsuranceStatus(resultSet.getString("ucid"));
+
+                clientInsuranceClaim.setClientId(resultSet.getString("userId"));
+                clientInsuranceClaim.setClientFirstName(resultSet.getString("userFirstName"));
+                clientInsuranceClaim.setClientLastName(resultSet.getString("userLastName"));
+                clientInsuranceClaim.setClaimStatus(resultSet.getString("userStatus"));
+
+                clientInsuranceClaim.setClaimStatus(resultSet.getString("iname"));
+                clientInsuranceClaim.setClaimId((resultSet.getString("cid")));
+
+
+                ClientInsuranceClaimResults.add(clientInsuranceClaim);
+            }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return ClientInsuranceClaimResults;
     }
 }
+

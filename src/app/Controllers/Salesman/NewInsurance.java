@@ -1,6 +1,7 @@
 package app.Controllers.Salesman;
 
 import app.Main;
+import app.Models.Insurance;
 import app.connection.sqlConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +32,7 @@ public class NewInsurance {
     private TextField txtLastName;
 
     @FXML
-    private ChoiceBox<?> cbInsurance;
+    private ChoiceBox<String> cbInsurance;
 
     @FXML
     private Button btnSendNew;
@@ -43,15 +44,15 @@ public class NewInsurance {
     @FXML
     void CancelNewInsuranceForm(ActionEvent event)
     {
-        txtFirstName.setText(Main.AppUser.getFirstName());
-        txtLastName.setText(Main.AppUser.getLastName());
-        txtId.setText(Main.AppUser.getId());
+        txtFirstName.clear();
+        txtLastName.clear();
+        txtId.clear();
     }
 
     @FXML
     void SendNewInsuranceForm(ActionEvent event)
     {
-        sqlConnection.getInstance().SendQuery("");
+        sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].insurances (istatus,itype,ucid,usid) VALUES ('" + Insurance.getInsuranceStatus((byte)0) + "','" + cbInsurance.getValue() + "','" + txtId.getText()+"','" + Main.AppUser.getId() + "')");
     }
 
 }

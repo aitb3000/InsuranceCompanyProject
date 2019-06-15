@@ -54,10 +54,10 @@ public class Home implements Initializable {
         try
         {
             paneInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Client/Insurances.fxml"));
-            paneNewInsurance  = FXMLLoader.load(Main.class.getResource("/app/View/Client/NewInsurance.fxml"));
+            //paneNewInsurance  = FXMLLoader.load(Main.class.getResource("/app/View/Client/NewInsurance.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Client/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Client/Settings.fxml"));
-            spHome.getChildren().addAll(paneOverview,paneInsurance,paneNewInsurance,paneSettings);
+            spHome.getChildren().addAll(paneOverview,paneInsurance,paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
         {

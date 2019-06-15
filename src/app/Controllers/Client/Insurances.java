@@ -28,7 +28,7 @@ import java.util.function.Predicate;
 public class Insurances implements Initializable {
 
     private ObservableList<ClientInsurance> AllInsurances = FXCollections.observableArrayList();
-    private FilteredList<ClientInsurance> DataTable = new FilteredList<ClientInsurance>(AllInsurances);
+    private FilteredList<ClientInsurance> DataTable = new FilteredList<>(AllInsurances);
 
     @FXML
     private Pane pnlInsurences;
@@ -40,10 +40,22 @@ public class Insurances implements Initializable {
     private TableView<ClientInsurance> tvInsurence;
 
     @FXML
-    private TableColumn<ClientInsurance, String> tcId;
+    private TableColumn<ClientInsurance, String> tciid;
 
     @FXML
-    private TableColumn<ClientInsurance, String> tcName;
+    private TableColumn<ClientInsurance, String> tcType;
+
+    @FXML
+    private TableColumn<ClientInsurance, String> tcStatus;
+
+    @FXML
+    private TableColumn<ClientInsurance, String> tcClientId;
+
+    @FXML
+    private TableColumn<ClientInsurance, String> tcClientFname;
+
+    @FXML
+    private TableColumn<ClientInsurance, String> tcClientLname;
 
     @FXML
     private Button btnShowAll;
@@ -52,7 +64,8 @@ public class Insurances implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Object[]> results = sqlConnection.getInstance().GetData("");
+        //Get all insurances of a client.
+        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetClientInsurances("SELECT * FROM [dbo].[insurances] WHERE [dbo].[insurances].[ucid] ='" + Main.AppUser.getId() + "'");
 
         if (!DataTable.isEmpty())
         {
@@ -69,21 +82,14 @@ public class Insurances implements Initializable {
             ((Client)Main.AppUser).ClientInsurances.clear();
         }
 
-
-        for (Object[] row : results)
-        {
-            ClientInsurance insurance = new ClientInsurance();
-            insurance.setInsuranceType((String) row[0]);
-            insurance.setInsuranceName((String) row[1]);
-            insurance.setInsuranceStatus((String) row[2]);
-            ((Client)Main.AppUser).ClientInsurances.add(insurance);
-
-        }
-
         AllInsurances.addAll(((Client) Main.AppUser).ClientInsurances);
 
-        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceTypeProperty());
-        tcName.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
+        tciid.setCellValueFactory(cellData -> cellData.getValue().insuranceTypeProperty());
+        tcType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
+        tcStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
+        tcClientId.setCellValueFactory(cellData -> cellData.getValue().ucIdProperty());
+        tcClientFname.setCellValueFactory(cellData -> cellData.getValue().ucFnameProperty());
+        tcClientLname.setCellValueFactory(cellData -> cellData.getValue().ucLnameProperty());
 
         tvInsurence.setItems(DataTable);
     }

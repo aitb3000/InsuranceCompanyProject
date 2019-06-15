@@ -9,10 +9,9 @@ public class ClientInsuranceClaim {
     private SimpleStringProperty clientLastName = new SimpleStringProperty(this, "lastName");
     private SimpleStringProperty clientStatus = new SimpleStringProperty(this, "status");
 
-    private SimpleStringProperty claimType = new SimpleStringProperty(this, "claimType");
+    private SimpleStringProperty claimId = new SimpleStringProperty(this, "claimId");
     private SimpleStringProperty claimName = new SimpleStringProperty(this, "claimName");
     private SimpleStringProperty ClaimStatus = new SimpleStringProperty(this, "claimName");
-
 
     private SimpleStringProperty insuranceId = new SimpleStringProperty(this, "insuranceId");
     private SimpleStringProperty insuranceName = new SimpleStringProperty(this, "insuranceName");
@@ -67,16 +66,16 @@ public class ClientInsuranceClaim {
         this.clientStatus.set(clientStatus);
     }
 
-    public String getClaimType() {
-        return claimType.get();
+    public String getClaimId() {
+        return claimId.get();
     }
 
-    public SimpleStringProperty claimTypeProperty() {
-        return claimType;
+    public SimpleStringProperty claimIdProperty() {
+        return claimId;
     }
 
-    public void setClaimType(String claimType) {
-        this.claimType.set(claimType);
+    public void setClaimId(String claimId) {
+        this.claimId.set(claimId);
     }
 
     public String getClaimName() {
@@ -115,9 +114,7 @@ public class ClientInsuranceClaim {
         this.insuranceName.set(insuranceName);
     }
 
-    public String getClaimStatus() {
-        return ClaimStatus.get();
-    }
+    public String getClaimStatus() { return ClaimStatus.get(); }
 
     public SimpleStringProperty claimStatusProperty() {
         return ClaimStatus;
@@ -127,15 +124,9 @@ public class ClientInsuranceClaim {
         this.ClaimStatus.set(claimStatus);
     }
 
-    public String getInsuranceStatus() {
-        return insuranceStatus.get();
-    }
+    public String getInsuranceStatus() { return insuranceStatus.get();  }
 
-    public SimpleStringProperty insuranceStatusProperty() {
-        return insuranceStatus;
-    }
+    public SimpleStringProperty insuranceStatusProperty() { return insuranceStatus;  }
 
-    public void setInsuranceStatus(String insuranceStatus) {
-        this.insuranceStatus.set(insuranceStatus);
-    }
+    public void setInsuranceStatus(String insuranceStatus) {  this.insuranceStatus.set(insuranceStatus); }
 }

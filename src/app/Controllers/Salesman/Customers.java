@@ -53,10 +53,10 @@ public class Customers implements Initializable {
     private TableColumn<ClientInsurance, String> tcLname;
 
     @FXML
-    private TableColumn<ClientInsurance, String> tcClientStatus;
+    private TableColumn<ClientInsurance, String> tcInsurnceId;
 
     @FXML
-    private TableColumn<ClientInsurance, String> tcInsuranceName;
+    private TableColumn<ClientInsurance, String> tcInsuranceType;
 
     @FXML
     private TableColumn<ClientInsurance, String> tcInsuranceStatus;
@@ -119,7 +119,7 @@ public class Customers implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ResetDetails();
-        ArrayList<Object[]> results = sqlConnection.getInstance().GetData("");
+        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetDataClientInsurances("SELECT * FROM dbo.users, dbo.insurances WHERE users.userId = insurances.ucid");
 
         if (!DataTable.isEmpty())
         {
@@ -135,22 +135,12 @@ public class Customers implements Initializable {
             ((Client) Main.AppUser).ClientInsurances.clear();
         }
 
-        for (Object[] row : results)
-        {
-            ClientInsurance clientInsurance = new ClientInsurance();
-            clientInsurance.setId((String)row[0]);
-            clientInsurance.setFirstName((String)row[1]);
-            clientInsurance.setLastName((String)row[2]);
-            clientInsurance.setInsuranceName((String)row[3]);
-            clientInsurance.setInsuranceStatus((String)row[4]);
-            ((Client) Main.AppUser).ClientInsurances.add(clientInsurance);
-        }
 
-        tcId.setCellValueFactory(cellData -> cellData.getValue().idProperty());
-        tcFname.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-        tcLname.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-        tcClientStatus.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
-        tcInsuranceName.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
+        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
+        tcFname.setCellValueFactory(cellData -> cellData.getValue().ucLnameProperty());
+        tcLname.setCellValueFactory(cellData -> cellData.getValue().ucFnameProperty());
+        tcInsurnceId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
+        tcInsuranceType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
         tcInsuranceStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
 
         tvInsurence.setItems(DataTable);
@@ -169,7 +159,7 @@ public class Customers implements Initializable {
 
     private void SearchAndShowInsurance(String id)
     {
-        Predicate<ClientInsurance> containText = insu -> insu.getId().contains(id);
+        Predicate<ClientInsurance> containText = insu -> insu.getUcId().contains(id);
         DataTable.setPredicate(containText);
     }
 
@@ -177,12 +167,12 @@ public class Customers implements Initializable {
     {
         int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
         ClientInsurance clientInsurance = AllClientInsurance.get(index);
-        lblCstatus.setText(clientInsurance.getStatus());
-        lblFname.setText(clientInsurance.getFirstName());
-        lblId.setText(clientInsurance.getId());
+        lblCstatus.setText(clientInsurance.getUcStatus());
+        lblFname.setText(clientInsurance.getUcFname());
+        lblId.setText(clientInsurance.getUcId());
         lblInsuranceName.setText(clientInsurance.getInsuranceName());
         lblInsuranceType.setText(clientInsurance.getInsuranceType());
-        lblLname.setText(clientInsurance.getLastName());
+        lblLname.setText(clientInsurance.getUcLname());
         lblInsuranceStatus.setText(clientInsurance.getInsuranceStatus());
     }
 }

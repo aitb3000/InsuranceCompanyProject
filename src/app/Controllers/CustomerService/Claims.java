@@ -124,7 +124,6 @@ public class Claims implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         ResetDetails();
-        ArrayList<Object[]> results = sqlConnection.getInstance().GetData("");
 
         if (!DataTable.isEmpty())
         {
@@ -140,18 +139,9 @@ public class Claims implements Initializable {
             ((Client) Main.AppUser).ClientInsurances.clear();
         }
 
-        for (Object[] row : results)
-        {
-            ClientInsuranceClaim clientInsuranceClaim = new ClientInsuranceClaim();
-            clientInsuranceClaim.setClientId((String)row[0]);
-            clientInsuranceClaim.setClientFirstName((String)row[1]);
-            clientInsuranceClaim.setClientLastName((String)row[2]);
-            clientInsuranceClaim.setClientStatus((String)row[3]);
-            clientInsuranceClaim.setInsuranceId((String)row[4]);
-            clientInsuranceClaim.setInsuranceName((String)row[5]);
-            clientInsuranceClaim.setClaimName((String)row[6]);
-            ((Client) Main.AppUser).ClientInsuranceClaim.add(clientInsuranceClaim);
-        }
+        ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM dbo.users, dbo.claims WHERE users.userId = claims.ucid");
+        AllClientInsuranceClaim.addAll(results);
+
 
         tcId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
         tcFname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());
@@ -224,7 +214,7 @@ public class Claims implements Initializable {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
         ClientInsuranceClaim clientInsuranceClaim = AllClientInsuranceClaim.get(index);
         lblClaimStatus.setText(clientInsuranceClaim.getClaimStatus());
-        lblClaimType.setText(clientInsuranceClaim.getClaimType());
+        lblClaimType.setText(clientInsuranceClaim.getClaimId());
         lblCstatus.setText(clientInsuranceClaim.getClientStatus());
         lblFname.setText(clientInsuranceClaim.getClientFirstName());
         lblId.setText(clientInsuranceClaim.getClientId());

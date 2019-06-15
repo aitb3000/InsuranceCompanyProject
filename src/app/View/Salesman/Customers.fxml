@@ -45,10 +45,10 @@
                 <TableView fx:id="tvInsurence" layoutX="-6.0" layoutY="-26.0" onKeyPressed="#ShowClientInformationKeyboardHandler" onMouseClicked="#ShowClientInformationMouseHandler" prefHeight="192.0" prefWidth="771.0" AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-26.0">
                     <columns>
                         <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="tcInsurnceId" prefWidth="75.0" text="Insurance Id" />
                         <TableColumn fx:id="tcFname" prefWidth="75.0" text="First Name" />
                         <TableColumn fx:id="tcLname" prefWidth="75.0" text="Last Name" />
-                        <TableColumn fx:id="tcClientStatus" prefWidth="75.0" text="Status" />
-                        <TableColumn fx:id="tcInsuranceName" prefWidth="75.0" text="Insurance" />
+                        <TableColumn fx:id="tcInsuranceType" prefWidth="75.0" text="Type" />
                         <TableColumn fx:id="tcInsuranceStatus" prefWidth="75.0" text="Status" />
                     </columns>
                     <columnResizePolicy>
