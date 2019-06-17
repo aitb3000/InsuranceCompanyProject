@@ -1,5 +1,6 @@
 package app.connection;
 
+import app.Main;
 import app.Models.*;
 
 import java.io.Console;
@@ -102,7 +103,8 @@ public class sqlConnection {
         }
     }
 
-    public ArrayList<ClientInsurance> GetClientInsurances(String sqlQuery) {
+    public ArrayList<ClientInsurance> GetClientInsurances() {
+        String sqlQuery = "SELECT * FROM [dbo].[insurances] WHERE [dbo].[insurances].[ucid] ='" + Main.AppUser.getId() + "'";
         System.out.println("GetClientInsurances() - " + sqlQuery);
         resultSet = null;
         ClientInsuranceResults.clear();

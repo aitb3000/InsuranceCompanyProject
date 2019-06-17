@@ -1,6 +1,7 @@
 package app;
 
 import app.Models.User;
+import app.connection.loggerAPI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,38 +34,20 @@ public class Main extends Application {
     {
         Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Login.fxml"));
         PrimaryStage.setScene(new Scene(root));
+        root = AttachEvent(root);
 
-        root.setOnMousePressed(event -> {
-            x = event.getSceneX();
-            y = event.getSceneY();
-        });
 
-        root.setOnMouseDragged(event -> {
-
-            PrimaryStage.setX(event.getScreenX() - x);
-            PrimaryStage.setY(event.getScreenY() - y);
-
-        });
         PrimaryStage.show();
     }
 
 
-    public static void ShowHome() throws Exception
+    public static void ShowSalesmanHome() throws Exception
     {
         Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Home.fxml"));
         PrimaryStage.setScene(new Scene(root));
+        root = AttachEvent(root);
 
-        root.setOnMousePressed(event -> {
-            x = event.getSceneX();
-            y = event.getSceneY();
-        });
 
-        root.setOnMouseDragged(event -> {
-
-            PrimaryStage.setX(event.getScreenX() - x);
-            PrimaryStage.setY(event.getScreenY() - y);
-
-        });
         PrimaryStage.show();
     }
 
@@ -72,7 +55,21 @@ public class Main extends Application {
     {
         Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Client/Home.fxml"));
         PrimaryStage.setScene(new Scene(root));
+        root = AttachEvent(root);
+        PrimaryStage.show();
+    }
 
+    public static void ShowCustomerServieHome() throws Exception
+    {
+        Parent root = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Home.fxml"));
+        PrimaryStage.setScene(new Scene(root));
+        root = AttachEvent(root);
+        PrimaryStage.show();
+    }
+
+
+    private static Parent AttachEvent(Parent root)
+    {
         root.setOnMousePressed(event -> {
             x = event.getSceneX();
             y = event.getSceneY();
@@ -84,6 +81,7 @@ public class Main extends Application {
             PrimaryStage.setY(event.getScreenY() - y);
 
         });
-        PrimaryStage.show();
+
+        return root;
     }
 }

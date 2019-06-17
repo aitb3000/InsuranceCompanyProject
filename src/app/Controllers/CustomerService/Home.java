@@ -2,6 +2,7 @@ package app.Controllers.CustomerService;
 
 import app.Main;
 import app.connection.loggerAPI;
+import app.connection.sqlConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,6 +81,7 @@ public class Home implements Initializable {
     {
         try
         {
+            sqlConnection.getInstance().CloseConnection();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Sign out.");
             loggerAPI.getInstance().CloseLogger();
             Main.ShowLogin();
@@ -92,6 +94,8 @@ public class Home implements Initializable {
 
     public void Exit(ActionEvent actionEvent)
     {
+        sqlConnection.getInstance().CloseConnection();
+        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Exit from application.");
         loggerAPI.getInstance().CloseLogger();
         Platform.exit();
     }

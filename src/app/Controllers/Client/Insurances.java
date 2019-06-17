@@ -21,7 +21,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
@@ -64,9 +63,6 @@ public class Insurances implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Get all insurances of a client.
-        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetClientInsurances("SELECT * FROM [dbo].[insurances] WHERE [dbo].[insurances].[ucid] ='" + Main.AppUser.getId() + "'");
-
         if (!DataTable.isEmpty())
         {
             DataTable.clear();
@@ -77,9 +73,10 @@ public class Insurances implements Initializable {
             AllInsurances.clear();
         }
 
-        if (!((Client) Main.AppUser).ClientInsurances.isEmpty())
+        //Get all insurances of a client.
+        if (((Client)Main.AppUser).ClientInsurances.isEmpty())
         {
-            ((Client)Main.AppUser).ClientInsurances.clear();
+            ((Client)Main.AppUser).ClientInsurances= sqlConnection.getInstance().GetClientInsurances();
         }
 
         AllInsurances.addAll(((Client) Main.AppUser).ClientInsurances);

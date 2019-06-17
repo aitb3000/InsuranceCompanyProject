@@ -52,15 +52,15 @@ public class Login implements Initializable {
             if (CheckLoginFields()) {
                 Main.AppUser = sqlConnection.getInstance().Connect(txtUsername.getText(), txtPassword.getText());
                 if (Main.AppUser != null) {
-                    lblWrongUser.setVisible(true);
+                    lblWrongUser.setVisible(false);
                     if (Main.AppUser instanceof Client) {
                         Main.ShowClientHome();
                     } else if (Main.AppUser instanceof Salesman) {
-                        Main.ShowHome();
+                        Main.ShowSalesmanHome();
                     }
                     loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign out.");
                 } else {
-                    lblWrongUser.setVisible(false);
+                    lblWrongUser.setVisible(true);
                 }
             } else {
                 lblWrongUser.setVisible(true);
