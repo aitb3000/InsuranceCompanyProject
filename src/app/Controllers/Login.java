@@ -58,7 +58,7 @@ public class Login implements Initializable {
                     } else if (Main.AppUser instanceof Salesman) {
                         Main.ShowSalesmanHome();
                     }
-                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign out.");
+                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
                 } else {
                     lblWrongUser.setVisible(true);
                 }

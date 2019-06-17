@@ -1,18 +1,32 @@
 package app.Controllers.Salesman;
 
+import app.Main;
+import app.Models.ClientInsurance;
+import app.Models.Salesman;
+import app.connection.sqlConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
-public class Overview {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Overview implements Initializable {
+
+    private int insuranceTotal = 0;
+    private int insurancePending = 0;
+    private int insuranceDone = 0;
 
     @FXML
     private Pane pnlOverview;
-
-    @FXML
-    private TextField txtSearch;
 
     @FXML
     private Label lblTotalOrders;
@@ -24,6 +38,59 @@ public class Overview {
     private Label lblPending;
 
     @FXML
-    private VBox pnItems;
+    private PieChart pieChartSales;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Get all insurances of a client.
+        if (((Salesman) Main.AppUser).ClientsInsurances.isEmpty()) {
+            ((Salesman) Main.AppUser).ClientsInsurances = sqlConnection.getInstance().GetDataClientInsurances("SELECT * FROM dbo.users, dbo.insurances WHERE users.userId = insurances.ucid and insurances.usid ='" + Main.AppUser.getId() + "'");
+        }
+
+        for (ClientInsurance clientInsurance : ((Salesman) Main.AppUser).ClientsInsurances) {
+            if (clientInsurance.getInsuranceStatus().compareTo("Done") == 0)
+                insuranceDone++;
+            else if (clientInsurance.getInsuranceStatus().compareTo("None") == 0)
+                insurancePending++;
+            insuranceTotal++;
+        }
+
+        lblTotalOrders.setText(String.valueOf(insuranceTotal));
+        lblTotalDone.setText(String.valueOf(insuranceDone));
+        lblPending.setText(String.valueOf(insurancePending));
+
+        SetPieChartData();
+
+    }
+
+
+    private void SetPieChartData() {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Insurance Total", insuranceTotal),
+                        new PieChart.Data("Insurance Done", insuranceDone),
+                        new PieChart.Data("Insurance Pending", insurancePending));
+        pieChartSales.setData(pieChartData);
+        pieChartSales.setTitle("Salesman Insurances Sales");
+    }
+
+
+    @FXML
+    private void ShowPieChardPerst(MouseEvent event) {
+        Label caption = new Label("");
+        caption.setTextFill(Color.DARKORANGE);
+        caption.setStyle("-fx-font: 24 arial;");
+
+        for (final PieChart.Data data : pieChartSales.getData()) {
+            data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+                    new EventHandler<MouseEvent>() {
+                        @Override public void handle(MouseEvent e) {
+                            caption.setTranslateX(e.getSceneX());
+                            caption.setTranslateY(e.getSceneY());
+                            caption.setText(String.valueOf(data.getPieValue()) + "%");
+                        }
+                    });
+        }
+    }
 
 }

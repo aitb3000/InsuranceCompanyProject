@@ -26,7 +26,6 @@ import java.util.ResourceBundle;
 public class Home implements Initializable {
 
     private Pane paneCustomers;
-    private Pane paneOrders;
     private Pane paneOverview;
     private Pane paneSettings;
     private Pane paneNewInsurance;
@@ -40,9 +39,6 @@ public class Home implements Initializable {
 
     @FXML
     private Button btnOverview;
-
-    @FXML
-    private Button btnOrders;
 
     @FXML
     private Button btnCustomers;
@@ -68,8 +64,7 @@ public class Home implements Initializable {
             paneNewInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/NewInsurance.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Settings.fxml"));
-            paneOrders  = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Orders.fxml"));
-            spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings,paneOrders);
+            spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
         {
@@ -83,10 +78,6 @@ public class Home implements Initializable {
             //paneCustomers.setStyle("-fx-background-color : #1620A1");
             paneCustomers.toFront();
         }
-        if (actionEvent.getSource() == btnOrders) {
-            //paneOrders.setStyle("-fx-background-color : #53639F");
-            paneOrders.toFront();
-        }
         if (actionEvent.getSource() == btnOverview) {
             //paneOverview.setStyle("-fx-background-color : #02030A");
             paneOverview.toFront();
@@ -94,7 +85,7 @@ public class Home implements Initializable {
         if(actionEvent.getSource()==btnSettings)
         {
             //paneOrders.setStyle("-fx-background-color : #464F67");
-            paneOrders.toFront();
+            paneSettings.toFront();
         }
         if(actionEvent.getSource()==btnNewInsurance)
         {

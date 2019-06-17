@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public class Salesman extends User
 {
-    public ArrayList<Insurance> Insurances = new ArrayList<Insurance>();
+    public ArrayList<ClientInsurance> ClientsInsurances = new ArrayList<>();
 }

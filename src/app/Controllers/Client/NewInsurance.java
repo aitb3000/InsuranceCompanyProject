@@ -76,7 +76,12 @@ public class NewInsurance implements Initializable {
         if (CheckFields())
         {
             lblNewInsuranceCheckLField.setVisible(false);
-            sqlConnection.getInstance().SendQuery("");
+            lblNewInsuranceCheckLField.setVisible(false);
+            sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].clientInsurance ("
+                    + txtId.getText() + ","
+                    + txtFirstName.getText() + ","
+                    + txtLastName.getText() + ","
+                    + cbInsurance.getValue() +"')");
         }
         else
         {

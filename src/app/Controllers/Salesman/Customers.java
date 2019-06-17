@@ -175,4 +175,27 @@ public class Customers implements Initializable {
         lblLname.setText(clientInsurance.getUcLname());
         lblInsuranceStatus.setText(clientInsurance.getInsuranceStatus());
     }
+
+
+    @FXML
+    void ApproveInsurance(ActionEvent event)
+    {
+        int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
+        ClientInsurance clientInsurance = AllClientInsurance.get(index);
+        clientInsurance.setInsuranceStatus("Approved");
+        tvInsurence.refresh();
+
+        sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '1' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+    }
+
+    @FXML
+    void DisapproveInsurance(ActionEvent event)
+    {
+        int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
+        ClientInsurance clientInsurance = AllClientInsurance.get(index);
+        clientInsurance.setInsuranceStatus("Disapprove");
+        tvInsurence.refresh();
+
+        sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '2' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+    }
 }

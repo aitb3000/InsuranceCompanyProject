@@ -173,6 +173,7 @@ public class sqlConnection {
 
     public ArrayList<ClientInsuranceClaim> GetDataClientInsuranceClaim(String sqlQuery)
     {
+        System.out.println("GetDataClientInsuranceClaim() - " + sqlQuery);
         resultSet = null;
         ClientInsuranceClaimResults.clear();
 
