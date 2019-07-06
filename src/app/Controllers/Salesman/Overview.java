@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -44,7 +43,7 @@ public class Overview implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Get all insurances of a client.
         if (((Salesman) Main.AppUser).ClientsInsurances.isEmpty()) {
-            ((Salesman) Main.AppUser).ClientsInsurances = sqlConnection.getInstance().GetDataClientInsurances("SELECT * FROM dbo.users, dbo.insurances WHERE users.userId = insurances.ucid and insurances.usid ='" + Main.AppUser.getId() + "'");
+            ((Salesman) Main.AppUser).ClientsInsurances = sqlConnection.getInstance().GetSalesmanClientInsurances("SELECT * FROM insurances WHERE insurances.salesmanId ='" + Main.AppUser.getId() + "'");
         }
 
         for (ClientInsurance clientInsurance : ((Salesman) Main.AppUser).ClientsInsurances) {
@@ -83,12 +82,10 @@ public class Overview implements Initializable {
 
         for (final PieChart.Data data : pieChartSales.getData()) {
             data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
-                    new EventHandler<MouseEvent>() {
-                        @Override public void handle(MouseEvent e) {
-                            caption.setTranslateX(e.getSceneX());
-                            caption.setTranslateY(e.getSceneY());
-                            caption.setText(String.valueOf(data.getPieValue()) + "%");
-                        }
+                    e -> {
+                        caption.setTranslateX(e.getSceneX());
+                        caption.setTranslateY(e.getSceneY());
+                        caption.setText(String.valueOf(data.getPieValue()) + "%");
                     });
         }
     }

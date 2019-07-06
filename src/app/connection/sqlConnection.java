@@ -1,9 +1,10 @@
 package app.connection;
 
+import app.LoaderScreen;
 import app.Main;
 import app.Models.*;
-
-import java.io.Console;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -16,6 +17,9 @@ public class sqlConnection {
     private ResultSet resultSet = null;
     private ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
     private ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
+
+    private boolean tryingToConnect = false;
+    private boolean active = true;
 
 
     public static sqlConnection getInstance() {
@@ -34,14 +38,41 @@ public class sqlConnection {
     }
 
 
-    public User Connect(String Username, String Password)
+    public void connectToServer(String Username, String Password){
+        if (tryingToConnect) {return;}
+        tryingToConnect = true;
+        final Task<Void> task = new Task<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Platform.runLater(()-> LoaderScreen.showLoadingScreen());
+                Main.AppUser = Connect(Username,Password);
+                while(active){}
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(event -> {
+            try
+            {
+                Platform.runLater(()->LoaderScreen.hideLoadingScreen());
+
+            } catch (Exception e){}
+
+        });
+
+        Thread t = new Thread(task);
+        t.start();
+    }
+
+
+    private User Connect(String Username, String Password)
     {
         User user = null;
 
         try {
             connection = DriverManager.getConnection(connectionString);
             String schema = connection.getSchema();
-            String selectSql = "SELECT * FROM [dbo].[users] WHERE [dbo].[users].[userId] ='" + Username + "' AND [dbo].[users].[userPassword] ='"+Password+"'";
+            String selectSql = "SELECT * FROM users WHERE users.userId ='" + Username + "' AND users.userPassword ='"+Password+"'";
             System.out.println("Connect() - " + selectSql);
             try (Statement statement = connection.createStatement();
                  ResultSet resultSet = statement.executeQuery(selectSql)) {
@@ -80,12 +111,15 @@ public class sqlConnection {
             e.printStackTrace();
         }
 
+        active = false;
+        tryingToConnect = false;
         return user;
     }
 
 
     public void SendQuery(String sqlQuery) {
         try {
+            System.out.println("SendQuery: " + sqlQuery);
             Statement statement = connection.createStatement();
             statement.executeQuery(sqlQuery);
         } catch (SQLException e) {
@@ -103,8 +137,12 @@ public class sqlConnection {
         }
     }
 
+    /**
+     *
+     * @return All login client insurances.
+     */
     public ArrayList<ClientInsurance> GetClientInsurances() {
-        String sqlQuery = "SELECT * FROM [dbo].[insurances] WHERE [dbo].[insurances].[ucid] ='" + Main.AppUser.getId() + "'";
+        String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.getId() + "'";
         System.out.println("GetClientInsurances() - " + sqlQuery);
         resultSet = null;
         ClientInsuranceResults.clear();
@@ -116,12 +154,12 @@ public class sqlConnection {
             while (resultSet.next())
             {
                 ClientInsurance clientInsurance = new ClientInsurance();
-                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("iid")));
-                clientInsurance.setUcId(resultSet.getString("ucid"));
-                clientInsurance.setUsId(resultSet.getString("usid"));
-                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("itype")));
-                clientInsurance.setInsuranceName(resultSet.getString("iname"));
-                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("istatus"))));
+                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
+                clientInsurance.setUcId(resultSet.getString("clientId"));
+                clientInsurance.setUsId(resultSet.getString("salesmanId"));
+                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("insuranceType")));
+                clientInsurance.setInsuranceName(resultSet.getString("insuranceName"));
+                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("insuranceStatus"))));
                 ClientInsuranceResults.add(clientInsurance);
             }
         }
@@ -132,10 +170,14 @@ public class sqlConnection {
         return ClientInsuranceResults;
     }
 
-
-    public ArrayList<ClientInsurance> GetDataClientInsurances(String sqlQuery)
+    /**
+     *
+     * @param sqlQuery
+     * @return All client insurances.
+     */
+    public ArrayList<ClientInsurance> GetSalesmanClientInsurances(String sqlQuery)
     {
-        System.out.println("GetDataClientInsurances() - " + sqlQuery);
+        System.out.println("GetSalesmanClientInsurances() - " + sqlQuery);
         resultSet = null;
         ClientInsuranceResults.clear();
 
@@ -146,19 +188,16 @@ public class sqlConnection {
             while (resultSet.next())
             {
                 ClientInsurance clientInsurance = new ClientInsurance();
-                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("iid")));
-                clientInsurance.setUcId(resultSet.getString("ucid"));
-                clientInsurance.setUsId(resultSet.getString("usid"));
+                clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
+                clientInsurance.setUcId(resultSet.getString("clientId"));
+                clientInsurance.setUsId(resultSet.getString("salesmanId"));
 
-                clientInsurance.setUcId(resultSet.getString("userId"));
-                clientInsurance.setUcFname(resultSet.getString("userFirstName"));
-                clientInsurance.setUcLname(resultSet.getString("userLastName"));
-                clientInsurance.setUcStatus(resultSet.getString("userStatus"));
+                clientInsurance.setUcFname(resultSet.getString("clientFname"));
+                clientInsurance.setUcLname(resultSet.getString("clientLname"));
 
-                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("itype")));
-                clientInsurance.setInsuranceName(resultSet.getString("iname"));
-                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("istatus"))));
-
+                clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("insuranceType")));
+                clientInsurance.setInsuranceName(resultSet.getString("insuranceName"));
+                clientInsurance.setInsuranceStatus(Insurance.getInsuranceStatus((resultSet.getByte("insuranceStatus"))));
 
                 ClientInsuranceResults.add(clientInsurance);
             }
@@ -171,6 +210,11 @@ public class sqlConnection {
     }
 
 
+    /**
+     *
+     * @param sqlQuery
+     * @return All client insurances claims.
+     */
     public ArrayList<ClientInsuranceClaim> GetDataClientInsuranceClaim(String sqlQuery)
     {
         System.out.println("GetDataClientInsuranceClaim() - " + sqlQuery);
@@ -184,16 +228,17 @@ public class sqlConnection {
             while (resultSet.next())
             {
                 ClientInsuranceClaim clientInsuranceClaim = new ClientInsuranceClaim();
-                clientInsuranceClaim.setInsuranceName(String.valueOf(resultSet.getInt("iname")));
-                clientInsuranceClaim.setInsuranceStatus(resultSet.getString("ucid"));
+                clientInsuranceClaim.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
+                clientInsuranceClaim.setInsuranceName(String.valueOf(resultSet.getInt("insuranceName")));
+                clientInsuranceClaim.setInsuranceStatus(resultSet.getString("insuranceStatus"));
 
-                clientInsuranceClaim.setClientId(resultSet.getString("userId"));
-                clientInsuranceClaim.setClientFirstName(resultSet.getString("userFirstName"));
-                clientInsuranceClaim.setClientLastName(resultSet.getString("userLastName"));
-                clientInsuranceClaim.setClaimStatus(resultSet.getString("userStatus"));
+                clientInsuranceClaim.setClientId(resultSet.getString("clientId"));
+                clientInsuranceClaim.setClientFirstName(resultSet.getString("clientFname"));
+                clientInsuranceClaim.setClientLastName(resultSet.getString("clientLname"));
 
-                clientInsuranceClaim.setClaimStatus(resultSet.getString("iname"));
-                clientInsuranceClaim.setClaimId((resultSet.getString("cid")));
+                clientInsuranceClaim.setClaimStatus(String.valueOf(resultSet.getString("claimStatus")));
+                clientInsuranceClaim.setClaimName(resultSet.getString("claimStatus"));
+                clientInsuranceClaim.setClaimId((resultSet.getString("claimId")));
 
 
                 ClientInsuranceClaimResults.add(clientInsuranceClaim);

@@ -45,10 +45,12 @@ public class Home implements Initializable {
     private StackPane spHome;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
         txtUserFullName.setText(Main.AppUser.getUserName());
 
-        try {
+        try
+        {
             paneClaims = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Claims.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Settings.fxml"));
@@ -63,16 +65,19 @@ public class Home implements Initializable {
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnNewClaim) {
-            //paneCustomers.setStyle("-fx-background-color : #1620A1");
+            paneClaims.setStyle("-fx-background-color : #02030A");
             paneClaims.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Overview view.");
         }
         if (actionEvent.getSource() == btnOverview) {
-            //paneOverview.setStyle("-fx-background-color : #02030A");
+            paneOverview.setStyle("-fx-background-color : #02030A");
             paneOverview.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurances view.");
         }
         if(actionEvent.getSource()==btnSettings) {
-            //paneOrders.setStyle("-fx-background-color : #464F67");
+            paneSettings.setStyle("-fx-background-color : #02030A");
             paneSettings.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Settings view.");
         }
     }
 
@@ -92,6 +97,7 @@ public class Home implements Initializable {
 
     }
 
+    @FXML
     public void Exit(ActionEvent actionEvent)
     {
         sqlConnection.getInstance().CloseConnection();

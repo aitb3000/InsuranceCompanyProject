@@ -135,10 +135,6 @@ public class Claims implements Initializable {
             AllClientInsuranceClaim.clear();
         }
 
-        if (!((Client) Main.AppUser).ClientInsurances.isEmpty()) {
-            ((Client) Main.AppUser).ClientInsurances.clear();
-        }
-
         ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM dbo.users, dbo.claims WHERE users.userId = claims.ucid");
         AllClientInsuranceClaim.addAll(results);
 
@@ -176,31 +172,37 @@ public class Claims implements Initializable {
 
 
     @FXML
-    void ApproveClaim(ActionEvent event)
-    {
-        sqlConnection.getInstance().SendQuery("");
-        UpdateSelectedRow(true);
+    void ApproveClaim(ActionEvent event) {
+        int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
+        if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
+            sqlConnection.getInstance().SendQuery("");
+            UpdateSelectedRow(true);
+        }
     }
 
-    private void UpdateSelectedRow(boolean status)
-    {
+
+
+    private void UpdateSelectedRow(boolean status) {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
-        if (status)
+        if ((index >= 0) && (index < AllClientInsuranceClaim.size()))
         {
-            AllClientInsuranceClaim.get(index).setClaimStatus("Approved");
+            if (status) {
+                AllClientInsuranceClaim.get(index).setClaimStatus("Approved");
+            } else {
+                AllClientInsuranceClaim.get(index).setClaimStatus("Disapproved");
+            }
+            tvClaims.refresh();
         }
-        else
-        {
-            AllClientInsuranceClaim.get(index).setClaimStatus("Disapproved");
-        }
-        tvClaims.refresh();
     }
 
     @FXML
     void DisapproveClaim(ActionEvent event)
     {
-        sqlConnection.getInstance().SendQuery("");
-        UpdateSelectedRow(false);
+        int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
+        if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
+            sqlConnection.getInstance().SendQuery("");
+            UpdateSelectedRow(false);
+        }
     }
 
     @FXML
@@ -209,20 +211,22 @@ public class Claims implements Initializable {
         UpdateClientInformation();
     }
 
-    private void UpdateClientInformation()
-    {
+    private void UpdateClientInformation() {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
-        ClientInsuranceClaim clientInsuranceClaim = AllClientInsuranceClaim.get(index);
-        lblClaimStatus.setText(clientInsuranceClaim.getClaimStatus());
-        lblClaimType.setText(clientInsuranceClaim.getClaimId());
-        lblCstatus.setText(clientInsuranceClaim.getClientStatus());
-        lblFname.setText(clientInsuranceClaim.getClientFirstName());
-        lblId.setText(clientInsuranceClaim.getClientId());
-        lblInsuranceName.setText(clientInsuranceClaim.getInsuranceName());
-        lblInsuranceType.setText(clientInsuranceClaim.getInsuranceId());
-        lblLname.setText(clientInsuranceClaim.getClientLastName());
-        lblInsuranceStatus.setText(clientInsuranceClaim.getInsuranceStatus());
+        if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
+            ClientInsuranceClaim clientInsuranceClaim = AllClientInsuranceClaim.get(index);
+            lblClaimStatus.setText(clientInsuranceClaim.getClaimStatus());
+            lblClaimType.setText(clientInsuranceClaim.getClaimId());
+            lblCstatus.setText(clientInsuranceClaim.getClientStatus());
+            lblFname.setText(clientInsuranceClaim.getClientFirstName());
+            lblId.setText(clientInsuranceClaim.getClientId());
+            lblInsuranceName.setText(clientInsuranceClaim.getInsuranceName());
+            lblInsuranceType.setText(clientInsuranceClaim.getInsuranceId());
+            lblLname.setText(clientInsuranceClaim.getClientLastName());
+            lblInsuranceStatus.setText(clientInsuranceClaim.getInsuranceStatus());
+        }
     }
+
 
     @FXML
     void ShowClientInformationMouseHandler(MouseEvent event)

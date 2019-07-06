@@ -52,13 +52,13 @@ public class Home implements Initializable {
     public void initialize(URL location, ResourceBundle resources)
     {
         lblUserFullName.setText(Main.AppUser.getUserName());
+        
         try
         {
             paneInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Client/Insurances.fxml"));
-            paneNewInsurance  = FXMLLoader.load(Main.class.getResource("/app/View/Client/NewInsurance.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Client/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Client/Settings.fxml"));
-            spHome.getChildren().addAll(paneOverview,paneInsurance,paneSettings,paneNewInsurance);
+            spHome.getChildren().addAll(paneOverview,paneInsurance,paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
         {
@@ -78,12 +78,6 @@ public class Home implements Initializable {
             paneInsurance.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurances view.");
         }
-        if (actionEvent.getSource() == btnNewInsurance) {
-            paneNewInsurance.setStyle("-fx-background-color : #030a12");
-            paneNewInsurance.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to New Insurance view.");
-        }
-
         if (actionEvent.getSource() == btnSetting) {
             paneSettings.setStyle("-fx-background-color : #030a12");
             paneSettings.toFront();

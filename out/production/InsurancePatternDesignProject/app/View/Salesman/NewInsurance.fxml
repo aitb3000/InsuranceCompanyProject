@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnlNewInsurance" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Client.NewInsurance">
+<Pane fx:id="pnlNewInsurance" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Salesman.NewInsurance">
    <children>
       <Label layoutX="57.0" layoutY="25.0" text="New Insurance Form" textFill="#e7e5e5">
          <font>
@@ -27,15 +27,6 @@
          <children>
             <VBox prefHeight="320.0" prefWidth="771.0" spacing="20.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="771.0" spacing="10.0">
-                     <children>
-                        <Label text="Name:" textFill="#e7e5e5" />
-                        <Label fx:id="lblClientName" layoutX="10.0" layoutY="10.0" text="Label" textFill="#e7e5e5" />
-                     </children>
-                     <padding>
-                        <Insets left="20.0" right="20.0" />
-                     </padding>
-                  </HBox>
                   <Label fx:id="lblNewInsuranceCheckLField" alignment="CENTER" contentDisplay="CENTER" text="*Check fields" textFill="#e7e5e5">
                      <padding>
                         <Insets left="220.0" />
@@ -58,11 +49,11 @@
                      </rowConstraints>
                      <children>
                         <Label contentDisplay="CENTER" text="Client Id:" textFill="#e7e5e5" GridPane.columnIndex="2" />
-                        <TextField fx:id="txtId" editable="false" GridPane.columnIndex="3" />
+                        <TextField fx:id="txtId" editable="false" promptText="Client ID" GridPane.columnIndex="3" />
                         <Label text="First Name:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtFirstName" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtFirstName" promptText="Client First Name" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                         <Label alignment="CENTER" contentDisplay="CENTER" text="Last Name:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtLastName" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtLastName" promptText="Client Last Name" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Label text="Insurance:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                         <ChoiceBox fx:id="cbInsurance" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                      </children>

@@ -1,7 +1,9 @@
 package app.Controllers;
 
+import app.LoaderScreen;
 import app.Main;
 import app.Models.Client;
+import app.Models.CustomerService;
 import app.Models.Salesman;
 import app.Models.User;
 import app.connection.loggerAPI;
@@ -49,14 +51,17 @@ public class Login implements Initializable {
     {
         try {
 
-            if (CheckLoginFields()) {
-                Main.AppUser = sqlConnection.getInstance().Connect(txtUsername.getText(), txtPassword.getText());
+            if (CheckLoginFields())
+            {
+                sqlConnection.getInstance().connectToServer(txtUsername.getText(), txtPassword.getText());
                 if (Main.AppUser != null) {
                     lblWrongUser.setVisible(false);
                     if (Main.AppUser instanceof Client) {
                         Main.ShowClientHome();
                     } else if (Main.AppUser instanceof Salesman) {
                         Main.ShowSalesmanHome();
+                    } else if (Main.AppUser instanceof CustomerService){
+                        Main.ShowCustomerServieHome();
                     }
                     loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
                 } else {

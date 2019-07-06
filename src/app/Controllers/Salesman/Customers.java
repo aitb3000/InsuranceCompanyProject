@@ -3,7 +3,7 @@ package app.Controllers.Salesman;
 import app.Main;
 import app.Models.Client;
 import app.Models.ClientInsurance;
-import app.Models.ClientInsuranceClaim;
+import app.Models.Salesman;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -119,7 +119,7 @@ public class Customers implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ResetDetails();
-        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetDataClientInsurances("SELECT * FROM dbo.users, dbo.insurances WHERE users.userId = insurances.ucid");
+        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetSalesmanClientInsurances("SELECT * FROM insurances WHERE insurances.salesmanId='" + Main.AppUser.getId() + "'");
 
         if (!DataTable.isEmpty())
         {
@@ -129,10 +129,6 @@ public class Customers implements Initializable {
         if (!AllClientInsurance.isEmpty())
         {
             AllClientInsurance.clear();
-        }
-
-        if (!((Client) Main.AppUser).ClientInsurances.isEmpty()) {
-            ((Client) Main.AppUser).ClientInsurances.clear();
         }
 
 
@@ -166,36 +162,42 @@ public class Customers implements Initializable {
     private void UpdateClientInformation()
     {
         int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
-        ClientInsurance clientInsurance = AllClientInsurance.get(index);
-        lblCstatus.setText(clientInsurance.getUcStatus());
-        lblFname.setText(clientInsurance.getUcFname());
-        lblId.setText(clientInsurance.getUcId());
-        lblInsuranceName.setText(clientInsurance.getInsuranceName());
-        lblInsuranceType.setText(clientInsurance.getInsuranceType());
-        lblLname.setText(clientInsurance.getUcLname());
-        lblInsuranceStatus.setText(clientInsurance.getInsuranceStatus());
+        if ((index < AllClientInsurance.size()) && (index >= 0))
+        {
+            ClientInsurance clientInsurance = AllClientInsurance.get(index);
+            lblCstatus.setText(clientInsurance.getUcStatus());
+            lblFname.setText(clientInsurance.getUcFname());
+            lblId.setText(clientInsurance.getUcId());
+            lblInsuranceName.setText(clientInsurance.getInsuranceName());
+            lblInsuranceType.setText(clientInsurance.getInsuranceType());
+            lblLname.setText(clientInsurance.getUcLname());
+            lblInsuranceStatus.setText(clientInsurance.getInsuranceStatus());
+        }
     }
 
 
     @FXML
-    void ApproveInsurance(ActionEvent event)
-    {
+    void ApproveInsurance(ActionEvent event) {
         int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
-        ClientInsurance clientInsurance = AllClientInsurance.get(index);
-        clientInsurance.setInsuranceStatus("Approved");
-        tvInsurence.refresh();
+        if ((index >= 0) && (index < AllClientInsurance.size()))
+        {
+            ClientInsurance clientInsurance = AllClientInsurance.get(index);
+            clientInsurance.setInsuranceStatus("Approved");
+            tvInsurence.refresh();
 
-        sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '1' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+            sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '1' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+        }
     }
 
     @FXML
-    void DisapproveInsurance(ActionEvent event)
-    {
+    void DisapproveInsurance(ActionEvent event) {
         int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
-        ClientInsurance clientInsurance = AllClientInsurance.get(index);
-        clientInsurance.setInsuranceStatus("Disapprove");
-        tvInsurence.refresh();
+        if ((index >= 0) && (index < AllClientInsurance.size())) {
+            ClientInsurance clientInsurance = AllClientInsurance.get(index);
+            clientInsurance.setInsuranceStatus("Disapprove");
+            tvInsurence.refresh();
 
-        sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '2' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+            sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '2' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+        }
     }
 }

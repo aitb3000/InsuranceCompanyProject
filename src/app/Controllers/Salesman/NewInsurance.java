@@ -66,9 +66,19 @@ public class NewInsurance implements Initializable {
     }
 
     @FXML
-    void SendNewInsuranceForm(ActionEvent event)
+    void SendNewInsuranceForm(ActionEvent event) {
+        if (CheckFields()) {
+            sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].insurances (istatus,itype,ucid,usid) VALUES ('" + Insurance.getInsuranceStatus((byte) 0) + "','" + cbInsurance.getValue() + "','" + txtId.getText() + "','" + Main.AppUser.getId() + "')");
+        }
+    }
+
+    private boolean CheckFields()
     {
-        sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].insurances (istatus,itype,ucid,usid) VALUES ('" + Insurance.getInsuranceStatus((byte)0) + "','" + cbInsurance.getValue() + "','" + txtId.getText()+"','" + Main.AppUser.getId() + "')");
+        if (txtId.getText().isEmpty()) return false;
+        if (txtFirstName.getText().isEmpty()) return false;
+        if (txtLastName.getText().isEmpty()) return false;
+
+        return true;
     }
 
     @Override

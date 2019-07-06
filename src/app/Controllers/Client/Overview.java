@@ -70,7 +70,7 @@ public class Overview implements Initializable {
 
         if (((Client)Main.AppUser).ClientInsuranceClaim.isEmpty())
         {
-            ((Client)Main.AppUser).ClientInsuranceClaim = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM dbo.users, dbo.claims WHERE users.userId = '" + Main.AppUser.getId() +"'");
+            ((Client)Main.AppUser).ClientInsuranceClaim = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims WHERE claims.clientId = '" + Main.AppUser.getId() +"'");
         }
 
         lblClientId.setText(Main.AppUser.getId());

@@ -26,22 +26,46 @@
         </Label>
         <AnchorPane layoutX="9.0" layoutY="145.0" prefHeight="409.0" prefWidth="771.0">
             <children>
-                <HBox alignment="CENTER" layoutX="4.0" layoutY="361.0" prefHeight="44.0" prefWidth="771.0" spacing="20.0">
-                    <children>
-                        <Button fx:id="btnShowAll" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#ShowAll" prefHeight="40.0" prefWidth="200.0" stylesheets="/content/styles/style.css" text="Show All">
-                            <graphic>
-                                <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../../../content/images/icons/icons8_Sign_Out_32px.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <padding>
-                                <Insets left="50.0" />
-                            </padding>
-                        </Button>
-                    </children>
-                </HBox>
+            <HBox alignment="CENTER" layoutX="16.0" layoutY="360.0" prefHeight="44.0" prefWidth="751.0" spacing="20.0">
+               <children>
+                  <Button fx:id="btnShowAll" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#ShowAll" prefHeight="40.0" prefWidth="200.0" stylesheets="/content/styles/style.css" text="Show All">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../content/images/icons/icons8_Sign_Out_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnApprove" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#ApproveInsurance" prefHeight="40.0" prefWidth="200.0" stylesheets="/content/styles/style.css" text="Approve">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../../../content/images/icons/approve.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btnDisapprove" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#DisapproveInsurance" prefHeight="40.0" prefWidth="200.0" stylesheets="/content/styles/style.css" text="Disapprove">
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../content/images/icons/disapprove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
                 <TableView fx:id="tvInsurence" layoutX="-6.0" layoutY="-26.0" onKeyPressed="#ShowClientInformationKeyboardHandler" onMouseClicked="#ShowClientInformationMouseHandler" prefHeight="192.0" prefWidth="771.0" AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-26.0">
                     <columns>
                         <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
@@ -55,7 +79,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                     </columnResizePolicy>
                 </TableView>
-                <GridPane layoutX="81.0" layoutY="211.0" prefHeight="139.0" prefWidth="618.0">
+                <GridPane layoutX="77.0" layoutY="211.0" prefHeight="139.0" prefWidth="618.0">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -96,7 +120,7 @@
                         <Label fx:id="lblInsuranceStatus" text="Label" textFill="#e7e5e5" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
-                <Label layoutX="260.0" layoutY="166.0" text="Client Information" textFill="#e7e5e5" underline="true">
+                <Label layoutX="256.0" layoutY="166.0" text="Client Information" textFill="#e7e5e5" underline="true">
                     <font>
                         <Font name="System Bold" size="30.0" />
                     </font>

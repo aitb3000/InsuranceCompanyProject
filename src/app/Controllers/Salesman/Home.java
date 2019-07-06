@@ -75,21 +75,21 @@ public class Home implements Initializable {
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnCustomers) {
-            //paneCustomers.setStyle("-fx-background-color : #1620A1");
+            paneCustomers.setStyle("-fx-background-color : #02030A");
             paneCustomers.toFront();
         }
         if (actionEvent.getSource() == btnOverview) {
-            //paneOverview.setStyle("-fx-background-color : #02030A");
+            paneOverview.setStyle("-fx-background-color : #02030A");
             paneOverview.toFront();
         }
         if(actionEvent.getSource()==btnSettings)
         {
-            //paneOrders.setStyle("-fx-background-color : #464F67");
+            paneSettings.setStyle("-fx-background-color : #02030A");
             paneSettings.toFront();
         }
         if(actionEvent.getSource()==btnNewInsurance)
         {
-            //paneNewInsurance.setStyle("-fx-background-color : #53639F");
+            paneNewInsurance.setStyle("-fx-background-color : #02030A");
             paneNewInsurance.toFront();
         }
     }

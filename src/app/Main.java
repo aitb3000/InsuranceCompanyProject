@@ -1,11 +1,11 @@
 package app;
 
 import app.Models.User;
-import app.connection.loggerAPI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -14,8 +14,13 @@ public class Main extends Application {
 
     private static double x, y;
     private static Stage PrimaryStage;
-
+    private static Pane MainRoot;
+ 
     public static User AppUser;
+
+    public static Pane getMainLayout() {
+        return MainRoot;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,43 +37,43 @@ public class Main extends Application {
 
     public static void ShowLogin() throws Exception
     {
-        Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Login.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/app/View/Login.fxml"));
         PrimaryStage.setScene(new Scene(root));
         root = AttachEvent(root);
-
-
+        MainRoot = root;
         PrimaryStage.show();
     }
 
 
     public static void ShowSalesmanHome() throws Exception
     {
-        Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Home.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Home.fxml"));
         PrimaryStage.setScene(new Scene(root));
         root = AttachEvent(root);
-
-
+        MainRoot = root;
         PrimaryStage.show();
     }
 
     public static void ShowClientHome() throws Exception
     {
-        Parent root = FXMLLoader.load(Main.class.getResource("/app/View/Client/Home.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/app/View/Client/Home.fxml"));
         PrimaryStage.setScene(new Scene(root));
         root = AttachEvent(root);
+        MainRoot = root;
         PrimaryStage.show();
     }
 
     public static void ShowCustomerServieHome() throws Exception
     {
-        Parent root = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Home.fxml"));
+        Pane root = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Home.fxml"));
         PrimaryStage.setScene(new Scene(root));
         root = AttachEvent(root);
+        MainRoot = root;
         PrimaryStage.show();
     }
 
 
-    private static Parent AttachEvent(Parent root)
+    private static Pane AttachEvent(Pane root)
     {
         root.setOnMousePressed(event -> {
             x = event.getSceneX();
