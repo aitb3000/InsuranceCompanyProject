@@ -4,32 +4,23 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Claim {
 
-    private SimpleStringProperty ClaimType = new SimpleStringProperty(this, "claimType");
-    private SimpleStringProperty ClaimName = new SimpleStringProperty(this, "claimName");
+    private SimpleStringProperty ClaimId = new SimpleStringProperty(this, "claimId");
     private SimpleStringProperty ClaimStatus = new SimpleStringProperty(this, "claimName");
-    private SimpleStringProperty CliamId = new SimpleStringProperty(this, "cliamId");
-
-    // User Client Id
-    private SimpleStringProperty ucId = new SimpleStringProperty(this, "ucId");
-    // User CustomerService Id
-    private SimpleStringProperty ucsId = new SimpleStringProperty(this, "usId");
 
 
+    private SimpleStringProperty ClientId = new SimpleStringProperty(this, "id");
+    private SimpleStringProperty ClientFirstName = new SimpleStringProperty(this, "firstName");
+    private SimpleStringProperty ClientLastName = new SimpleStringProperty(this, "lastName");
+
+    private SimpleStringProperty InsuranceId = new SimpleStringProperty(this, "insuranceId");
+    private SimpleStringProperty InsuranceName = new SimpleStringProperty(this, "insuranceName");
+    private SimpleStringProperty InsuranceStatus = new SimpleStringProperty(this, "insuranceName");
+
+    private SimpleStringProperty CustomerServiceId = new SimpleStringProperty(this, "id");
+    private SimpleStringProperty CustomerServiceFirstName = new SimpleStringProperty(this, "firstName");
+    private SimpleStringProperty CustomerServiceLastName = new SimpleStringProperty(this, "lastName");
 
 
-
-
-    public String getClaimType() { return ClaimType.get(); }
-
-    public SimpleStringProperty claimTypeProperty() { return ClaimType;}
-
-    public void setClaimType(String claimType) { this.ClaimType.set(claimType); }
-
-    public String getClaimName() { return ClaimName.get(); }
-
-    public SimpleStringProperty claimNameProperty() { return ClaimName;}
-
-    public void setClaimName(String claimName) { this.ClaimName.set(claimName);}
 
     public String getClaimStatus() { return ClaimStatus.get(); }
 
@@ -37,27 +28,123 @@ public class Claim {
 
     public void setClaimStatus(String claimStatus) { this.ClaimStatus.set(claimStatus);  }
 
-    public String getUcId() {  return ucId.get();   }
-
-    public SimpleStringProperty ucIdProperty() {        return ucId;    }
-
-    public void setUcId(String ucId) {        this.ucId.set(ucId);    }
-
-    public String getUcsId() {        return ucsId.get();    }
-
-    public SimpleStringProperty ucsIdProperty() {        return ucsId;    }
-
-    public void setUcsId(String ucsId) {        this.ucsId.set(ucsId);    }
-
-    public String getCliamId() {
-        return CliamId.get();
+    public String getClaimId() {
+        return ClaimId.get();
     }
 
-    public SimpleStringProperty cliamIdProperty() {
-        return CliamId;
+    public SimpleStringProperty claimIdProperty() {
+        return ClaimId;
     }
 
-    public void setCliamId(String cliamId) {
-        this.CliamId.set(cliamId);
+    public void setClaimId(String claimId) {
+        this.ClaimId.set(claimId);
+    }
+
+    public String getClientId() {
+        return ClientId.get();
+    }
+
+    public SimpleStringProperty clientIdProperty() {
+        return ClientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.ClientId.set(clientId);
+    }
+
+    public String getClientFirstName() {
+        return ClientFirstName.get();
+    }
+
+    public SimpleStringProperty clientFirstNameProperty() {
+        return ClientFirstName;
+    }
+
+    public void setClientFirstName(String clientFirstName) {
+        this.ClientFirstName.set(clientFirstName);
+    }
+
+    public String getClientLastName() {
+        return ClientLastName.get();
+    }
+
+    public SimpleStringProperty clientLastNameProperty() {
+        return ClientLastName;
+    }
+
+    public void setClientLastName(String clientLastName) {
+        this.ClientLastName.set(clientLastName);
+    }
+
+    public String getInsuranceId() {
+        return InsuranceId.get();
+    }
+
+    public SimpleStringProperty insuranceIdProperty() {
+        return InsuranceId;
+    }
+
+    public void setInsuranceId(String insuranceId) {
+        this.InsuranceId.set(insuranceId);
+    }
+
+    public String getInsuranceName() {
+        return InsuranceName.get();
+    }
+
+    public SimpleStringProperty insuranceNameProperty() {
+        return InsuranceName;
+    }
+
+    public void setInsuranceName(String insuranceName) {
+        this.InsuranceName.set(insuranceName);
+    }
+
+    public String getInsuranceStatus() {
+        return InsuranceStatus.get();
+    }
+
+    public SimpleStringProperty insuranceStatusProperty() {
+        return InsuranceStatus;
+    }
+
+    public void setInsuranceStatus(String insuranceStatus) {
+        this.InsuranceStatus.set(insuranceStatus);
+    }
+
+    public String getCustomerServiceId() {
+        return CustomerServiceId.get();
+    }
+
+    public SimpleStringProperty customerServiceIdProperty() {
+        return CustomerServiceId;
+    }
+
+    public void setCustomerServiceId(String customerServiceId) {
+        this.CustomerServiceId.set(customerServiceId);
+    }
+
+    public String getCustomerServiceFirstName() {
+        return CustomerServiceFirstName.get();
+    }
+
+    public SimpleStringProperty customerServiceFirstNameProperty() {
+        return CustomerServiceFirstName;
+    }
+
+    public void setCustomerServiceFirstName(String customerServiceFirstName) {
+        this.CustomerServiceFirstName.set(customerServiceFirstName);
+    }
+
+    public String getCustomerServiceLastName() {
+        return CustomerServiceLastName.get();
+    }
+
+    public SimpleStringProperty customerServiceLastNameProperty() {
+        return CustomerServiceLastName;
+    }
+
+    public void setCustomerServiceLastName(String customerServiceLastName) {
+        this.CustomerServiceLastName.set(customerServiceLastName);
     }
 }

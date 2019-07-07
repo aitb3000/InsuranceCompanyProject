@@ -1,6 +1,11 @@
 package app.Controllers.CustomerService;
 
-import javafx.event.EventHandler;
+import app.Main;
+import app.Models.Claim;
+import app.Models.CustomerService;
+import app.connection.sqlConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
@@ -13,6 +18,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Overview implements Initializable {
+
+    private int claimsTotal = 0;
+    private int claimsPending = 0;
+    private int claimsDone = 0;
 
     @FXML
     private Pane pnlOverview;
@@ -28,6 +37,31 @@ public class Overview implements Initializable {
 
     @FXML
     private PieChart pieChartClaims;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+        //Get all insurances of a client.
+        if (((CustomerService) Main.AppUser).Claims.isEmpty()) {
+            ((CustomerService) Main.AppUser).Claims = sqlConnection.getInstance().GetDataCustomerServicesClaims("SELECT * FROM claims WHERE claims.customerServiceId ='" + Main.AppUser.getId() + "'");
+        }
+
+        for (Claim claim : ((CustomerService) Main.AppUser).Claims) {
+            if (claim.getClaimStatus().compareTo("Done") == 0)
+                claimsDone++;
+            else if (claim.getClaimStatus().compareTo("Pending") == 0)
+                claimsPending++;
+            claimsTotal++;
+        }
+
+        lblTotalOrders.setText(String.valueOf(claimsTotal));
+        lblTotalDone.setText(String.valueOf(claimsDone));
+        lblPending.setText(String.valueOf(claimsPending));
+
+        SetPieChartData();
+    }
+
 
     @FXML
     private void ShowPieChardPerst(MouseEvent event) {
@@ -46,9 +80,13 @@ public class Overview implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
-    {
-
+    private void SetPieChartData() {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Claims Total", claimsTotal),
+                        new PieChart.Data("Claims Done", claimsDone),
+                        new PieChart.Data("Claims Pending", claimsPending));
+        pieChartClaims.setData(pieChartData);
+        pieChartClaims.setTitle("Customer Service Claims");
     }
 }

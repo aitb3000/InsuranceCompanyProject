@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="276.0" fitWidth="463.0" layoutX="63.0" layoutY="-72.0" pickOnBounds="true">
          <image>
-            <Image url="@../../content/images/logos/logo_transparent.png" />
+            <Image url="/content/images/logos/logo_transparent.png"></Image>
          </image>
       </ImageView>
       <Label fx:id="lblWrongUser" layoutX="194.0" layoutY="139.0" text="*Username and/or Password wrong" textFill="#e7e5e5" />
@@ -39,7 +39,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../content/images/icons/icons8_Sign_Out_32px.png" />
+                              <Image url="/content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -51,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../content/images/icons/icons8_Sign_Out_32px.png" />
+                              <Image url="/content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>

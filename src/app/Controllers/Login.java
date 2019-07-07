@@ -54,25 +54,33 @@ public class Login implements Initializable {
             if (CheckLoginFields())
             {
                 sqlConnection.getInstance().connectToServer(txtUsername.getText(), txtPassword.getText());
-                if (Main.AppUser != null) {
-                    lblWrongUser.setVisible(false);
-                    if (Main.AppUser instanceof Client) {
-                        Main.ShowClientHome();
-                    } else if (Main.AppUser instanceof Salesman) {
-                        Main.ShowSalesmanHome();
-                    } else if (Main.AppUser instanceof CustomerService){
-                        Main.ShowCustomerServieHome();
-                    }
-                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
-                } else {
-                    lblWrongUser.setVisible(true);
-                }
+
             } else {
                 lblWrongUser.setVisible(true);
             }
         }catch (Exception ex)
         {
             ex.printStackTrace();
+        }
+    }
+
+    public void showUserHome()
+    {
+        try {
+            if (Main.AppUser != null) {
+                lblWrongUser.setVisible(false);
+                if (Main.AppUser instanceof Client) {
+                    Main.ShowClientHome();
+                } else if (Main.AppUser instanceof Salesman) {
+                    Main.ShowSalesmanHome();
+                } else if (Main.AppUser instanceof CustomerService) {
+                    Main.ShowCustomerServieHome();
+                }
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
+            } else {
+                lblWrongUser.setVisible(true);
+            }
+        }catch (Exception ex) {
         }
     }
 

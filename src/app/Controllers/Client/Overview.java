@@ -3,10 +3,15 @@ package app.Controllers.Client;
 import app.Main;
 import app.Models.*;
 import app.connection.sqlConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,6 +64,12 @@ public class Overview implements Initializable {
     @FXML
     private Label lvlPedingClaims;
 
+    @FXML
+    private PieChart pieChartClaims;
+
+    @FXML
+    private PieChart pieChartSales;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -108,5 +119,57 @@ public class Overview implements Initializable {
         lblTotalClaims.setText(String.valueOf(claimTotal));
         lvlTotalApproved.setText(String.valueOf(claimApproved));
         lvlPedingClaims.setText(String.valueOf(claimPending));
+
+        SetPieChartData();
+    }
+
+    @FXML
+    void ShowPieChardPerst(MouseEvent event)
+    {
+        Label caption1 = new Label("");
+        caption1.setTextFill(Color.DARKORANGE);
+        caption1.setStyle("-fx-font: 12 arial;");
+
+        for (final PieChart.Data data : pieChartClaims.getData())
+        {
+            data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+                    e -> {
+                        caption1.setTranslateX(e.getSceneX());
+                        caption1.setTranslateY(e.getSceneY());
+                        caption1.setText(data.getPieValue() + "%");
+                    });
+        }
+
+        Label caption2 = new Label("");
+        caption2.setTextFill(Color.DARKORANGE);
+        caption2.setStyle("-fx-font: 12 arial;");
+
+        for (final PieChart.Data data : pieChartSales.getData()) {
+            data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+                    e -> {
+                        caption2.setTranslateX(e.getSceneX());
+                        caption2.setTranslateY(e.getSceneY());
+                        caption2.setText((data.getPieValue()) + "%");
+                    });
+        }
+    }
+
+    private void SetPieChartData()
+    {
+        ObservableList<PieChart.Data> pieChartData1 =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Claims Total", claimTotal),
+                        new PieChart.Data("Claims Approved", claimApproved),
+                        new PieChart.Data("Claims Pending", claimPending));
+        pieChartClaims.setData(pieChartData1);
+        pieChartClaims.setTitle("Claims");
+
+        ObservableList<PieChart.Data> pieChartData2 =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Insurance Total", insuranceTotal),
+                        new PieChart.Data("Insurance Done", insuranceDone),
+                        new PieChart.Data("Insurance Pending", insurancePending));
+        pieChartSales.setData(pieChartData2);
+        pieChartSales.setTitle("Insurances");
     }
 }

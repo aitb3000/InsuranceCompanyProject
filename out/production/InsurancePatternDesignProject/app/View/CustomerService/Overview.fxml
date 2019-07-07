@@ -43,7 +43,7 @@
                         <Font name="System Bold" size="26.0" />
                      </font>
                   </Label>
-                  <Label text="Peding Orders" textFill="#e7e5e5" />
+                  <Label text="Pending Orders" textFill="#e7e5e5" />
                </children>
             </VBox>
          </children>

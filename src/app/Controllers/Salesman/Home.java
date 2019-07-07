@@ -101,7 +101,6 @@ public class Home implements Initializable {
         {
             sqlConnection.getInstance().CloseConnection();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Sign out.");
-            loggerAPI.getInstance().CloseLogger();
             Main.ShowLogin();
         }catch (Exception ex)
         {

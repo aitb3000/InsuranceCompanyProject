@@ -1,11 +1,9 @@
 package app.Models;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Insurance
 {
-
 
     public static String getInsuranceStatus(byte id)
     {
@@ -14,9 +12,6 @@ public class Insurance
         else if (id == 3)   return "Disapproved";
         return "None";
     }
-
-
-
 
 
     private SimpleStringProperty insuranceId = new SimpleStringProperty(this, "insuranceId");

@@ -52,7 +52,7 @@ public class Home implements Initializable {
     public void initialize(URL location, ResourceBundle resources)
     {
         lblUserFullName.setText(Main.AppUser.getUserName());
-        
+
         try
         {
             paneInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Client/Insurances.fxml"));
@@ -92,7 +92,6 @@ public class Home implements Initializable {
         {
             sqlConnection.getInstance().CloseConnection();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Sign out.");
-            loggerAPI.getInstance().CloseLogger();
             Main.ShowLogin();
         }catch (Exception ex)
         {

@@ -1,9 +1,9 @@
 package app;
 
+import app.Controllers.Login;
 import app.Models.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -15,7 +15,8 @@ public class Main extends Application {
     private static double x, y;
     private static Stage PrimaryStage;
     private static Pane MainRoot;
- 
+    public static Login LoginController;
+
     public static User AppUser;
 
     public static Pane getMainLayout() {
@@ -37,11 +38,18 @@ public class Main extends Application {
 
     public static void ShowLogin() throws Exception
     {
-        Pane root = FXMLLoader.load(Main.class.getResource("/app/View/Login.fxml"));
-        PrimaryStage.setScene(new Scene(root));
-        root = AttachEvent(root);
-        MainRoot = root;
+        FXMLLoader loader = new FXMLLoader();
+        Pane loginItems = loader.load(Main.class.getResource("/app/View/Login.fxml").openStream());
+        LoginController = (Login) loader.getController();
+        PrimaryStage.setScene(new Scene(loginItems));
+        loginItems = AttachEvent(loginItems);
+        MainRoot = loginItems;
         PrimaryStage.show();
+    }
+
+    public static void showUserMenu()
+    {
+        LoginController.showUserHome();
     }
 
 

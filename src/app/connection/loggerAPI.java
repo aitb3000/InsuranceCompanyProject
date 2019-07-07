@@ -20,8 +20,13 @@ public class loggerAPI {
     }
 
 
-    private loggerAPI() {
+    private loggerAPI()
+    {
+        OpenStream();
+    }
 
+    private void OpenStream()
+    {
         try
         {
             fileWriter = new FileWriter(loggerFileName,true);

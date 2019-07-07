@@ -1,7 +1,6 @@
 package app.Controllers.CustomerService;
 
-import app.Main;
-import app.Models.Client;
+
 import app.Models.ClientInsuranceClaim;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
@@ -28,7 +27,7 @@ import java.util.function.Predicate;
 public class Claims implements Initializable {
 
     private ObservableList<ClientInsuranceClaim> AllClientInsuranceClaim = FXCollections.observableArrayList();
-    private FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<ClientInsuranceClaim>(AllClientInsuranceClaim);
+    private FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<>(AllClientInsuranceClaim);
 
     @FXML
     private Pane pnlInsurences;
@@ -135,9 +134,8 @@ public class Claims implements Initializable {
             AllClientInsuranceClaim.clear();
         }
 
-        ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM dbo.users, dbo.claims WHERE users.userId = claims.ucid");
+        ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims");
         AllClientInsuranceClaim.addAll(results);
-
 
         tcId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
         tcFname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());

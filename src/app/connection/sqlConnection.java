@@ -15,8 +15,8 @@ public class sqlConnection {
     private Connection connection;
     private String connectionString;
     private ResultSet resultSet = null;
-    private ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
-    private ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
+    //private ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
+    //private ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
 
     private boolean tryingToConnect = false;
     private boolean active = true;
@@ -55,7 +55,7 @@ public class sqlConnection {
             try
             {
                 Platform.runLater(()->LoaderScreen.hideLoadingScreen());
-
+                Platform.runLater(()->Main.LoginController.showUserHome());
             } catch (Exception e){}
 
         });
@@ -142,10 +142,11 @@ public class sqlConnection {
      * @return All login client insurances.
      */
     public ArrayList<ClientInsurance> GetClientInsurances() {
+        ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
+
         String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.getId() + "'";
         System.out.println("GetClientInsurances() - " + sqlQuery);
         resultSet = null;
-        ClientInsuranceResults.clear();
 
         try {
             Statement statement = connection.createStatement();
@@ -177,9 +178,10 @@ public class sqlConnection {
      */
     public ArrayList<ClientInsurance> GetSalesmanClientInsurances(String sqlQuery)
     {
+        ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
+
         System.out.println("GetSalesmanClientInsurances() - " + sqlQuery);
         resultSet = null;
-        ClientInsuranceResults.clear();
 
         try {
             Statement statement = connection.createStatement();
@@ -217,9 +219,9 @@ public class sqlConnection {
      */
     public ArrayList<ClientInsuranceClaim> GetDataClientInsuranceClaim(String sqlQuery)
     {
+        ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
         System.out.println("GetDataClientInsuranceClaim() - " + sqlQuery);
         resultSet = null;
-        ClientInsuranceClaimResults.clear();
 
         try {
             Statement statement = connection.createStatement();
@@ -250,6 +252,46 @@ public class sqlConnection {
         }
 
         return ClientInsuranceClaimResults;
+    }
+
+    public ArrayList<Claim> GetDataCustomerServicesClaims(String sqlQuery)
+    {
+        ArrayList<Claim> CustomerServicesClaims = new ArrayList<>();
+        System.out.println("GetDataCustomerServicesClaims() - " + sqlQuery);
+        resultSet = null;
+
+        try {
+            Statement statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next())
+            {
+                Claim claim = new Claim();
+
+                claim.setClaimId(String.valueOf(resultSet.getInt("claimId")));
+                claim.setClaimStatus(resultSet.getString("claimStatus"));
+
+                claim.setClientId(resultSet.getString("clientId"));
+                claim.setClientFirstName(resultSet.getString("clientFname"));
+                claim.setClientLastName(resultSet.getString("clientLname"));
+
+                claim.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
+                claim.setInsuranceName(resultSet.getString("insuranceName"));
+                claim.setInsuranceStatus(resultSet.getString("insuranceStatus"));
+
+                claim.setCustomerServiceFirstName(resultSet.getString("customerServiceId"));
+                claim.setCustomerServiceId(resultSet.getString("customerServiceFname"));
+                claim.setCustomerServiceLastName(resultSet.getString("customerServiceLname"));
+
+                CustomerServicesClaims.add(claim);
+            }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return CustomerServicesClaims;
     }
 }
 

@@ -49,7 +49,7 @@ public class Overview implements Initializable {
         for (ClientInsurance clientInsurance : ((Salesman) Main.AppUser).ClientsInsurances) {
             if (clientInsurance.getInsuranceStatus().compareTo("Done") == 0)
                 insuranceDone++;
-            else if (clientInsurance.getInsuranceStatus().compareTo("None") == 0)
+            else if (clientInsurance.getInsuranceStatus().compareTo("Pending") == 0)
                 insurancePending++;
             insuranceTotal++;
         }
