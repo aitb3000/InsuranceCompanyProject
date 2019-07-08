@@ -3,7 +3,6 @@ package app.Controllers.Client;
 import app.Main;
 import app.Models.Client;
 import app.Models.ClientInsurance;
-import app.Models.Insurance;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

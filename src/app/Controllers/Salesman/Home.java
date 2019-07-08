@@ -5,21 +5,14 @@ import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -63,7 +56,7 @@ public class Home implements Initializable {
             paneCustomers = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Customers.fxml"));
             paneNewInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/NewInsurance.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Overview.fxml"));
-            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Settings.fxml"));
+            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
             spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
@@ -75,21 +68,21 @@ public class Home implements Initializable {
 
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnCustomers) {
-            paneCustomers.setStyle("-fx-background-color : #02030A");
+            paneCustomers.setStyle("-fx-background-color : #030a12");
             paneCustomers.toFront();
         }
         if (actionEvent.getSource() == btnOverview) {
-            paneOverview.setStyle("-fx-background-color : #02030A");
+            paneOverview.setStyle("-fx-background-color : #030a12");
             paneOverview.toFront();
         }
         if(actionEvent.getSource()==btnSettings)
         {
-            paneSettings.setStyle("-fx-background-color : #02030A");
+            paneSettings.setStyle("-fx-background-color : #030a12");
             paneSettings.toFront();
         }
         if(actionEvent.getSource()==btnNewInsurance)
         {
-            paneNewInsurance.setStyle("-fx-background-color : #02030A");
+            paneNewInsurance.setStyle("-fx-background-color : #030a12");
             paneNewInsurance.toFront();
         }
     }

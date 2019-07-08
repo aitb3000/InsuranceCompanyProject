@@ -28,6 +28,8 @@ public class Claims implements Initializable {
 
     private ObservableList<ClientInsuranceClaim> AllClientInsuranceClaim = FXCollections.observableArrayList();
     private FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<>(AllClientInsuranceClaim);
+    private final String Approved = "Approved";
+    private final String Disapproved = "Disapproved";
 
     @FXML
     private Pane pnlInsurences;
@@ -134,6 +136,7 @@ public class Claims implements Initializable {
             AllClientInsuranceClaim.clear();
         }
 
+
         ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims");
         AllClientInsuranceClaim.addAll(results);
 
@@ -170,15 +173,26 @@ public class Claims implements Initializable {
 
 
     @FXML
-    void ApproveClaim(ActionEvent event) {
+    void ApproveClaim(ActionEvent event)
+    {
+        SendNewCliamStatus(Approved);
+    }
+
+    @FXML
+    void DisapproveClaim(ActionEvent event)
+    {
+        SendNewCliamStatus(Disapproved);
+    }
+
+    private void SendNewCliamStatus(String newStatus)
+    {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
         if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
+            //TODO: Create an UPDATE query for ApproveClaim
             sqlConnection.getInstance().SendQuery("");
             UpdateSelectedRow(true);
         }
     }
-
-
 
     private void UpdateSelectedRow(boolean status) {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
@@ -193,15 +207,7 @@ public class Claims implements Initializable {
         }
     }
 
-    @FXML
-    void DisapproveClaim(ActionEvent event)
-    {
-        int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
-        if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
-            sqlConnection.getInstance().SendQuery("");
-            UpdateSelectedRow(false);
-        }
-    }
+
 
     @FXML
     void ShowClientInformationKeyboardHandler(KeyEvent event)

@@ -53,7 +53,7 @@ public class Home implements Initializable {
         {
             paneClaims = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Claims.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Overview.fxml"));
-            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Settings.fxml"));
+            paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
             spHome.getChildren().addAll(paneOverview, paneClaims, paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
@@ -64,18 +64,21 @@ public class Home implements Initializable {
 
 
     public void handleClicks(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == btnNewClaim) {
-            paneClaims.setStyle("-fx-background-color : #02030A");
+        if (actionEvent.getSource() == btnNewClaim)
+        {
+            paneClaims.setStyle("-fx-background-color : #030a12");
             paneClaims.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Overview view.");
         }
-        if (actionEvent.getSource() == btnOverview) {
-            paneOverview.setStyle("-fx-background-color : #02030A");
+        if (actionEvent.getSource() == btnOverview)
+        {
+            paneOverview.setStyle("-fx-background-color : #030a12");
             paneOverview.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurances view.");
         }
-        if(actionEvent.getSource()==btnSettings) {
-            paneSettings.setStyle("-fx-background-color : #02030A");
+        if(actionEvent.getSource()==btnSettings)
+        {
+            paneSettings.setStyle("-fx-background-color : #030a12");
             paneSettings.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Settings view.");
         }

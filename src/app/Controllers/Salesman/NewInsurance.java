@@ -3,16 +3,19 @@ package app.Controllers.Salesman;
 import app.Main;
 import app.Models.Insurance;
 import app.connection.sqlConnection;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -31,11 +34,25 @@ public class NewInsurance implements Initializable {
     private ArrayList<String> AL_Insurances_string = new ArrayList<>();
     private ArrayList<Insurance> AL_Insurances = new ArrayList<>();
 
+    private final double MoveXLeftInsurance = -200;
+    private final double MoveXRightInsurance = 100;
+    private final double MoveXLeftNewClient = -400;
+    private final double MoveXRightNewClient = 200;
+
     @FXML
     private Pane pnlNewInsurance;
 
     @FXML
-    private Label lblNewInsuranceCheckLField;
+    private Button btnSendNew;
+
+    @FXML
+    private Button btnCancelNew;
+
+    @FXML
+    private AnchorPane anchorPaneNewInsurance;
+
+    @FXML
+    private AnchorPane anchorPaneRoot;
 
     @FXML
     private TextField txtId;
@@ -50,11 +67,35 @@ public class NewInsurance implements Initializable {
     private ChoiceBox<String> cbInsurance;
 
     @FXML
-    private Button btnSendNew;
+    private CheckBox checkBoxNewClient;
 
     @FXML
-    private Button btnCancelNew;
+    private Label lblNewInsuranceCheckLField;
 
+    @FXML
+    private AnchorPane anchorPaneNewClient;
+
+    @FXML
+    private TextField txtPass;
+
+    @FXML
+    private TextField txtAddr;
+
+    @FXML
+    private TextField txtPhone;
+
+    @FXML
+    private Label lblNewInsuranceCheckLField1;
+
+    @FXML
+    private TextField txtStatus;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
+        //TODO: Hide the errors labels and create handles!!!
+        GetInsuranceFromXML();
+    }
 
 
     @FXML
@@ -68,7 +109,23 @@ public class NewInsurance implements Initializable {
     @FXML
     void SendNewInsuranceForm(ActionEvent event) {
         if (CheckFields()) {
-            sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].insurances (istatus,itype,ucid,usid) VALUES ('" + Insurance.getInsuranceStatus((byte) 0) + "','" + cbInsurance.getValue() + "','" + txtId.getText() + "','" + Main.AppUser.getId() + "')");
+            lblNewInsuranceCheckLField.setVisible(false);
+            if (checkBoxNewClient.isSelected())
+            {
+                //TODO: Checking INSERT query for the new User
+                sqlConnection.getInstance().SendQuery("INSERT INTO users VALUES '" + txtId.getText() + "' '" + txtFirstName.getText() + "' '" + txtLastName.getText());
+            }
+            //TODO: Create a INSERT query
+            sqlConnection.getInstance().SendQuery("INSERT INTO insurances VALUES" +
+                    " ('" + Insurance.getInsuranceStatus((byte) 0) +
+                    "','" + cbInsurance.getValue() +
+                    "','" + txtId.getText() +
+                    "','" + Main.AppUser.getId() + "')");
+
+        }
+        else
+        {
+            lblNewInsuranceCheckLField.setVisible(true);
         }
     }
 
@@ -81,10 +138,7 @@ public class NewInsurance implements Initializable {
         return true;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        GetInsuranceFromXML();
-    }
+
 
     private void GetInsuranceFromXML()
     {
@@ -97,6 +151,7 @@ public class NewInsurance implements Initializable {
 
         try
         {
+            System.out.println("Loading Insurances types from xml file.");
             ClassLoader classLoader = getClass().getClassLoader();
             InputStream inputFile = classLoader.getResourceAsStream("data/config.xml");
 
@@ -126,5 +181,40 @@ public class NewInsurance implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void StartAnimationInsuranceNewClient(ActionEvent event)
+    {
+        Timeline timeline = new Timeline();
+        KeyValue kv;
+        KeyFrame kf;
+
+        if (checkBoxNewClient.isSelected())
+        {
+            // First is Moving the new insurance to the left
+            kv = new KeyValue(anchorPaneNewInsurance.translateXProperty(), MoveXLeftInsurance, Interpolator.EASE_IN);
+            timeline.setOnFinished(timeEvent -> ShowAnchorPane(anchorPaneNewClient, MoveXLeftNewClient ));
+        }
+        else
+        {
+            // First is Moving the new client to the right
+            kv = new KeyValue(anchorPaneNewClient.translateXProperty(), MoveXRightNewClient, Interpolator.EASE_IN);
+            timeline.setOnFinished(timeEvent -> ShowAnchorPane(anchorPaneNewInsurance, MoveXRightInsurance));
+        }
+
+        kf = new KeyFrame(Duration.seconds(1), kv);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
+
+    }
+
+    private void ShowAnchorPane(AnchorPane pane , double newXProperty)
+    {
+        Timeline timeline = new Timeline();
+        KeyValue  kv = new KeyValue(pane.translateXProperty(), newXProperty, Interpolator.EASE_IN);
+        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+        timeline.getKeyFrames().add(kf);
+        timeline.play();
     }
 }
