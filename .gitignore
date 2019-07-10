@@ -22,3 +22,6 @@ hs_err_pid*
 
 # log files.
 *.log
+
+# Folder out
+out/
