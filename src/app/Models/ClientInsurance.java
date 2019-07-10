@@ -4,9 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ClientInsurance
 {
-
-    public Insurance ClineInsuranceInformation;
+    public Insurance ClientInsuranceInformation;
     public Client ClientInformation;
+    public Salesman SalesmanInformation;
 
     private SimpleStringProperty insuranceId = new SimpleStringProperty(this, "insuranceId");
     private SimpleStringProperty insuranceType = new SimpleStringProperty(this, "insuranceName");

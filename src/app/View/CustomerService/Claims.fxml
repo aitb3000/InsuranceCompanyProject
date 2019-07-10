@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnlInsurences" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #05071F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.CustomerService.Claims">
+<Pane fx:id="pnlInsurences" prefHeight="554.0" prefWidth="793.0" stylesheets="@../../../content/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.CustomerService.Claims">
    <children>
-      <TextField fx:id="txtSearchInsurance" layoutX="590.0" layoutY="47.0" onKeyPressed="#SearchInsurance" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #02030A; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+      <TextField fx:id="txtSearchInsurance" layoutX="590.0" layoutY="47.0" onKeyPressed="#SearchInsurance" prefHeight="27.0" prefWidth="183.0" promptText="search" />
       <Label layoutX="57.0" layoutY="25.0" text="Claims" textFill="#e7e5e5">
          <font>
             <Font size="24.0" />

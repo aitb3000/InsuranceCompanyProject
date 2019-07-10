@@ -2,6 +2,7 @@ package app.Controllers.Salesman;
 
 import app.Main;
 import app.Models.Insurance;
+import app.Models.User;
 import app.connection.sqlConnection;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -27,6 +28,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static app.Models.User.TypeUser.eUser;
 
 public class NewInsurance implements Initializable {
 
@@ -93,10 +96,16 @@ public class NewInsurance implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        //TODO: Hide the errors labels and create handles!!!
         GetInsuranceFromXML();
+
+        HideErrors();
     }
 
+    private void HideErrors()
+    {
+        lblNewInsuranceCheckLField.setVisible(false);
+        lblNewInsuranceCheckLField1.setVisible(false);
+    }
 
     @FXML
     void CancelNewInsuranceForm(ActionEvent event)
@@ -104,40 +113,100 @@ public class NewInsurance implements Initializable {
         txtFirstName.clear();
         txtLastName.clear();
         txtId.clear();
+        HideErrors();
     }
 
     @FXML
     void SendNewInsuranceForm(ActionEvent event) {
-        if (CheckFields()) {
-            lblNewInsuranceCheckLField.setVisible(false);
-            if (checkBoxNewClient.isSelected())
-            {
-                //TODO: Checking INSERT query for the new User
-                sqlConnection.getInstance().SendQuery("INSERT INTO users VALUES '" + txtId.getText() + "' '" + txtFirstName.getText() + "' '" + txtLastName.getText());
-            }
-            //TODO: Create a INSERT query
-            sqlConnection.getInstance().SendQuery("INSERT INTO insurances VALUES" +
-                    " ('" + Insurance.getInsuranceStatus((byte) 0) +
-                    "','" + cbInsurance.getValue() +
-                    "','" + txtId.getText() +
-                    "','" + Main.AppUser.getId() + "')");
+        boolean pass;
+        CheckErrors();
+        if ((lblNewInsuranceCheckLField1.isVisible()) || (lblNewInsuranceCheckLField.isVisible()))
+        {
+            return;
+        }
 
+        if (checkBoxNewClient.isSelected())
+        {
+            pass = sqlConnection.getInstance().SendQueryWithReturn(String.format("INSERT INTO users VALUES ('%s','%s','%s','%d','%s','%s','%s','%s')",
+                    txtId.getText(),
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    eUser,
+                    txtPass.getText(),
+                    txtAddr.getText(),
+                    txtPhone.getText(),
+                    txtStatus.getText()));
         }
         else
         {
+            pass = true;
+        }
+
+        if (pass == false)
+        {
+            ShowAlert(Alert.AlertType.ERROR,"Client by this Id already exist.");
+        }
+
+        //TODO: Created an INSERT query for Claims -  Need to check
+        sqlConnection.getInstance().SendQuery(String.format("INSERT INTO insurances VALUES ('%s','%d','%s','%s','%s','%s','%s','%s','%s')",
+                txtId.getText(),
+                cbInsurance.getSelectionModel().getSelectedIndex(),
+                Insurance.getInsuranceStatus((byte) 0),
+                cbInsurance.getValue(),
+                txtFirstName.getText(),
+                txtLastName.getText(),
+                Main.AppUser.getId(),
+                Main.AppUser.getFirstName(),
+                Main.AppUser.getLastName()));
+
+        if (checkBoxNewClient.isSelected())
+        {
+            ShowAlert(Alert.AlertType.CONFIRMATION,"New Client created.");
+        }
+        else
+        {
+            ShowAlert(Alert.AlertType.CONFIRMATION,"New Insurance added.");
+        }
+
+    }
+
+    private void ShowAlert(Alert.AlertType alertType, String msg)
+    {
+        Alert alert = new Alert(alertType);
+        alert.setTitle("Message from Application");
+        alert.setHeaderText("Message is");
+        alert.setContentText(msg);
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                System.out.println("Pressed OK.");
+            }
+        });
+    }
+
+    private void CheckErrors()
+    {
+        if (!CheckNewInsuranceFields())
+        {
             lblNewInsuranceCheckLField.setVisible(true);
         }
+        else
+        {
+            lblNewInsuranceCheckLField.setVisible(false);
+        }
+
+        if (checkBoxNewClient.isSelected())
+        {
+            if (!CheckNewClientFields())
+            {
+                lblNewInsuranceCheckLField1.setVisible(true);
+            }
+            else
+            {
+                lblNewInsuranceCheckLField1.setVisible(false);
+            }
+        }
+
     }
-
-    private boolean CheckFields()
-    {
-        if (txtId.getText().isEmpty()) return false;
-        if (txtFirstName.getText().isEmpty()) return false;
-        if (txtLastName.getText().isEmpty()) return false;
-
-        return true;
-    }
-
 
 
     private void GetInsuranceFromXML()
@@ -216,5 +285,23 @@ public class NewInsurance implements Initializable {
         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
         timeline.getKeyFrames().add(kf);
         timeline.play();
+    }
+
+    private boolean CheckNewInsuranceFields()
+    {
+        if ((txtId.getText().isEmpty()) || (txtId.getText().length()!= 9)) {return false;}
+        if (txtFirstName.getText().isEmpty()) {return false;}
+        if (txtLastName.getText().isEmpty()) {return false;}
+        return true;
+    }
+
+    private boolean CheckNewClientFields()
+    {
+        if (txtAddr.getText().isEmpty()) {return false;}
+        if (txtPass.getText().isEmpty()) {return false;}
+        if (txtPhone.getText().isEmpty()) {return false;}
+        if (txtStatus.getText().isEmpty()) {return false;}
+
+        return true;
     }
 }

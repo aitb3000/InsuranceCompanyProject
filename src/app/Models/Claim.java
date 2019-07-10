@@ -5,6 +5,8 @@ import javafx.beans.property.SimpleStringProperty;
 public class Claim {
 
     private SimpleStringProperty ClaimId = new SimpleStringProperty(this, "claimId");
+    private SimpleStringProperty ClaimName = new SimpleStringProperty(this, "claimName");
+    private SimpleStringProperty ClaimType = new SimpleStringProperty(this, "claimType");
     private SimpleStringProperty ClaimStatus = new SimpleStringProperty(this, "claimName");
 
 
@@ -146,5 +148,29 @@ public class Claim {
 
     public void setCustomerServiceLastName(String customerServiceLastName) {
         this.CustomerServiceLastName.set(customerServiceLastName);
+    }
+
+    public String getClaimName() {
+        return ClaimName.get();
+    }
+
+    public SimpleStringProperty claimNameProperty() {
+        return ClaimName;
+    }
+
+    public void setClaimName(String claimName) {
+        this.ClaimName.set(claimName);
+    }
+
+    public String getClaimType() {
+        return ClaimType.get();
+    }
+
+    public SimpleStringProperty claimTypeProperty() {
+        return ClaimType;
+    }
+
+    public void setClaimType(String claimType) {
+        this.ClaimType.set(claimType);
     }
 }

@@ -75,8 +75,24 @@ public class Settings implements Initializable {
             if (txtNewPass1.getText().compareTo(txtNewPass2.getText()) == 0)
             {
                 ShowError(false);
-                //TODO: Create an UPDATE query with password.
-                sqlConnection.getInstance().SendQuery("UPDATE");
+
+                //TODO: Created an UPDATE query with password - Need to check
+                sqlConnection.getInstance().SendQuery(String.format("UPDATE users SET" +
+                        "userFirstName='%s'",
+                        "userLastName='%s'",
+                        "userType='%d'",
+                        "userPassword='%s'",
+                        "userAddress='%s'",
+                        "userPhone='%s'",
+                        "userStatus='%s' WHERE userId='%s'",
+                        txtClientSettingFirst.getText(),
+                        txtClientSettingLast.getText(),
+                        Main.AppUser.getUserType(),
+                        txtNewPass1.getText(),
+                        txtClientSettingAddress.getText(),
+                        txtClientSettingPhone.getText(),
+                        txtClientSettingStatus.getText(),
+                        Main.AppUser.getId()));
             }
             else // If not match present an error
             {
@@ -86,8 +102,21 @@ public class Settings implements Initializable {
         }
         else // When need to send update query without changing password.
         {
-            //TODO: Create an UPDATE query without password.
-            sqlConnection.getInstance().SendQuery("UPDATE");
+            //TODO: Create an UPDATE query without password - Need to check
+            sqlConnection.getInstance().SendQuery(String.format("UPDATE users SET" +
+                            "userFirstName='%s'",
+                    "userLastName='%s'",
+                    "userType='%d'",
+                    "userAddress='%s'",
+                    "userPhone='%s'",
+                    "userStatus='%s' WHERE userId='%s'",
+                    txtClientSettingFirst.getText(),
+                    txtClientSettingLast.getText(),
+                    Main.AppUser.getUserType(),
+                    txtClientSettingAddress.getText(),
+                    txtClientSettingPhone.getText(),
+                    txtClientSettingStatus.getText(),
+                    Main.AppUser.getId()));
         }
 
     }

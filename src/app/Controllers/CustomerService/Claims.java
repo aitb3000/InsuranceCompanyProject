@@ -1,6 +1,8 @@
 package app.Controllers.CustomerService;
 
 
+import app.Main;
+import app.Models.Claim;
 import app.Models.ClientInsuranceClaim;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
@@ -175,21 +177,35 @@ public class Claims implements Initializable {
     @FXML
     void ApproveClaim(ActionEvent event)
     {
-        SendNewCliamStatus(Approved);
+        SendNewClaimStatus(Approved);
     }
 
     @FXML
     void DisapproveClaim(ActionEvent event)
     {
-        SendNewCliamStatus(Disapproved);
+        SendNewClaimStatus(Disapproved);
     }
 
-    private void SendNewCliamStatus(String newStatus)
+    private void SendNewClaimStatus(String newStatus)
     {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
-        if ((index >= 0) && (index < AllClientInsuranceClaim.size())) {
-            //TODO: Create an UPDATE query for ApproveClaim
-            sqlConnection.getInstance().SendQuery("");
+        if ((index >= 0) && (index < AllClientInsuranceClaim.size()))
+        {
+            ClientInsuranceClaim selectedClaim = tvClaims.getSelectionModel().getSelectedItem();
+            //TODO: Created an UPDATE query for Claims -  Need to check
+            sqlConnection.getInstance().SendQuery("UPDATE claims SET " +
+                    "claimStatus='"+selectedClaim.getClaimStatus()+"'," +
+                    "clientId='"+selectedClaim.getClientId()+"'," +
+                    "clientFname='"+selectedClaim.getClientFirstName()+"'," +
+                    "clientLname='"+selectedClaim.getClientLastName()+"'," +
+                    "insuranceId='"+selectedClaim.getInsuranceId()+"'," +
+                    "insuranceName='"+selectedClaim.getInsuranceName()+"'," +
+                    "insuranceStatus='"+selectedClaim.getInsuranceStatus()+"'," +
+                    "customerServiceId='"+ Main.AppUser.getId()+"'," +
+                    "customerServiceFname='"+Main.AppUser.getFirstName()+"'," +
+                    "customerServiceLname='"+Main.AppUser.getLastName()+"'" +
+                    "WHERE claimId='"+selectedClaim.getClaimId()+"'");
+
             UpdateSelectedRow(true);
         }
     }

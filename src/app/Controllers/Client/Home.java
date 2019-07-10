@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +22,10 @@ public class Home implements Initializable {
     private Pane paneNewInsurance;
     private Pane paneOverview;
     private Pane paneSettings;
+    private Pane paneClaims;
+
+    @FXML
+    private VBox vBoxMenu;
 
     @FXML
     private Label lblUserFullName;
@@ -41,6 +46,9 @@ public class Home implements Initializable {
     private Button btnExit;
 
     @FXML
+    private Button btnClaims;
+
+    @FXML
     private StackPane spHome;
 
     @Override
@@ -53,8 +61,12 @@ public class Home implements Initializable {
             paneInsurance = FXMLLoader.load(Main.class.getResource("/app/View/Client/Insurances.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/Client/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
-            spHome.getChildren().addAll(paneOverview,paneInsurance,paneSettings);
+            paneClaims = FXMLLoader.load(Main.class.getResource("/app/View/Client/Claims.fxml"));
+            spHome.getChildren().addAll(paneOverview,paneInsurance,paneSettings,paneClaims);
             paneOverview.toFront();
+//            paneInsurance.toBack();
+//            paneSettings.toBack();
+//            paneClaims.toBack();
         }catch (Exception ex)
         {
             ex.printStackTrace();
@@ -65,21 +77,23 @@ public class Home implements Initializable {
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnInsurences)
         {
-            paneInsurance.setStyle("-fx-background-color : #030a12");
             paneInsurance.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurances view.");
         }
         if (actionEvent.getSource() == btnOverview)
         {
-            paneOverview.setStyle("-fx-background-color : #030a12");
             paneOverview.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Overview view.");
         }
         if (actionEvent.getSource() == btnSetting)
         {
-            paneSettings.setStyle("-fx-background-color : #030a12");
             paneSettings.toFront();
             loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Settings view.");
+        }
+        if (actionEvent.getSource() == btnClaims)
+        {
+            paneClaims.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Claims view.");
         }
     }
 

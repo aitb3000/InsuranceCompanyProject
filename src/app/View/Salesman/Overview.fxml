@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Salesman.Overview">
+<Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0" stylesheets="@../../../content/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Salesman.Overview">
    <children>
       <Label layoutX="57.0" layoutY="25.0" text="Sales" textFill="#e7e5e5">
          <font>

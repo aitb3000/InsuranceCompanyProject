@@ -128,8 +128,7 @@ public class Overview implements Initializable {
     {
         Label caption1 = new Label("");
         caption1.setTextFill(Color.DARKORANGE);
-        caption1.setStyle("-fx-font: 12 arial;");
-
+        //caption1.setStyle("-fx-font: 12 arial;");
         for (final PieChart.Data data : pieChartClaims.getData())
         {
             data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -142,7 +141,7 @@ public class Overview implements Initializable {
 
         Label caption2 = new Label("");
         caption2.setTextFill(Color.DARKORANGE);
-        caption2.setStyle("-fx-font: 12 arial;");
+        //caption2.setStyle("-fx-font: 12 arial;");
 
         for (final PieChart.Data data : pieChartSales.getData()) {
             data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,

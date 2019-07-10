@@ -75,11 +75,17 @@ public class NewInsurance implements Initializable {
         {
             lblNewInsuranceCheckLField.setVisible(false);
             lblNewInsuranceCheckLField.setVisible(false);
-            sqlConnection.getInstance().SendQuery("INSERT INTO [dbo].clientInsurance ('"
-                    + txtId.getText() + "','"
-                    + txtFirstName.getText() + "','"
-                    + txtLastName.getText() + "','"
-                    + cbInsurance.getValue() +"')");
+
+            sqlConnection.getInstance().SendQuery(String.format("INSERT INTO insurances VALUES ('%s','%d','%s','%s','%s','%s','%s','%s','%s')",
+                    txtId.getText(),
+                    cbInsurance.getSelectionModel().getSelectedIndex(),
+                    Insurance.getInsuranceStatus((byte) 0),
+                    cbInsurance.getValue(),
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    Main.AppUser.getId(),
+                    Main.AppUser.getFirstName(),
+                    Main.AppUser.getLastName()));
         }
         else
         {

@@ -1,14 +1,11 @@
 package app.Controllers;
 
-import app.LoaderScreen;
 import app.Main;
 import app.Models.Client;
 import app.Models.CustomerService;
 import app.Models.Salesman;
-import app.Models.User;
 import app.connection.loggerAPI;
 import app.connection.sqlConnection;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +23,7 @@ import java.util.ResourceBundle;
 public class Login implements Initializable {
 
     @FXML
-    private Label lblWrongUser;
+    private Label lblWrong;
     @FXML
     private TextField txtUsername;
     @FXML
@@ -56,7 +53,7 @@ public class Login implements Initializable {
                 sqlConnection.getInstance().connectToServer(txtUsername.getText(), txtPassword.getText());
 
             } else {
-                lblWrongUser.setVisible(true);
+                lblWrong.setVisible(true);
             }
         }catch (Exception ex)
         {
@@ -68,7 +65,7 @@ public class Login implements Initializable {
     {
         try {
             if (Main.AppUser != null) {
-                lblWrongUser.setVisible(false);
+                lblWrong.setVisible(false);
                 if (Main.AppUser instanceof Client) {
                     Main.ShowClientHome();
                 } else if (Main.AppUser instanceof Salesman) {
@@ -78,7 +75,7 @@ public class Login implements Initializable {
                 }
                 loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
             } else {
-                lblWrongUser.setVisible(true);
+                lblWrong.setVisible(true);
             }
         }catch (Exception ex) {
         }
@@ -111,7 +108,7 @@ public class Login implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        lblWrongUser.setVisible(false);
+        lblWrong.setVisible(false);
     }
 }
 

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pnlNewInsurance" prefHeight="554.0" prefWidth="793.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Salesman.NewInsurance">
+<Pane fx:id="pnlNewInsurance" prefHeight="554.0" prefWidth="793.0" stylesheets="@../../../content/styles/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Salesman.NewInsurance">
    <children>
       <Label layoutX="71.0" layoutY="20.0" text="New Insurance" textFill="#e7e5e5">
          <font>

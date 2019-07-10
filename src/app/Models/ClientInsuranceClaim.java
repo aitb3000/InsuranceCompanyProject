@@ -4,6 +4,11 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ClientInsuranceClaim {
 
+    public Insurance ClientInsuranceInformation;
+    public Client ClientInformation;
+    public Salesman SalesmanInformation;
+
+
     private SimpleStringProperty clientId = new SimpleStringProperty(this, "id");
     private SimpleStringProperty clientFirstName = new SimpleStringProperty(this, "firstName");
     private SimpleStringProperty clientLastName = new SimpleStringProperty(this, "lastName");

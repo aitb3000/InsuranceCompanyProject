@@ -11,25 +11,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="576.0" style="-fx-background-color: #05071F;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Login">
+<AnchorPane fx:id="paneLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="576.0" stylesheets="@/content/styles/style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controllers.Login">
    <children>
-      <ImageView fitHeight="276.0" fitWidth="463.0" layoutX="63.0" layoutY="-72.0" pickOnBounds="true">
+      <ImageView fitHeight="133.0" fitWidth="463.0" layoutX="63.0" layoutY="2.0" pickOnBounds="true">
          <image>
-            <Image url="/content/images/logos/logo_transparent.png"></Image>
+            <Image url="@/content/images/logos/logo_transparent.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblWrongUser" layoutX="194.0" layoutY="139.0" text="*Username and/or Password wrong" textFill="#e7e5e5" />
+      <Label fx:id="lblWrong" layoutX="194.0" layoutY="139.0" text="*Username and/or Password wrong" textFill="#f50000" />
       <VBox layoutX="122.0" layoutY="158.0" prefHeight="123.0" prefWidth="333.0" spacing="10.0">
          <children>
             <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="227.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Username:" textFill="#e7e5e5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Username:" />
                   <TextField fx:id="txtUsername" onKeyPressed="#LoginAction" promptText="Username" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="227.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Password:" textFill="#e7e5e5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Password:" />
                   <PasswordField fx:id="txtPassword" onKeyPressed="#LoginAction" promptText="Password" />
                </children>
             </HBox>
@@ -39,7 +39,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="/content/images/icons/icons8_Sign_Out_32px.png" />
+                              <Image url="@/content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -51,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="/content/images/icons/icons8_Sign_Out_32px.png" />
+                              <Image url="@/content/images/icons/icons8_Sign_Out_32px.png" />
                            </image>
                         </ImageView>
                      </graphic>

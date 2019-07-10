@@ -1,42 +1,168 @@
-.button
-{
--fx-background-color : #05071F;
--fx-text-fill : #e7e5e5;
-}
-.button:hover{
--fx-background-color : #10165F;
-}
-.button:pressed
-{
--fx-background-color : #1620A1;
-}
-
-.scroll-pane {
+#spHome{
     -fx-background-color: #02030A;
 }
 
-.scroll-bar:horizontal, .scroll-bar:vertical{
-    -fx-background-color:transparent;
+#vBoxMenu{
+    -fx-background-color: #05071F;
 }
+
+#pnlInsurences{
+    -fx-background-color: #02030A;
+}
+
+#pnlCustomers{
+    -fx-background-color: #02030A;
+}
+
+#pnlNewInsurance{
+    -fx-background-color: #02030A;
+}
+
+#pnlOverview{
+    -fx-background-color: #02030A;
+}
+
+#pnlNewInsurance
+{
+    -fx-background-color: #02030A;
+}
+
+#paneLogin{
+    -fx-background-color: #02030A;
+}
+
+#pnlSettings{
+    -fx-background-color: #02030A;
+}
+
+#txtSearchInsurance{
+    -fx-background-color: #02030A;
+    -fx-border-color: #B7C3D7;
+    -fx-border-radius: 20em;
+}
+
+#lblTotalDone, #lvlTotalApproved{
+    -fx-text-fill: #26bfbc;
+}
+#lblPending, #lvlPedingClaims{
+    -fx-text-fill: #fa5f7e;
+}
+#lblTotalOrders, #lblTotalClaims{
+    -fx-text-fill: #2a73ff;
+}
+
+#tvInsurence{
+    -fx-background-color: #05071F;
+}
+
+#lblWrong, #lblNewInsuranceCheckLField, #lblNewInsuranceCheckLField1
+{
+    -fx-text-fill: #f50000;
+}
+
+#tvClaims{
+    -fx-background-color: #05071F;
+}
+
+
 
 .increment-button, .decrement-button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
 
-.scroll-bar:horizontal .track,
-.scroll-bar:vertical .track{
+.button
+{
+    -fx-background-color : #05071F;
+    -fx-text-fill : #e7e5e5;
+}
+.button:hover{
+    -fx-background-color : #10165F;
+}
+
+.button:pressed
+{
+    -fx-background-color : #1620A1;
+}
+
+.root{
+    -fx-background-color: #02030A;
+}
+
+.background {
+    -fx-background-color: #1d1d1d;
+}
+
+.label {
+     /*-fx-font-size: 11pt;*/
+     -fx-font-family: "Segoe UI Semibold";
+     -fx-text-fill: #e7e5e5;
+     -fx-opacity: 0.6;
+ }
+
+.label-bright {
+    /*-fx-font-size: 11pt;*/
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #e7e5e5;
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #e7e5e5;
+    -fx-opacity: 1;
+}
+
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
     -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 0em;
 }
 
-.scroll-bar:horizontal .thumb,
-.scroll-bar:vertical .thumb {
-    -fx-background-color: #10165F;
-    -fx-background-radius: 5em;
+.table-view .column-header, .table-view .filler {
+    -fx-size: 15;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color:
+            transparent
+            transparent
+            derive(-fx-base, 80%)
+            transparent;
+    -fx-border-insets: 0 10 1 0;
 }
 
-.scroll-pane > .corner {
-    -fx-background-color: black;
+.table-view .column-header .label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #e7e5e5;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+/* chart properties */
+
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
 }

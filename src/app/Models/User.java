@@ -5,6 +5,19 @@ import javafx.beans.property.SimpleStringProperty;
 
 public abstract class User {
 
+
+    public String getUserType() {
+        return UserType.get();
+    }
+
+    public SimpleStringProperty userTypeProperty() {
+        return UserType;
+    }
+
+    public void setUserType(String userType) {
+        this.UserType.set(userType);
+    }
+
     public enum TypeUser
     {
         eUser,
@@ -27,8 +40,7 @@ public abstract class User {
     private SimpleStringProperty Address = new SimpleStringProperty(this, "address");
     private SimpleStringProperty Phone = new SimpleStringProperty(this, "phone");
     private SimpleStringProperty Status = new SimpleStringProperty(this, "status");
-
-
+    private SimpleStringProperty UserType = new SimpleStringProperty(this, "userType");
 
     public String getId() {        return Id.get();    }
 

@@ -59,6 +59,8 @@ public class Home implements Initializable {
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
             spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings);
             paneOverview.toFront();
+            paneCustomers.toBack();
+
         }catch (Exception ex)
         {
             ex.printStackTrace();
@@ -67,23 +69,25 @@ public class Home implements Initializable {
 
 
     public void handleClicks(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == btnCustomers) {
-            paneCustomers.setStyle("-fx-background-color : #030a12");
+        if (actionEvent.getSource() == btnCustomers)
+        {
             paneCustomers.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Customer view.");
         }
-        if (actionEvent.getSource() == btnOverview) {
-            paneOverview.setStyle("-fx-background-color : #030a12");
+        if (actionEvent.getSource() == btnOverview)
+        {
             paneOverview.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Overview view.");
         }
         if(actionEvent.getSource()==btnSettings)
         {
-            paneSettings.setStyle("-fx-background-color : #030a12");
             paneSettings.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Settings view.");
         }
         if(actionEvent.getSource()==btnNewInsurance)
         {
-            paneNewInsurance.setStyle("-fx-background-color : #030a12");
             paneNewInsurance.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurance view.");
         }
     }
 

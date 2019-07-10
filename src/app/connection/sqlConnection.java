@@ -293,5 +293,19 @@ public class sqlConnection {
 
         return CustomerServicesClaims;
     }
+
+    public boolean SendQueryWithReturn(String sqlQuery)
+    {
+        try
+        {
+            System.out.println("SendQuery: " + sqlQuery);
+            Statement statement = connection.createStatement();
+            statement.executeQuery(sqlQuery);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 }
 
