@@ -2,7 +2,7 @@ package app.Models;
 
 import java.util.ArrayList;
 
-public class Salesman extends AbstractUser
+public class Salesman extends AbstractUser  implements UserInterface
 {
     public ArrayList<ClientInsurance> ClientsInsurances = new ArrayList<>();
 

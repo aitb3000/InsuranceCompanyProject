@@ -30,7 +30,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static app.Models.UserInterface.TypeUser.eClient;
+import static app.Models.TypeUser.eClient;
 import static app.Models.UserInterface.TypeUserToInteger;
 
 public class NewInsurance implements Initializable {

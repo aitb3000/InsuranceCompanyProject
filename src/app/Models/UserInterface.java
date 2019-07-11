@@ -4,13 +4,13 @@ package app.Models;
 public interface UserInterface
 {
 
-    enum TypeUser
-    {
-        eUser,
-        eClient,
-        eSalesman,
-        eCustomerService
-    }
+//    enum TypeUser
+//    {
+//        eUser,
+//        eClient,
+//        eSalesman,
+//        eCustomerService
+//    }
 
     static TypeUser GetTypeUser(byte id)
     {

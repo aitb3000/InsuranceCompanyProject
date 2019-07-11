@@ -2,7 +2,7 @@ package app.Models;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public abstract class AbstractUser implements UserInterface
+public abstract class AbstractUser
 {
 
     private SimpleStringProperty Id = new SimpleStringProperty(this, "id");

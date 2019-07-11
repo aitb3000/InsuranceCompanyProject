@@ -75,7 +75,7 @@ public class Overview implements Initializable {
 
         //Get all insurances of a client.
         Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetClientInsurances());
-        Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims WHERE claims.clientId = '" + Main.AppUser.GetId() +"'"));
+        Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims WHERE claims.clientId = '" + Main.AppUser.GetCurrentAppUser().getId() +"'"));
 
 
         lblClientId.setText(Main.AppUser.GetCurrentAppUser().getId());

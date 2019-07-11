@@ -168,7 +168,7 @@ public class sqlConnection {
     public ArrayList<ClientInsurance> GetClientInsurances() {
         ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
 
-        String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.GetId() + "'";
+        String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.GetCurrentAppUser().getId() + "'";
         System.out.println("GetClientInsurances() - " + sqlQuery);
         resultSet = null;
 
@@ -323,7 +323,7 @@ public class sqlConnection {
     public ArrayList<Client> GetAllUserClients()
     {
 
-        String sqlQuery = "SELECT * FROM users WHERE userType='" + TypeUserToInteger(AbstractUser.TypeUser.eClient)+ "'";
+        String sqlQuery = "SELECT * FROM users WHERE userType='" + TypeUserToInteger(TypeUser.eClient)+ "'";
         ArrayList<Client> UserClients = new ArrayList<>();
         System.out.println("GetAllUserClients() - " + sqlQuery);
         resultSet = null;

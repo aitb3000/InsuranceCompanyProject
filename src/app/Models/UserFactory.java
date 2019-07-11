@@ -28,17 +28,6 @@ public class UserFactory
         }
     }
 
-    public String GetId()
-    {
-        if (Client!=null) return Client.getId();
-
-        if (CustomerService!=null) return CustomerService.getId();
-
-        if (Salesman!=null) return Salesman.getId();
-
-        return null;
-    }
-
     public AbstractUser GetCurrentAppUser()
     {
         if (Client!=null) return Client;
