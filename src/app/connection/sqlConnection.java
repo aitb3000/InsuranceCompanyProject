@@ -8,6 +8,9 @@ import javafx.concurrent.Task;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static app.Models.UserInterface.TypeUserToInteger;
+import static app.Models.UserInterface.GetTypeUser;
+
 
 public class sqlConnection {
 
@@ -15,12 +18,9 @@ public class sqlConnection {
     private Connection connection;
     private String connectionString;
     private ResultSet resultSet = null;
-    //private ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
-    //private ArrayList<ClientInsuranceClaim> ClientInsuranceClaimResults = new ArrayList<>();
 
     private boolean tryingToConnect = false;
     private boolean active = true;
-
 
     public static sqlConnection getInstance() {
         return ourInstance;
@@ -45,7 +45,7 @@ public class sqlConnection {
             @Override
             public Void call() throws Exception {
                 Platform.runLater(()-> LoaderScreen.showLoadingScreen());
-                Main.AppUser = Connect(Username,Password);
+                Main.AppUser = new UserFactory(Connect(Username,Password));
                 while(active){}
                 return null;
             }
@@ -65,9 +65,9 @@ public class sqlConnection {
     }
 
 
-    private User Connect(String Username, String Password)
+    private AbstractUser Connect(String Username, String Password)
     {
-        User user = null;
+        AbstractUser user = null;
 
         try {
             connection = DriverManager.getConnection(connectionString);
@@ -79,7 +79,7 @@ public class sqlConnection {
 
                 if (resultSet.next())
                 {
-                    switch(User.getTypeUser(resultSet.getByte("userType")))
+                    switch(GetTypeUser(resultSet.getByte("userType")))
                     {
 
                         case eClient:
@@ -116,8 +116,32 @@ public class sqlConnection {
         return user;
     }
 
+    /**
+     * SendQueryExecute for data manipulation like: insert, update and delete.
+     * @param sqlQuery
+     */
+    public boolean SendQueryExecute(String sqlQuery)
+    {
+        boolean pass = false;
 
-    public void SendQuery(String sqlQuery) {
+        try
+        {
+            System.out.println("SendQuery: " + sqlQuery);
+            Statement statement = connection.createStatement();
+            pass  = statement.execute(sqlQuery);
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return !pass;
+    }
+
+    /**
+     * SendQueryExecuteQuery for data retrieval like: select.
+     * @param sqlQuery
+     */
+    public void SendQueryExecuteQuery(String sqlQuery) {
         try {
             System.out.println("SendQuery: " + sqlQuery);
             Statement statement = connection.createStatement();
@@ -144,7 +168,7 @@ public class sqlConnection {
     public ArrayList<ClientInsurance> GetClientInsurances() {
         ArrayList<ClientInsurance> ClientInsuranceResults = new ArrayList<>();
 
-        String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.getId() + "'";
+        String sqlQuery = "SELECT * FROM insurances WHERE insurances.clientId ='" + Main.AppUser.GetId() + "'";
         System.out.println("GetClientInsurances() - " + sqlQuery);
         resultSet = null;
 
@@ -155,8 +179,11 @@ public class sqlConnection {
             while (resultSet.next())
             {
                 ClientInsurance clientInsurance = new ClientInsurance();
+
                 clientInsurance.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
                 clientInsurance.setUcId(resultSet.getString("clientId"));
+                clientInsurance.setUcLname(resultSet.getString("clientLname"));
+                clientInsurance.setUcFname(resultSet.getString("clientFname"));
                 clientInsurance.setUsId(resultSet.getString("salesmanId"));
                 clientInsurance.setInsuranceType(String.valueOf(resultSet.getInt("insuranceType")));
                 clientInsurance.setInsuranceName(resultSet.getString("insuranceName"));
@@ -230,18 +257,17 @@ public class sqlConnection {
             while (resultSet.next())
             {
                 ClientInsuranceClaim clientInsuranceClaim = new ClientInsuranceClaim();
+
+                clientInsuranceClaim.setClaimId(String.valueOf(resultSet.getInt("claimId")));
+                clientInsuranceClaim.setClaimStatus(resultSet.getString("claimStatus"));
+
                 clientInsuranceClaim.setInsuranceId(String.valueOf(resultSet.getInt("insuranceId")));
-                clientInsuranceClaim.setInsuranceName(String.valueOf(resultSet.getInt("insuranceName")));
+                clientInsuranceClaim.setInsuranceName(resultSet.getString("insuranceName"));
                 clientInsuranceClaim.setInsuranceStatus(resultSet.getString("insuranceStatus"));
 
                 clientInsuranceClaim.setClientId(resultSet.getString("clientId"));
                 clientInsuranceClaim.setClientFirstName(resultSet.getString("clientFname"));
                 clientInsuranceClaim.setClientLastName(resultSet.getString("clientLname"));
-
-                clientInsuranceClaim.setClaimStatus(String.valueOf(resultSet.getString("claimStatus")));
-                clientInsuranceClaim.setClaimName(resultSet.getString("claimStatus"));
-                clientInsuranceClaim.setClaimId((resultSet.getString("claimId")));
-
 
                 ClientInsuranceClaimResults.add(clientInsuranceClaim);
             }
@@ -294,18 +320,39 @@ public class sqlConnection {
         return CustomerServicesClaims;
     }
 
-    public boolean SendQueryWithReturn(String sqlQuery)
+    public ArrayList<Client> GetAllUserClients()
     {
+
+        String sqlQuery = "SELECT * FROM users WHERE userType='" + TypeUserToInteger(AbstractUser.TypeUser.eClient)+ "'";
+        ArrayList<Client> UserClients = new ArrayList<>();
+        System.out.println("GetAllUserClients() - " + sqlQuery);
+        resultSet = null;
+
         try
         {
-            System.out.println("SendQuery: " + sqlQuery);
             Statement statement = connection.createStatement();
-            statement.executeQuery(sqlQuery);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next())
+            {
+                Client client = new Client();
+
+                client.setId(resultSet.getString("userId"));
+                client.setPhone(resultSet.getString("userPhone"));
+                client.setStatus(resultSet.getString("userStatus"));
+                client.setFirstName(resultSet.getString("userFirstName"));
+                client.setLastName(resultSet.getString("userLastName"));
+                client.setAddress(resultSet.getString("userAddress"));
+
+                UserClients.add(client);
+            }
         }
-        return true;
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return UserClients;
     }
 }
 

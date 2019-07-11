@@ -23,9 +23,9 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="anchorPaneRoot" layoutX="14.0" layoutY="135.0" prefHeight="432.0" prefWidth="771.0">
+      <AnchorPane fx:id="anchorPaneRoot" layoutY="100.0" prefHeight="432.0" prefWidth="771.0">
          <children>
-            <HBox alignment="CENTER" layoutX="197.0" layoutY="317.0" prefHeight="56.0" prefWidth="398.0" spacing="50.0">
+            <HBox alignment="CENTER" layoutX="195.0" layoutY="352.0" prefHeight="56.0" prefWidth="398.0" spacing="50.0">
                <children>
                   <Button fx:id="btnSendNew" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#SendNewInsuranceForm" prefHeight="40.0" prefWidth="160.0" stylesheets="/content/styles/style.css" text="Send">
                      <graphic>
@@ -53,41 +53,50 @@
                   </Button>
                </children>
             </HBox>
-            <AnchorPane fx:id="anchorPaneNewInsurance" layoutX="250.0" layoutY="20.0" prefHeight="214.0" prefWidth="279.0">
+            <AnchorPane fx:id="anchorPaneNewInsurance" layoutX="250.0" layoutY="20.0" prefHeight="280.0" prefWidth="300.0">
                <children>
-                  <GridPane alignment="CENTER" prefHeight="201.0" prefWidth="251.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="76.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.0" minWidth="10.0" prefWidth="153.0" />
-                     </columnConstraints>
-                     <rowConstraints>
+                  <GridPane alignment="CENTER" hgap="10.0" layoutX="20.0" prefHeight="200.0" prefWidth="240.0" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columnConstraints>
+                     <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="85.0" minWidth="10.0" prefWidth="48.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="150.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Label contentDisplay="CENTER" text="Client Id:" textFill="#e7e5e5" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtId" editable="false" promptText="Client ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="First Name:" textFill="#e7e5e5" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtFirstName" promptText="Client First Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="Last Name:" textFill="#e7e5e5" GridPane.rowIndex="3" />
-                        <TextField fx:id="txtLastName" promptText="Client Last Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Insurance:" textFill="#e7e5e5" GridPane.rowIndex="4" />
-                        <ChoiceBox fx:id="cbInsurance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <CheckBox fx:id="checkBoxNewClient" mnemonicParsing="false" onAction="#StartAnimationInsuranceNewClient" text="New Client?" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  </rowConstraints>
+                  <children>
+                     <Label text="Last Name:" textFill="#e7e5e5" GridPane.rowIndex="3" />
+                     <Label text="Status:" textFill="#e7e5e5" GridPane.rowIndex="4" />
+                     <Label text="First Name:" textFill="#e7e5e5" GridPane.rowIndex="2" />
+                     <Label fx:id="lblClientPhone" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <Label fx:id="lblClientAddress" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     <Label fx:id="lblClientLastName" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <Label fx:id="lblClientStatus" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label fx:id="lblClientFirstName" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label text="Id:" textFill="#e7e5e5" GridPane.rowIndex="1" />
+                     <Label text="Address:" textFill="#e7e5e5" GridPane.rowIndex="5" />
+                     <Label text="Phone:" textFill="#e7e5e5" GridPane.rowIndex="6" />
+                        <Label text="Insurance:" textFill="#e7e5e5" GridPane.rowIndex="7" />
+                        <ChoiceBox fx:id="cbInsurance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <CheckBox fx:id="checkBoxNewClient" mnemonicParsing="false" onAction="#StartAnimationInsuranceNewClient" text="New Client?" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <Label fx:id="lblNewInsuranceCheckLField" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="84.0" text="*Check fields" textFill="#e7e5e5" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
+                        <ChoiceBox fx:id="cbId" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  </children>
+               </GridPane>
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="anchorPaneNewClient" layoutX="804.0" layoutY="170.0" prefHeight="214.0" prefWidth="279.0">
+      <AnchorPane fx:id="anchorPaneNewClient" layoutX="800.0" layoutY="120.0" prefHeight="280.0" prefWidth="300.0">
          <children>
-            <GridPane alignment="CENTER" prefHeight="201.0" prefWidth="251.0">
+            <GridPane alignment="CENTER" prefHeight="249.0" prefWidth="251.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="76.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.0" minWidth="10.0" prefWidth="153.0" />
@@ -99,17 +108,25 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Label contentDisplay="CENTER" text="Password:" textFill="#e7e5e5" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtPass" editable="false" promptText="Client Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Address:" textFill="#e7e5e5" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtAddr" promptText="Client Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Phone:" textFill="#e7e5e5" GridPane.rowIndex="3" />
-                  <TextField fx:id="txtPhone" promptText="Client Phone" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Status:" textFill="#e7e5e5" GridPane.rowIndex="4" />
+                  <Label contentDisplay="CENTER" text="Password:" textFill="#e7e5e5" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtPass" promptText="Client Password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Address:" textFill="#e7e5e5" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtAddr" promptText="Client Address" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Phone:" textFill="#e7e5e5" GridPane.rowIndex="6" />
+                  <TextField fx:id="txtPhone" promptText="Client Phone" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Status:" textFill="#e7e5e5" GridPane.rowIndex="7" />
                   <Label fx:id="lblNewInsuranceCheckLField1" alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="84.0" text="*Check fields" textFill="#e7e5e5" GridPane.columnIndex="1" />
-                  <TextField fx:id="txtStatus" promptText="Client Status" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="txtStatus" promptText="Client Status" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="txtLastName" promptText="Client Last Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Last Name:" textFill="#e7e5e5" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtFirstName" promptText="Client First Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="First Name:" textFill="#e7e5e5" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtId" promptText="Client ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label contentDisplay="CENTER" text="Client Id:" textFill="#e7e5e5" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>

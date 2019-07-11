@@ -2,57 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Controllers/Client/Claims.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/View/Client/Claims.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Models/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/UML Insurance Company.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/UML Insurance Company.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Insurances.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Insurances.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/NewInsurance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/NewInsurance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Client/Overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Claims.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Claims.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/CustomerService/Overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Customers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Customers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/NewInsurance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/NewInsurance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Orders.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/app/View/Salesman/Overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/content/images/logos/logo_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/content/images/logos/logo_transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/content/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/content/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/images/logos/logo_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/images/logos/logo_transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/InsurancePatternDesignProject/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controllers/Client/Claims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Client/Claims.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Client/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Client/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Client/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Client/Overview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controllers/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controllers/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/LoaderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/LoaderScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Claim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/ClientInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/ClientInsurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/ClientInsuranceClaim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/ClientInsuranceClaim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Models/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Client/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Client/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Insurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/Salesman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Salesman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/View/Client/Claims.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Client/Claims.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/Client/Insurances.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Client/Insurances.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Client/NewInsurance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Client/NewInsurance.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/Client/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Client/Overview.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/CustomerService/Claims.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/CustomerService/Claims.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/CustomerService/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/CustomerService/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/Salesman/Customers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Salesman/Customers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Salesman/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Salesman/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Salesman/Orders.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Salesman/Overview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Salesman/Overview.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/View/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/View/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/connection/loggerAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/connection/loggerAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/connection/sqlConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/connection/sqlConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/images/logos/logo_transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/images/logos/logo_transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/styles/style.css" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -130,17 +115,93 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2624">
-              <caret line="150" selection-start-line="150" selection-end-line="159" selection-end-column="45" />
+            <state relative-caret-position="527">
+              <caret line="252" selection-start-line="252" selection-end-line="264" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Models/Insurance.java">
+        <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="411">
+              <caret line="212" column="16" lean-forward="true" selection-start-line="212" selection-start-column="16" selection-end-line="212" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Claims.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="79" column="40" lean-forward="true" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="143" column="55" lean-forward="true" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Models/Claim.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/View/Client/Insurances.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="114" selection-start-line="15" selection-start-column="114" selection-end-line="15" selection-end-column="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Models/UserInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Models/AbstractUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="737">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -148,77 +209,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/connection/sqlConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="296" column="38" selection-start-line="296" selection-start-column="19" selection-end-line="296" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Models/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#137#138#0" expanded="true" />
-                <element signature="e#174#175#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-                <element signature="e#259#260#0" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Controllers/Settings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="195" column="72" lean-forward="true" selection-start-line="195" selection-start-column="72" selection-end-line="195" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/View/Client/Claims.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-167">
-              <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/content/styles/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="912">
-              <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -238,28 +233,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ClientInsurances</find>
-      <find>FROM dbo.users, dbo.insurances WHERE users.userId</find>
-      <find>ShowClientInformationKeyboardHandler</find>
-      <find>ApproveInsurance</find>
-      <find>SendNewInsuranceForm</find>
-      <find>ShowClientHome</find>
-      <find>AllClien</find>
-      <find>UpdateSelectedRow</find>
-      <find>Dis</find>
-      <find>pnItems</find>
-      <find>Connect</find>
-      <find>showLoadingScreen</find>
-      <find>layoutX</find>
-      <find>logo_transparent.png</find>
-      <find>CloseLogger</find>
       <find>GetDataClientInsuranceClaim</find>
       <find>Pe</find>
       <find>sig</find>
       <find>event</find>
       <find>ClientClaims</find>
       <find>getTypeUser</find>
-      <find>getInsuranceStatus</find>
       <find>style.css</find>
       <find>/content/styles/style.css</find>
       <find>sty</find>
@@ -268,6 +247,22 @@
       <find>INSERT INTO</find>
       <find>SendQuery</find>
       <find>SendQueryWithReturn</find>
+      <find>pnlNewInsurance</find>
+      <find>Insurances</find>
+      <find>cbInsurance</find>
+      <find>CancelNewInsuranceForm</find>
+      <find>UPDATE users</find>
+      <find>executeQuery</find>
+      <find>active = false</find>
+      <find>LoadingScreen</find>
+      <find>Connect</find>
+      <find>GetClientInsurances</find>
+      <find>GetClientsInsurances</find>
+      <find>None</find>
+      <find>getInsuranceStatus</find>
+      <find>UPDATE insurances SET</find>
+      <find>SendQueryExecute</find>
+      <find>Rese</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -281,66 +276,66 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/View/CustomerService/Orders.fxml" />
-        <option value="$PROJECT_DIR$/src/app/View/CustomerService/Settings.fxml" />
-        <option value="$PROJECT_DIR$/src/content/data/config.xml" />
-        <option value="$PROJECT_DIR$/src/app/View/CustomerService/HomeBackup.fxml" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/HandleClaims.java" />
         <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/ClientInsuranceClaim.java" />
-        <option value="$PROJECT_DIR$/src/app/Models/Client.java" />
         <option value="$PROJECT_DIR$/src/app/Models/Types.java" />
         <option value="$PROJECT_DIR$/src/app/Models/TypeUser.java" />
-        <option value="$PROJECT_DIR$/src/app/Models/Salesman.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java" />
         <option value="$PROJECT_DIR$/src/app/Loaders.java" />
-        <option value="$PROJECT_DIR$/src/app/LoaderScreen.java" />
-        <option value="$PROJECT_DIR$/src/app/Main.java" />
-        <option value="$PROJECT_DIR$/src/app/connection/loggerAPI.java" />
-        <option value="$PROJECT_DIR$/src/app/Models/Insurance.java" />
         <option value="$PROJECT_DIR$/src/app/Models/ClientClaims.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java" />
-        <option value="$PROJECT_DIR$/src/app/Models/Claim.java" />
         <option value="$PROJECT_DIR$/src/app/Models/ClientInsuranceClaim.java" />
         <option value="$PROJECT_DIR$/src/app/Models/ClientInsurance.java" />
-        <option value="$PROJECT_DIR$/src/app/Models/CustomerService.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Claims.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Home.java" />
         <option value="$PROJECT_DIR$/src/app/View/Client/Home.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Client/Claims.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Client/Insurances.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Client/NewInsurance.fxml" />
-        <option value="$PROJECT_DIR$/src/app/View/Client/Overview.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Settings.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Salesman/Overview.fxml" />
-        <option value="$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml" />
-        <option value="$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/CustomerService/Claims.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/CustomerService/Home.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Salesman/Customers.fxml" />
         <option value="$PROJECT_DIR$/src/app/View/Salesman/Home.fxml" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Overview.java" />
         <option value="$PROJECT_DIR$/src/app/View/Login.fxml" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Login.java" />
         <option value="$PROJECT_DIR$/src/content/styles/style.css" />
-        <option value="$PROJECT_DIR$/src/app/connection/sqlConnection.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java" />
-        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java" />
+        <option value="$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml" />
+        <option value="$PROJECT_DIR$/src/app/LoaderScreen.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/UserTemp.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/Temp.java" />
         <option value="$PROJECT_DIR$/src/app/Models/User.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/AbstractUser.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Home.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/UserInterface.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/UserFactory.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/Client.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/Salesman.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Claims.java" />
+        <option value="$PROJECT_DIR$/src/app/View/Client/Overview.fxml" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Overview.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/Insurance.java" />
+        <option value="$PROJECT_DIR$/src/app/connection/sqlConnection.java" />
+        <option value="$PROJECT_DIR$/src/app/Main.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Login.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java" />
+        <option value="$PROJECT_DIR$/src/app/connection/loggerAPI.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java" />
+        <option value="$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml" />
         <option value="$PROJECT_DIR$/src/app/Controllers/Settings.java" />
         <option value="$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java" />
+        <option value="$PROJECT_DIR$/src/app/Models/Claim.java" />
+        <option value="$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-306" />
-    <option name="y" value="203" />
-    <option name="width" value="1612" />
-    <option name="height" value="788" />
+    <option name="x" value="-111" />
+    <option name="y" value="228" />
+    <option name="width" value="1147" />
+    <option name="height" value="495" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -353,7 +348,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -378,6 +372,13 @@
               <item name="InsuranceCompanyProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="connection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InsuranceCompanyProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InsuranceCompanyProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,6 +388,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InsuranceCompanyProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="InsuranceCompanyProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomerService" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="InsuranceCompanyProject" type="b2602c69:ProjectViewProjectNode" />
@@ -445,12 +454,13 @@
               <item name="InsuranceCompanyProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="content" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,23 +484,24 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View\Client" />
-      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View" />
-      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View\Salesman" />
-      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\content\images" />
-      <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="app.Controllers" />
-      <recent name="app.Controllers.Salesman" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src\content\data" />
       <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src\content\styles" />
       <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src\content\images\icons" />
       <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src\content\images\logos" />
       <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src\content\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.Models" />
+      <recent name="app.Controllers" />
+      <recent name="app.Controllers.Salesman" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View\Client" />
+      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View" />
+      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\app\View\Salesman" />
+      <recent name="C:\Users\Dinner\Git\InsuranceCompanyProject\src\content\images" />
+      <recent name="C:\Users\Dinner\Git\InsurancePatternDesignProject\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -625,11 +636,12 @@
       <workItem from="1562648154728" duration="1554000" />
       <workItem from="1562675984306" duration="16529000" />
       <workItem from="1562766361727" duration="13435000" />
+      <workItem from="1562821146428" duration="32917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129466000" />
+    <option name="totallyTimeSpent" value="162383000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -643,7 +655,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21641791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17697228" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -652,11 +664,11 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32647058" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25490198" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2127451" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28137255" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.2617647" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Problems" order="9" />
@@ -687,235 +699,12 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/app/connection/loggerAPI.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/LoaderScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/connection/loggerAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-          <folding>
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/NewClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/NewClient.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Settings.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Settings.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Settings.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Settings.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1728">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#3518#3519#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="82" selection-start-line="82" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3220">
-          <caret line="193" selection-start-line="193" selection-end-line="194" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Models/ClientClaims.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/Models/Claim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#3173#3174#0" expanded="true" />
-            <element signature="e#3211#3212#0" expanded="true" />
-            <element signature="e#4610#4611#0" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#4703#4704#0" expanded="true" />
-            <element signature="e#4735#4736#0" expanded="true" />
-            <element signature="e#4785#4786#0" expanded="true" />
-            <element signature="e#4830#4831#0" expanded="true" />
-            <element signature="e#4866#4867#0" expanded="true" />
-            <element signature="e#4904#4905#0" expanded="true" />
-            <element signature="e#4959#4960#0" expanded="true" />
-            <element signature="e#4991#4992#0" expanded="true" />
-            <element signature="e#5041#5042#0" expanded="true" />
-            <element signature="e#5086#5087#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Models/ClientInsuranceClaim.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1234#1235#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1462#1463#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1822#1823#0" expanded="true" />
-            <element signature="e#1877#1878#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
-            <element signature="e#1957#1958#0" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2050#2051#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2191#2192#0" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="true" />
-            <element signature="e#2280#2281#0" expanded="true" />
-            <element signature="e#2310#2311#0" expanded="true" />
-            <element signature="e#2356#2357#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2433#2434#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2526#2527#0" expanded="true" />
-            <element signature="e#2558#2559#0" expanded="true" />
-            <element signature="e#2608#2609#0" expanded="true" />
-            <element signature="e#2653#2654#0" expanded="true" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2788#2789#0" expanded="true" />
-            <element signature="e#2822#2823#0" expanded="true" />
-            <element signature="e#2876#2877#0" expanded="true" />
-            <element signature="e#2925#2926#0" expanded="true" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3007#3008#0" expanded="true" />
-            <element signature="e#3066#3067#0" expanded="true" />
-            <element signature="e#3102#3103#0" expanded="true" />
-            <element signature="e#3160#3161#0" expanded="true" />
-            <element signature="e#3213#3214#0" expanded="true" />
-            <element signature="e#3336#3337#0" expanded="true" />
-            <element signature="e#3370#3371#0" expanded="true" />
-            <element signature="e#3424#3425#0" expanded="true" />
-            <element signature="e#3473#3474#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Models/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Models/Salesman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Models/ClientInsurance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding>
-            <element signature="e#1081#1082#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1415#1416#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3111#3112#0" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3196#3197#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3287#3288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/Orders.fxml" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -924,124 +713,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Claims.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="55" column="94" selection-start-line="55" selection-start-column="94" selection-end-line="55" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Claims.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Home.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/Customers.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="25" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Insurances.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="114" selection-start-line="15" selection-start-column="114" selection-end-line="15" selection-end-column="114" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Client/Home.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/Home.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/Overview.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="112" selection-start-line="9" selection-start-column="112" selection-end-line="9" selection-end-column="112" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Settings.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Overview.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1347">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Overview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="159" column="41" selection-start-line="159" selection-start-column="37" selection-end-line="159" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,123 +761,355 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/View/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="28" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Claims.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state>
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/content/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="180" column="1" selection-start-line="180" selection-start-column="1" selection-end-line="180" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/LoaderScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3894">
+          <caret line="177" column="42" lean-forward="true" selection-start-line="177" selection-start-column="42" selection-end-line="177" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-            <element signature="e#2808#2809#0" expanded="true" />
+            <element signature="e#7801#7802#0" expanded="true" />
+            <element signature="e#7831#7832#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Client/NewInsurance.fxml">
+    <entry file="file://$PROJECT_DIR$/src/app/Models/Temp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="38" column="58" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="58" />
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Salesman/NewInsurance.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="28" />
+    <entry file="file://$PROJECT_DIR$/src/app/Models/UserTemp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Claims.fxml">
+    <entry file="file://$PROJECT_DIR$/src/app/Models/ClientInsurance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="176">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/content/styles/style.css">
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="145" column="4" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="25" />
+        <state relative-caret-position="1806">
+          <caret line="111" column="101" selection-start-line="111" selection-start-column="101" selection-end-line="111" selection-end-column="101" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Models/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/connection/sqlConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/app/Models/Salesman.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="296" column="38" selection-start-line="296" selection-start-column="19" selection-end-line="296" selection-end-column="38" />
+        <state relative-caret-position="220">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Overview.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1166">
+          <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/Client/NewInsurance.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Overview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/ClientInsuranceClaim.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+          <folding>
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1406#1407#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+            <element signature="e#2356#2357#0" expanded="true" />
+            <element signature="e#2485#2486#0" expanded="true" />
+            <element signature="e#2526#2527#0" expanded="true" />
+            <element signature="e#3553#3554#0" expanded="true" />
+            <element signature="e#3602#3603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/content/data/config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="115" column="102" selection-start-line="115" selection-start-column="102" selection-end-line="115" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Overview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="51" column="58" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/UserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Models/Insurance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="352">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Models/User.java">
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Overview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2624">
-          <caret line="150" selection-start-line="150" selection-end-line="159" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+        <state relative-caret-position="353">
+          <caret line="92" column="35" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/Settings.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Controllers/CustomerService/Claims.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="195" column="72" lean-forward="true" selection-start-line="195" selection-start-column="72" selection-end-line="195" selection-end-column="72" />
+        <state relative-caret-position="2578">
+          <caret line="205" column="9" lean-forward="true" selection-start-line="205" selection-end-line="206" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6860#6861#0" expanded="true" />
+            <element signature="e#7970#7971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connection/loggerAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Insurance.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Claims.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/CustomerService/Overview.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="140" column="75" selection-start-line="140" selection-start-column="75" selection-end-line="140" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/View/Client/Insurances.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="114" selection-start-line="15" selection-start-column="114" selection-end-line="15" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/NewInsurance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/UserInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/AbstractUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connection/sqlConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Models/Claim.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/NewInsurance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="252" selection-start-line="252" selection-end-line="264" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Salesman/Customers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="212" column="16" lean-forward="true" selection-start-line="212" selection-start-column="16" selection-end-line="212" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Claims.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="79" column="40" lean-forward="true" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Controllers/Client/Insurances.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="143" column="55" lean-forward="true" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

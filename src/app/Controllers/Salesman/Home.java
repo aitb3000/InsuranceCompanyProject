@@ -1,5 +1,6 @@
 package app.Controllers.Salesman;
 
+import app.LoaderScreen;
 import app.Main;
 import app.connection.loggerAPI;
 import app.connection.sqlConnection;
@@ -50,7 +51,7 @@ public class Home implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        txtUserFullName.setText(Main.AppUser.getUserName());
+        txtUserFullName.setText(Main.AppUser.GetCurrentAppUser().getUserName());
 
         try {
             paneCustomers = FXMLLoader.load(Main.class.getResource("/app/View/Salesman/Customers.fxml"));
@@ -59,7 +60,6 @@ public class Home implements Initializable {
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
             spHome.getChildren().addAll(paneOverview, paneCustomers, paneNewInsurance, paneSettings);
             paneOverview.toFront();
-            paneCustomers.toBack();
 
         }catch (Exception ex)
         {
@@ -72,22 +72,22 @@ public class Home implements Initializable {
         if (actionEvent.getSource() == btnCustomers)
         {
             paneCustomers.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Customer view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Customer view.");
         }
         if (actionEvent.getSource() == btnOverview)
         {
             paneOverview.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Overview view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Overview view.");
         }
         if(actionEvent.getSource()==btnSettings)
         {
             paneSettings.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Settings view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Settings view.");
         }
         if(actionEvent.getSource()==btnNewInsurance)
         {
             paneNewInsurance.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Insurance view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Insurance view.");
         }
     }
 
@@ -97,7 +97,7 @@ public class Home implements Initializable {
         try
         {
             sqlConnection.getInstance().CloseConnection();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Sign out.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Sign out.");
             Main.ShowLogin();
         }catch (Exception ex)
         {
@@ -109,7 +109,7 @@ public class Home implements Initializable {
     public void Exit(ActionEvent actionEvent)
     {
         sqlConnection.getInstance().CloseConnection();
-        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Exit from application.");
+        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Exit from application.");
         loggerAPI.getInstance().CloseLogger();
         Platform.exit();
     }

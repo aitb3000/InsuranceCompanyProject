@@ -56,6 +56,7 @@ public class loggerAPI {
             newLog.append(msg);
             newLog.append("\n");
             bufferedWriter.write(newLog.toString());
+            System.out.println(newLog);
         }
         catch(IOException ex)
         {

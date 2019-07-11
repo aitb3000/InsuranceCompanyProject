@@ -74,33 +74,27 @@ public class Overview implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //Get all insurances of a client.
-        if (((Client)Main.AppUser).ClientInsurances.isEmpty())
-        {
-            ((Client)Main.AppUser).ClientInsurances = sqlConnection.getInstance().GetClientInsurances();
-        }
+        Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetClientInsurances());
+        Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims WHERE claims.clientId = '" + Main.AppUser.GetId() +"'"));
 
-        if (((Client)Main.AppUser).ClientInsuranceClaim.isEmpty())
-        {
-            ((Client)Main.AppUser).ClientInsuranceClaim = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims WHERE claims.clientId = '" + Main.AppUser.getId() +"'");
-        }
 
-        lblClientId.setText(Main.AppUser.getId());
-        lblClientFirstName.setText(Main.AppUser.getFirstName());
-        lblClientLastName.setText(Main.AppUser.getLastName());
-        lblClientPhone.setText(Main.AppUser.getPhone());
-        lblClientStatus.setText(Main.AppUser.getStatus());
-        lblClientAddress.setText(Main.AppUser.getAddress());
+        lblClientId.setText(Main.AppUser.GetCurrentAppUser().getId());
+        lblClientFirstName.setText(Main.AppUser.GetCurrentAppUser().getFirstName());
+        lblClientStatus.setText(Main.AppUser.GetCurrentAppUser().getStatus());
+        lblClientAddress.setText(Main.AppUser.GetCurrentAppUser().getAddress());
+        lblClientLastName.setText(Main.AppUser.GetCurrentAppUser().getLastName());
+        lblClientPhone.setText(Main.AppUser.GetCurrentAppUser().getPhone());
 
-        for (ClientInsurance insurance :((Client)Main.AppUser).ClientInsurances)
+        for (ClientInsurance insurance : Main.AppUser.GetClientInsurances())
         {
-            if (insurance.getInsuranceStatus().compareTo(Insurance.getInsuranceStatus((byte)1)) == 0)
+            if (insurance.getInsuranceStatus().compareTo("Approved") == 0)
                 insuranceDone++;
-            else if (insurance.getInsuranceStatus().compareTo("None") == 0)
+            else if (insurance.getInsuranceStatus().compareTo("Pending") == 0)
                 insurancePending++;
             insuranceTotal++;
         }
 
-        for (ClientInsuranceClaim insuranceClaim : ((Client)Main.AppUser).ClientInsuranceClaim)
+        for (ClientInsuranceClaim insuranceClaim : Main.AppUser.GetClientInsuranceClaim())
         {
             if (insuranceClaim.getClaimStatus().compareTo("Approved") == 0)
             {

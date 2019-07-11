@@ -1,8 +1,9 @@
 package app.Controllers.Salesman;
 
 import app.Main;
+import app.Models.Client;
 import app.Models.Insurance;
-import app.Models.User;
+import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -29,21 +30,27 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import static app.Models.User.TypeUser.eUser;
+import static app.Models.UserInterface.TypeUser.eClient;
+import static app.Models.UserInterface.TypeUserToInteger;
 
 public class NewInsurance implements Initializable {
 
     private ObservableList<String> Insurances;
     private ArrayList<String> AL_Insurances_string = new ArrayList<>();
     private ArrayList<Insurance> AL_Insurances = new ArrayList<>();
+    private ArrayList<Client> AL_UserClients;
+    private ObservableList<Client> UserClients;
 
     private final double MoveXLeftInsurance = -200;
-    private final double MoveXRightInsurance = 100;
+    private final double MoveXRightInsurance = 50;
     private final double MoveXLeftNewClient = -400;
-    private final double MoveXRightNewClient = 200;
+    private final double MoveXRightNewClient = 100;
 
     @FXML
     private Pane pnlNewInsurance;
+
+    @FXML
+    private AnchorPane anchorPaneRoot;
 
     @FXML
     private Button btnSendNew;
@@ -55,16 +62,19 @@ public class NewInsurance implements Initializable {
     private AnchorPane anchorPaneNewInsurance;
 
     @FXML
-    private AnchorPane anchorPaneRoot;
+    private Label lblClientPhone;
 
     @FXML
-    private TextField txtId;
+    private Label lblClientAddress;
 
     @FXML
-    private TextField txtFirstName;
+    private Label lblClientLastName;
 
     @FXML
-    private TextField txtLastName;
+    private Label lblClientStatus;
+
+    @FXML
+    private Label lblClientFirstName;
 
     @FXML
     private ChoiceBox<String> cbInsurance;
@@ -74,6 +84,9 @@ public class NewInsurance implements Initializable {
 
     @FXML
     private Label lblNewInsuranceCheckLField;
+
+    @FXML
+    private ChoiceBox<Client> cbId;
 
     @FXML
     private AnchorPane anchorPaneNewClient;
@@ -93,12 +106,56 @@ public class NewInsurance implements Initializable {
     @FXML
     private TextField txtStatus;
 
+    @FXML
+    private TextField txtLastName;
+
+    @FXML
+    private TextField txtFirstName;
+
+    @FXML
+    private TextField txtId;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        ClearFields();
+        GetAllClients();
         GetInsuranceFromXML();
-
         HideErrors();
+    }
+
+    private void ClearFields()
+    {
+        ResetNewClientFields();
+        ResetExistClientFields();
+    }
+
+    private void ResetExistClientFields()
+    {
+        lblClientStatus.setText("");
+        lblClientPhone.setText("");
+        lblClientAddress.setText("");
+        lblClientLastName.setText("");
+        lblClientFirstName.setText("");
+    }
+
+    private void GetAllClients()
+    {
+       AL_UserClients = sqlConnection.getInstance().GetAllUserClients();
+       UserClients = FXCollections.observableArrayList(AL_UserClients);
+
+       cbId.setItems(UserClients);
+
+        // if the item of the list is changed
+        cbId.getSelectionModel().selectedIndexProperty().addListener((ov, value, new_value) -> {
+            Client selectedClient = AL_UserClients.get(new_value.intValue());
+            lblClientFirstName.setText(selectedClient.getFirstName());
+            lblClientLastName.setText(selectedClient.getLastName());
+            lblClientAddress.setText(selectedClient.getAddress());
+            lblClientPhone.setText(selectedClient.getPhone());
+            lblClientStatus.setText(selectedClient.getStatus());
+        });
+
     }
 
     private void HideErrors()
@@ -110,90 +167,108 @@ public class NewInsurance implements Initializable {
     @FXML
     void CancelNewInsuranceForm(ActionEvent event)
     {
-        txtFirstName.clear();
-        txtLastName.clear();
-        txtId.clear();
+        if (checkBoxNewClient.isSelected())
+        {
+            ResetNewClientFields();
+        }
+
         HideErrors();
     }
 
     @FXML
     void SendNewInsuranceForm(ActionEvent event) {
-        boolean pass;
+        boolean pass = false;
         CheckErrors();
+
+        // if there are any errors we don't continue.
         if ((lblNewInsuranceCheckLField1.isVisible()) || (lblNewInsuranceCheckLField.isVisible()))
         {
             return;
         }
 
+        // if new client is chosen.
         if (checkBoxNewClient.isSelected())
         {
-            pass = sqlConnection.getInstance().SendQueryWithReturn(String.format("INSERT INTO users VALUES ('%s','%s','%s','%d','%s','%s','%s','%s')",
+            pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO users VALUES" +
+                            "('%s','%s','%s','%d','%s','%s','%s','%s')",
                     txtId.getText(),
                     txtFirstName.getText(),
                     txtLastName.getText(),
-                    eUser,
+                    TypeUserToInteger(eClient),
                     txtPass.getText(),
                     txtAddr.getText(),
                     txtPhone.getText(),
                     txtStatus.getText()));
-        }
-        else
-        {
-            pass = true;
-        }
 
-        if (pass == false)
-        {
-            ShowAlert(Alert.AlertType.ERROR,"Client by this Id already exist.");
-        }
+            // if new user selected and we successfully added the new user now we can
+            // add the new insurance to the db.
+            if (pass == true)
+            {
 
-        //TODO: Created an INSERT query for Claims -  Need to check
-        sqlConnection.getInstance().SendQuery(String.format("INSERT INTO insurances VALUES ('%s','%d','%s','%s','%s','%s','%s','%s','%s')",
-                txtId.getText(),
-                cbInsurance.getSelectionModel().getSelectedIndex(),
-                Insurance.getInsuranceStatus((byte) 0),
-                cbInsurance.getValue(),
-                txtFirstName.getText(),
-                txtLastName.getText(),
-                Main.AppUser.getId(),
-                Main.AppUser.getFirstName(),
-                Main.AppUser.getLastName()));
+                pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO insurances VALUES" +
+                                "('%s','%d','%s','%s','%s','%s','%s','%s','%s')",
+                        txtId.getText(),
+                        cbInsurance.getSelectionModel().getSelectedIndex(),
+                        Insurance.getInsuranceStatus("Pending"),
+                        cbInsurance.getValue(),
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        Main.AppUser.GetCurrentAppUser().getId(),
+                        Main.AppUser.GetCurrentAppUser().getFirstName(),
+                        Main.AppUser.GetCurrentAppUser().getLastName()));
 
-        if (checkBoxNewClient.isSelected())
-        {
-            ShowAlert(Alert.AlertType.CONFIRMATION,"New Client created.");
-        }
-        else
-        {
-            ShowAlert(Alert.AlertType.CONFIRMATION,"New Insurance added.");
-        }
-
-    }
-
-    private void ShowAlert(Alert.AlertType alertType, String msg)
-    {
-        Alert alert = new Alert(alertType);
-        alert.setTitle("Message from Application");
-        alert.setHeaderText("Message is");
-        alert.setContentText(msg);
-        alert.showAndWait().ifPresent(rs -> {
-            if (rs == ButtonType.OK) {
-                System.out.println("Pressed OK.");
             }
-        });
+            if (pass)
+            {
+                ClearFields();
+                Main.ShowAlert(Alert.AlertType.CONFIRMATION,"Client by created.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "Added a New Client with an Insurance.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "New Client created with an Insurance.");
+            }
+            else
+            {
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "Cannot create new client already exist.");
+                Main.ShowAlert(Alert.AlertType.ERROR,"Client by this Id already exist.");
+            }
+        }//if (checkBoxNewClient.isSelected() == true)
+
+        //--------------------------------------------------------------------------------------------------
+
+        // if (checkBoxNewClient.isSelected() == false)
+        else {
+            Client selectedClient = cbId.getSelectionModel().getSelectedItem();
+            if (selectedClient != null)
+            {
+                pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO insurances VALUES ('%s','%d','%s','%s','%s','%s','%s','%s','%s')",
+                        selectedClient.getId(),
+                        (cbInsurance.getSelectionModel().getSelectedIndex() + 1),
+                        Insurance.getInsuranceStatus("Pending"), // Default new insurance is Pending
+                        cbInsurance.getValue(),
+                        selectedClient.getFirstName(),
+                        selectedClient.getLastName(),
+                        Main.AppUser.GetCurrentAppUser().getId(),
+                        Main.AppUser.GetCurrentAppUser().getFirstName(),
+                        Main.AppUser.GetCurrentAppUser().getLastName()));
+
+                if (pass)
+                {
+                    ClearFields();
+                    Main.ShowAlert(Alert.AlertType.CONFIRMATION, "New Insurance added.");
+                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "New Insurance added.");
+                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), " Added a New Insurance.");
+                }
+                else
+                {
+                    Main.ShowAlert(Alert.AlertType.ERROR, "Cannot addInsurance try again later.");
+                    loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "Cannot addInsurance try again later.");
+                }
+            }
+        }
     }
+
 
     private void CheckErrors()
     {
-        if (!CheckNewInsuranceFields())
-        {
-            lblNewInsuranceCheckLField.setVisible(true);
-        }
-        else
-        {
-            lblNewInsuranceCheckLField.setVisible(false);
-        }
-
         if (checkBoxNewClient.isSelected())
         {
             if (!CheckNewClientFields())
@@ -203,6 +278,17 @@ public class NewInsurance implements Initializable {
             else
             {
                 lblNewInsuranceCheckLField1.setVisible(false);
+            }
+        }
+        else
+        {
+            if (!CheckNewInsuranceFields())
+            {
+                lblNewInsuranceCheckLField.setVisible(true);
+            }
+            else
+            {
+                lblNewInsuranceCheckLField.setVisible(false);
             }
         }
 
@@ -289,10 +375,10 @@ public class NewInsurance implements Initializable {
 
     private boolean CheckNewInsuranceFields()
     {
-        if ((txtId.getText().isEmpty()) || (txtId.getText().length()!= 9)) {return false;}
-        if (txtFirstName.getText().isEmpty()) {return false;}
-        if (txtLastName.getText().isEmpty()) {return false;}
-        return true;
+        int index = cbId.getSelectionModel().getSelectedIndex();
+
+        if (index < 0) return false;
+        else return true;
     }
 
     private boolean CheckNewClientFields()
@@ -304,4 +390,20 @@ public class NewInsurance implements Initializable {
 
         return true;
     }
+
+    private void ResetNewClientFields()
+    {
+        txtPass.clear();
+        txtAddr.clear();
+        txtPhone.clear();
+        txtStatus.clear();
+        txtLastName.clear();
+        txtId.clear();
+        txtFirstName.clear();
+    }
+
 }
+
+
+
+

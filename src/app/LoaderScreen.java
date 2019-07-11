@@ -4,6 +4,7 @@ import javafx.animation.PathTransition;
 import javafx.animation.PathTransition.OrientationType;
 import javafx.application.ConditionalFeature;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcTo;
@@ -19,6 +20,7 @@ public final class LoaderScreen
     private static boolean flag = false;
     private static final double LayoutX = Main.getMainLayout().widthProperty().getValue() / 2;
     private static final double LayoutY = Main.getMainLayout().widthProperty().getValue() / 4;
+    private static boolean active = true;
 
     /**
      * Shows the loading screen.
@@ -170,5 +172,35 @@ public final class LoaderScreen
         if(flag)
             Main.getMainLayout().getChildren().remove(root);
         flag = false;
+    }
+
+
+    public static void ShowLoadingScreen()
+    {
+        active = true;
+        final Task<Void> task = new Task<Void>() {
+            @Override
+            public Void call() throws Exception {
+                Platform.runLater(()-> LoaderScreen.showLoadingScreen());
+                while(active){}
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(event -> {
+            try
+            {
+                Platform.runLater(()->LoaderScreen.hideLoadingScreen());
+            } catch (Exception e){}
+
+        });
+
+        Thread t = new Thread(task);
+        t.start();
+    }
+
+    public static void HideLoadingScreen()
+    {
+        active = false;
     }
 }

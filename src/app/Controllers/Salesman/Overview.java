@@ -41,12 +41,12 @@ public class Overview implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Get all insurances of a client.
-        if (((Salesman) Main.AppUser).ClientsInsurances.isEmpty()) {
-            ((Salesman) Main.AppUser).ClientsInsurances = sqlConnection.getInstance().GetSalesmanClientInsurances("SELECT * FROM insurances WHERE insurances.salesmanId ='" + Main.AppUser.getId() + "'");
-        }
+        Main.AppUser.SetClientsInsurances(sqlConnection.getInstance().GetSalesmanClientInsurances(
+                "SELECT * FROM insurances WHERE insurances.salesmanId ='" + Main.AppUser.GetCurrentAppUser().getId() + "'"));
 
-        for (ClientInsurance clientInsurance : ((Salesman) Main.AppUser).ClientsInsurances) {
-            if (clientInsurance.getInsuranceStatus().compareTo("Done") == 0)
+
+        for (ClientInsurance clientInsurance : Main.AppUser.GetClientInsurances()) {
+            if (clientInsurance.getInsuranceStatus().compareTo("Approved") == 0)
                 insuranceDone++;
             else if (clientInsurance.getInsuranceStatus().compareTo("Pending") == 0)
                 insurancePending++;

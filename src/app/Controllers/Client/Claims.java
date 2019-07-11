@@ -1,5 +1,11 @@
 package app.Controllers.Client;
 
+import app.Main;
+import app.Models.ClientInsuranceClaim;
+import app.connection.sqlConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +22,9 @@ import java.util.ResourceBundle;
 
 public class Claims implements Initializable {
 
+    private ObservableList<ClientInsuranceClaim> AllInsurances = FXCollections.observableArrayList();
+    private FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<>(AllInsurances);
+
     @FXML
     private Pane pnlInsurences;
 
@@ -26,45 +35,67 @@ public class Claims implements Initializable {
     private Button btnShowAll;
 
     @FXML
-    private TableView<?> tvInsurence;
+    private TableView<ClientInsuranceClaim> tvInsurence;
 
     @FXML
-    private TableColumn<?, ?> tciid;
+    private TableColumn<ClientInsuranceClaim, String> tciid;
 
     @FXML
-    private TableColumn<?, ?> tcType;
+    private TableColumn<ClientInsuranceClaim, String> tcStatus;
 
     @FXML
-    private TableColumn<?, ?> tcStatus;
+    private TableColumn<ClientInsuranceClaim, String> tcClientId;
 
     @FXML
-    private TableColumn<?, ?> tcClientId;
+    private TableColumn<ClientInsuranceClaim, String> tcClientFname;
 
     @FXML
-    private TableColumn<?, ?> tcClientFname;
-
-    @FXML
-    private TableColumn<?, ?> tcClientLname;
+    private TableColumn<ClientInsuranceClaim, String> tcClientLname;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+        if (!DataTable.isEmpty())
+        {
+            DataTable.clear();
+        }
 
+        if (!AllInsurances.isEmpty())
+        {
+            AllInsurances.clear();
+        }
+
+        //Get all insurances of a client.
+
+        Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetClientInsurances());
+
+        AllInsurances.addAll(Main.AppUser.GetClientInsuranceClaim());
+
+        tciid.setCellValueFactory(cellData -> cellData.getValue().claimIdProperty());
+        tcStatus.setCellValueFactory(cellData -> cellData.getValue().claimStatusProperty());
+        tcClientId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
+        tcClientFname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());
+        tcClientLname.setCellValueFactory(cellData -> cellData.getValue().clientLastNameProperty());
+
+        tvInsurence.setItems(DataTable);
     }
 
 
     @FXML
-    void MouseSearchInsurance(MouseEvent event) {
+    void MouseSearchInsurance(MouseEvent event)
+    {
 
     }
 
     @FXML
-    void SearchInsurance(KeyEvent event) {
+    void SearchInsurance(KeyEvent event)
+    {
 
     }
 
     @FXML
-    void ShowAll(ActionEvent event) {
+    void ShowAll(ActionEvent event)
+    {
 
     }
 

@@ -2,37 +2,8 @@ package app.Models;
 
 import javafx.beans.property.SimpleStringProperty;
 
-
-public abstract class User {
-
-
-    public String getUserType() {
-        return UserType.get();
-    }
-
-    public SimpleStringProperty userTypeProperty() {
-        return UserType;
-    }
-
-    public void setUserType(String userType) {
-        this.UserType.set(userType);
-    }
-
-    public enum TypeUser
-    {
-        eUser,
-        eClient,
-        eSalesman,
-        eCustomerService
-    }
-
-    public static TypeUser getTypeUser(byte id)
-    {
-        if (id == 1)        return TypeUser.eClient;
-        else if (id == 2)   return TypeUser.eSalesman;
-        else if (id == 3)   return TypeUser.eCustomerService;
-        return TypeUser.eUser;
-    }
+public abstract class AbstractUser implements UserInterface
+{
 
     private SimpleStringProperty Id = new SimpleStringProperty(this, "id");
     private SimpleStringProperty FirstName = new SimpleStringProperty(this, "firstName");
@@ -66,8 +37,7 @@ public abstract class User {
 
     public void setAddress(String address) {        this.Address.set(address);    }
 
-    public String getPhone() {        return Phone.get();
-    }
+    public String getPhone() {        return Phone.get(); }
 
     public SimpleStringProperty phoneProperty() {        return Phone;    }
 
@@ -80,4 +50,7 @@ public abstract class User {
     public void setStatus(String status) {        this.Status.set(status);  }
 
     public String getUserName()    {        return getFirstName() + " " + getLastName();    }
+
+    public String getUserType() {        return UserType.get();    }
+
 }

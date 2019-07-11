@@ -47,7 +47,7 @@ public class Home implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        txtUserFullName.setText(Main.AppUser.getUserName());
+        txtUserFullName.setText(Main.AppUser.GetCurrentAppUser().getUserName());
 
         try
         {
@@ -67,17 +67,17 @@ public class Home implements Initializable {
         if (actionEvent.getSource() == btnNewClaim)
         {
             paneClaims.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Claims view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to Claims view.");
         }
         if (actionEvent.getSource() == btnOverview)
         {
             paneOverview.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to his Overview view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Overview view.");
         }
         if(actionEvent.getSource()==btnSettings)
         {
             paneSettings.toFront();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Enter to Settings view.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to Settings view.");
         }
     }
 
@@ -87,7 +87,7 @@ public class Home implements Initializable {
         try
         {
             sqlConnection.getInstance().CloseConnection();
-            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Sign out.");
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Sign out.");
             Main.ShowLogin();
         }catch (Exception ex)
         {
@@ -100,7 +100,7 @@ public class Home implements Initializable {
     public void Exit(ActionEvent actionEvent)
     {
         sqlConnection.getInstance().CloseConnection();
-        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(),"Exit from application.");
+        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Exit from application.");
         loggerAPI.getInstance().CloseLogger();
         Platform.exit();
     }

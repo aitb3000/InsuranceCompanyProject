@@ -71,11 +71,9 @@
                   <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
                   <TableColumn fx:id="tcFname" prefWidth="75.0" text="First Name" />
                   <TableColumn fx:id="tcLname" prefWidth="75.0" text="Last Name" />
-                  <TableColumn fx:id="tcClientStatus" prefWidth="75.0" text="Status" />
-                  <TableColumn fx:id="tcInsuranceName" prefWidth="75.0" text="Insurance" />
+                  <TableColumn fx:id="tcInsuranceName" prefWidth="75.0" text="Insurance Name" />
                   <TableColumn fx:id="tcInsuranceStatus" prefWidth="75.0" text="Status" />
-                  <TableColumn fx:id="tcClaimName" prefWidth="75.0" text="Claim" />
-                  <TableColumn fx:id="tcClaimStatus" prefWidth="75.0" text="Status" />
+                  <TableColumn fx:id="tcClaimStatus" prefWidth="75.0" text="Claim Status" />
                </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

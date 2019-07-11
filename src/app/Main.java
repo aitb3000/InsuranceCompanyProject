@@ -1,10 +1,11 @@
 package app;
 
 import app.Controllers.Login;
-import app.Models.User;
+import app.Models.UserFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -17,7 +18,7 @@ public class Main extends Application {
     private static Pane MainRoot;
     public static Login LoginController;
 
-    public static User AppUser;
+    public static UserFactory AppUser;
 
     public static Pane getMainLayout() {
         return MainRoot;
@@ -96,5 +97,20 @@ public class Main extends Application {
         });
 
         return root;
+    }
+
+
+
+    public static void ShowAlert(Alert.AlertType alertType, String msg)
+    {
+        Alert alert = new Alert(alertType);
+        alert.setTitle("Message from Application");
+        alert.setHeaderText("Message is: " + msg);
+        alert.show();
+//        alert.showAndWait().ifPresent(rs -> {
+//            if (rs == ButtonType.OK) {
+//                System.out.println("Pressed OK.");
+//            }
+//        });
     }
 }

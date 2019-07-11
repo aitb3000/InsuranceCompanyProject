@@ -166,3 +166,17 @@
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
 }
+
+
+/*#cbInsurance  .box {*/
+
+/*    -fx-background-color: white;*/
+/*    -fx-border-color:grey;*/
+/*    -fx-border-radius:3px;*/
+/*    -fx-text-fill: BLACK;*/
+/*}*/
+
+.choice-box .label {
+    -fx-text-fill: BLACK;
+}
+

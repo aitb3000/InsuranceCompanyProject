@@ -1,8 +1,9 @@
 package app.Controllers.Client;
 
 import app.Main;
-import app.Models.Client;
+import app.Models.Claim;
 import app.Models.ClientInsurance;
+import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,10 +11,7 @@ import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -27,6 +25,9 @@ public class Insurances implements Initializable {
 
     private ObservableList<ClientInsurance> AllInsurances = FXCollections.observableArrayList();
     private FilteredList<ClientInsurance> DataTable = new FilteredList<>(AllInsurances);
+
+    @FXML
+    private Button btnOpenClaim;
 
     @FXML
     private Pane pnlInsurences;
@@ -73,12 +74,11 @@ public class Insurances implements Initializable {
         }
 
         //Get all insurances of a client.
-        if (((Client)Main.AppUser).ClientInsurances.isEmpty())
-        {
-            ((Client)Main.AppUser).ClientInsurances= sqlConnection.getInstance().GetClientInsurances();
-        }
 
-        AllInsurances.addAll(((Client) Main.AppUser).ClientInsurances);
+        Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetClientInsurances());
+
+
+        AllInsurances.addAll(Main.AppUser.GetClientInsurances());
 
         tciid.setCellValueFactory(cellData -> cellData.getValue().insuranceTypeProperty());
         tcType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
@@ -117,5 +117,45 @@ public class Insurances implements Initializable {
     void ShowAll(ActionEvent event)
     {
         DataTable.setPredicate(null);
+    }
+
+
+    @FXML
+    private void OpenClaim(ActionEvent event)
+    {
+        int index = tvInsurence.getSelectionModel().getSelectedIndex();
+
+        if (index >= 0 )
+        {
+            ClientInsurance selectedInsurance = tvInsurence.getSelectionModel().getSelectedItem();
+
+            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO claims VALUES (" +
+                            "claimStatus='%s', " +
+                            "clientId='&s', " +
+                            "clientFname='&s', " +
+                            "clientLname='&s', " +
+                            "insuranceId='&d', " +
+                            "insuranceName='&s'," +
+                            "insuranceStatus='&s' ",
+                    Claim.getClaimStatus((byte)1),
+                    Main.AppUser.GetCurrentAppUser().getId(),
+                    Main.AppUser.GetCurrentAppUser().getFirstName(),
+                    Main.AppUser.GetCurrentAppUser().getLastName(),
+                    selectedInsurance.getInsuranceId(),
+                    selectedInsurance.getInsuranceName(),
+                    selectedInsurance.getInsuranceStatus()));
+
+            if (pass)
+            {
+                Main.ShowAlert(Alert.AlertType.CONFIRMATION, "Claim Opened.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "New Claim added.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), " Opened a new Claim.");
+                tvInsurence.refresh();
+            }
+            else {
+                Main.ShowAlert(Alert.AlertType.ERROR, "Cannot add a claim try again later.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "Cannot add a claim try again later.");
+            }
+        }
     }
 }

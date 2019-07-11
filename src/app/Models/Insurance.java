@@ -2,6 +2,7 @@ package app.Models;
 
 import javafx.beans.property.SimpleStringProperty;
 
+
 public class Insurance
 {
 
@@ -11,6 +12,14 @@ public class Insurance
         else if (id == 2)   return "Approved";
         else if (id == 3)   return "Disapproved";
         return "None";
+    }
+
+    public static int getInsuranceStatus(String status)
+    {
+        if (status.compareTo("Pending") == 0) return 1;
+        else if (status.compareTo("Approved") == 0)   return 2;
+        else if (status.compareTo("Disapproved") == 0)   return 3;
+        return -1;
     }
 
 

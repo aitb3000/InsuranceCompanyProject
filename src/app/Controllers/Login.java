@@ -64,16 +64,17 @@ public class Login implements Initializable {
     public void showUserHome()
     {
         try {
-            if (Main.AppUser != null) {
+            if (Main.AppUser.GetCurrentAppUser()!=null)
+            {
                 lblWrong.setVisible(false);
-                if (Main.AppUser instanceof Client) {
+                if (Main.AppUser.GetCurrentAppUser() instanceof Client) {
                     Main.ShowClientHome();
-                } else if (Main.AppUser instanceof Salesman) {
+                } else if (Main.AppUser.GetCurrentAppUser() instanceof Salesman) {
                     Main.ShowSalesmanHome();
-                } else if (Main.AppUser instanceof CustomerService) {
+                } else if (Main.AppUser.GetCurrentAppUser() instanceof CustomerService) {
                     Main.ShowCustomerServieHome();
                 }
-                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.getUserName(), "Sign in.");
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "Signin.");
             } else {
                 lblWrong.setVisible(true);
             }

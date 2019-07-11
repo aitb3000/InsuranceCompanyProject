@@ -5,14 +5,13 @@ import app.connection.sqlConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static app.Models.UserInterface.TypeUserToInteger;
 
 public class Settings implements Initializable {
 
@@ -56,11 +55,11 @@ public class Settings implements Initializable {
     @FXML
     void CancelSettings(ActionEvent event)
     {
-        txtClientSettingFirst.setText(Main.AppUser.getFirstName());
-        txtClientSettingLast.setText(Main.AppUser.getLastName());
-        txtClientSettingPhone.setText(Main.AppUser.getPhone());
-        txtClientSettingStatus.setText(Main.AppUser.getStatus());
-        txtClientSettingAddress.setText(Main.AppUser.getAddress());
+        txtClientSettingFirst.setText(Main.AppUser.GetCurrentAppUser().getFirstName());
+        txtClientSettingLast.setText(Main.AppUser.GetCurrentAppUser().getLastName());
+        txtClientSettingPhone.setText(Main.AppUser.GetCurrentAppUser().getPhone());
+        txtClientSettingStatus.setText(Main.AppUser.GetCurrentAppUser().getStatus());
+        txtClientSettingAddress.setText(Main.AppUser.GetCurrentAppUser().getAddress());
         txtNewPass1.clear();
         txtNewPass2.clear();
     }
@@ -76,23 +75,31 @@ public class Settings implements Initializable {
             {
                 ShowError(false);
 
-                //TODO: Created an UPDATE query with password - Need to check
-                sqlConnection.getInstance().SendQuery(String.format("UPDATE users SET" +
-                        "userFirstName='%s'",
-                        "userLastName='%s'",
-                        "userType='%d'",
-                        "userPassword='%s'",
-                        "userAddress='%s'",
-                        "userPhone='%s'",
-                        "userStatus='%s' WHERE userId='%s'",
+                boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("UPDATE users SET " +
+                                "userFirstName='%s', " +
+                                "userLastName='%s', " +
+                                "userPassword='%s', " +
+                                "userAddress='%s', " +
+                                "userPhone='%s', " +
+                                "userStatus='%s' WHERE userId='%s'",
                         txtClientSettingFirst.getText(),
                         txtClientSettingLast.getText(),
-                        Main.AppUser.getUserType(),
                         txtNewPass1.getText(),
                         txtClientSettingAddress.getText(),
                         txtClientSettingPhone.getText(),
                         txtClientSettingStatus.getText(),
-                        Main.AppUser.getId()));
+                        Main.AppUser.GetCurrentAppUser().getId()));
+
+
+                if (pass)
+                {
+                    Main.ShowAlert(Alert.AlertType.CONFIRMATION,"Information updated.");
+                }
+                else
+                {
+                    Main.ShowAlert(Alert.AlertType.ERROR,"Information didn't update, try again later.");
+                }
+
             }
             else // If not match present an error
             {
@@ -102,33 +109,41 @@ public class Settings implements Initializable {
         }
         else // When need to send update query without changing password.
         {
-            //TODO: Create an UPDATE query without password - Need to check
-            sqlConnection.getInstance().SendQuery(String.format("UPDATE users SET" +
-                            "userFirstName='%s'",
-                    "userLastName='%s'",
-                    "userType='%d'",
-                    "userAddress='%s'",
-                    "userPhone='%s'",
-                    "userStatus='%s' WHERE userId='%s'",
+            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("UPDATE users SET " +
+                            "userFirstName='%s', " +
+                            "userLastName='%s', " +
+                            "userType='%d', " +
+                            "userAddress='%s', " +
+                            "userPhone='%s', " +
+                            "userStatus='%s' WHERE userId='%s'",
                     txtClientSettingFirst.getText(),
                     txtClientSettingLast.getText(),
-                    Main.AppUser.getUserType(),
+                    TypeUserToInteger(Main.AppUser.GetCurrentAppUser()),
                     txtClientSettingAddress.getText(),
                     txtClientSettingPhone.getText(),
                     txtClientSettingStatus.getText(),
-                    Main.AppUser.getId()));
-        }
+                    Main.AppUser.GetCurrentAppUser().getId()));
 
+            if (pass)
+            {
+                Main.ShowAlert(Alert.AlertType.CONFIRMATION,"Information updated.");
+            }
+            else
+            {
+                Main.ShowAlert(Alert.AlertType.ERROR,"Information didn't update, try again later.");
+            }
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        txtClientSettingFirst.setText(Main.AppUser.getFirstName());
-        txtClientSettingLast.setText(Main.AppUser.getLastName());
-        txtClientSettingPhone.setText(Main.AppUser.getPhone());
-        txtClientSettingStatus.setText(Main.AppUser.getStatus());
-        txtClientSettingAddress.setText(Main.AppUser.getAddress());
+        lblClientSettingId.setText(Main.AppUser.GetCurrentAppUser().getId());
+        txtClientSettingFirst.setText(Main.AppUser.GetCurrentAppUser().getFirstName());
+        txtClientSettingLast.setText(Main.AppUser.GetCurrentAppUser().getLastName());
+        txtClientSettingPhone.setText(Main.AppUser.GetCurrentAppUser().getPhone());
+        txtClientSettingStatus.setText(Main.AppUser.GetCurrentAppUser().getStatus());
+        txtClientSettingAddress.setText(Main.AppUser.GetCurrentAppUser().getAddress());
 
         ShowError(false);
     }

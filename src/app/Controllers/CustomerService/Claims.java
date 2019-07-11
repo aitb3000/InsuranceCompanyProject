@@ -4,6 +4,7 @@ package app.Controllers.CustomerService;
 import app.Main;
 import app.Models.Claim;
 import app.Models.ClientInsuranceClaim;
+import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,16 +62,10 @@ public class Claims implements Initializable {
     private TableColumn<ClientInsuranceClaim, String> tcLname;
 
     @FXML
-    private TableColumn<ClientInsuranceClaim, String> tcClientStatus;
-
-    @FXML
     private TableColumn<ClientInsuranceClaim, String> tcInsuranceName;
 
     @FXML
     private TableColumn<ClientInsuranceClaim, String> tcInsuranceStatus;
-
-    @FXML
-    private TableColumn<ClientInsuranceClaim, String> tcClaimName;
 
     @FXML
     private TableColumn<ClientInsuranceClaim, String> tcClaimStatus;
@@ -145,10 +140,8 @@ public class Claims implements Initializable {
         tcId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
         tcFname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());
         tcLname.setCellValueFactory(cellData -> cellData.getValue().clientLastNameProperty());
-        tcClientStatus.setCellValueFactory(cellData -> cellData.getValue().clientStatusProperty());
         tcInsuranceName.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
         tcInsuranceStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
-        tcClaimName.setCellValueFactory(cellData -> cellData.getValue().claimNameProperty());
         tcClaimStatus.setCellValueFactory(cellData -> cellData.getValue().claimStatusProperty());
 
         tvClaims.setItems(DataTable);
@@ -178,12 +171,14 @@ public class Claims implements Initializable {
     void ApproveClaim(ActionEvent event)
     {
         SendNewClaimStatus(Approved);
+        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "Approved a Claim");
     }
 
     @FXML
     void DisapproveClaim(ActionEvent event)
     {
         SendNewClaimStatus(Disapproved);
+        loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "Disapproved a Claim");
     }
 
     private void SendNewClaimStatus(String newStatus)
@@ -192,21 +187,22 @@ public class Claims implements Initializable {
         if ((index >= 0) && (index < AllClientInsuranceClaim.size()))
         {
             ClientInsuranceClaim selectedClaim = tvClaims.getSelectionModel().getSelectedItem();
-            //TODO: Created an UPDATE query for Claims -  Need to check
-            sqlConnection.getInstance().SendQuery("UPDATE claims SET " +
-                    "claimStatus='"+selectedClaim.getClaimStatus()+"'," +
-                    "clientId='"+selectedClaim.getClientId()+"'," +
-                    "clientFname='"+selectedClaim.getClientFirstName()+"'," +
-                    "clientLname='"+selectedClaim.getClientLastName()+"'," +
-                    "insuranceId='"+selectedClaim.getInsuranceId()+"'," +
-                    "insuranceName='"+selectedClaim.getInsuranceName()+"'," +
-                    "insuranceStatus='"+selectedClaim.getInsuranceStatus()+"'," +
-                    "customerServiceId='"+ Main.AppUser.getId()+"'," +
-                    "customerServiceFname='"+Main.AppUser.getFirstName()+"'," +
-                    "customerServiceLname='"+Main.AppUser.getLastName()+"'" +
+
+           boolean pass = sqlConnection.getInstance().SendQueryExecute("UPDATE claims SET " +
+                    "claimStatus='"+newStatus+"'," +
+                    "customerServiceId='"+ Main.AppUser.GetCurrentAppUser().getId()+"'," +
+                    "customerServiceFname='"+Main.AppUser.GetCurrentAppUser().getFirstName()+"'," +
+                    "customerServiceLname='"+Main.AppUser.GetCurrentAppUser().getLastName()+"'" +
                     "WHERE claimId='"+selectedClaim.getClaimId()+"'");
 
-            UpdateSelectedRow(true);
+           if (pass)
+           {
+               if (newStatus.compareTo(Approved) == 0)
+                    UpdateSelectedRow(true);
+               else
+                   UpdateSelectedRow(false);
+               loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "Data Saved.");
+           }
         }
     }
 
@@ -214,7 +210,8 @@ public class Claims implements Initializable {
         int index = AllClientInsuranceClaim.indexOf(tvClaims.getSelectionModel().getSelectedItem());
         if ((index >= 0) && (index < AllClientInsuranceClaim.size()))
         {
-            if (status) {
+            if (status)
+            {
                 AllClientInsuranceClaim.get(index).setClaimStatus("Approved");
             } else {
                 AllClientInsuranceClaim.get(index).setClaimStatus("Disapproved");

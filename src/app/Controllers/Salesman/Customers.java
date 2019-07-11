@@ -3,7 +3,9 @@ package app.Controllers.Salesman;
 import app.Main;
 import app.Models.Client;
 import app.Models.ClientInsurance;
+import app.Models.Insurance;
 import app.Models.Salesman;
+import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,11 +13,7 @@ import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -28,11 +26,10 @@ import java.util.function.Predicate;
 
 public class Customers implements Initializable {
 
-    private ObservableList<ClientInsurance> AllClientInsurance = FXCollections.observableArrayList();
-    private FilteredList<ClientInsurance> DataTable = new FilteredList<ClientInsurance>(AllClientInsurance);
+    private ObservableList<ClientInsurance> AllClientInsurance;
+    private FilteredList<ClientInsurance> DataTable;
+    private ArrayList<ClientInsurance> AL_ClientInsurance;
 
-    @FXML
-    private Pane pnlInsurences;
 
     @FXML
     private TextField txtSearchInsurance;
@@ -51,9 +48,6 @@ public class Customers implements Initializable {
 
     @FXML
     private TableColumn<ClientInsurance, String> tcLname;
-
-    @FXML
-    private TableColumn<ClientInsurance, String> tcInsurnceId;
 
     @FXML
     private TableColumn<ClientInsurance, String> tcInsuranceType;
@@ -81,6 +75,30 @@ public class Customers implements Initializable {
 
     @FXML
     private Label lblInsuranceStatus;
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ResetDetails();
+
+        AL_ClientInsurance = sqlConnection.getInstance().GetSalesmanClientInsurances(
+                "SELECT * FROM insurances WHERE insurances.salesmanId='" + Main.AppUser.GetCurrentAppUser().getId() + "'");
+
+        AllClientInsurance = FXCollections.observableArrayList(AL_ClientInsurance);
+        DataTable = new FilteredList<>(AllClientInsurance);
+
+        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
+        tcFname.setCellValueFactory(cellData -> cellData.getValue().ucLnameProperty());
+        tcLname.setCellValueFactory(cellData -> cellData.getValue().ucFnameProperty());
+        tcInsuranceType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
+        tcInsuranceStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
+
+        tvInsurence.setItems(DataTable);
+    }
+
+
+
 
     @FXML
     void MouseSearchInsurance(MouseEvent event) {
@@ -116,31 +134,6 @@ public class Customers implements Initializable {
         UpdateClientInformation();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ResetDetails();
-        ArrayList<ClientInsurance> results = sqlConnection.getInstance().GetSalesmanClientInsurances("SELECT * FROM insurances WHERE insurances.salesmanId='" + Main.AppUser.getId() + "'");
-
-        if (!DataTable.isEmpty())
-        {
-            DataTable.clear();
-        }
-
-        if (!AllClientInsurance.isEmpty())
-        {
-            AllClientInsurance.clear();
-        }
-
-
-        tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
-        tcFname.setCellValueFactory(cellData -> cellData.getValue().ucLnameProperty());
-        tcLname.setCellValueFactory(cellData -> cellData.getValue().ucFnameProperty());
-        tcInsurnceId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
-        tcInsuranceType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
-        tcInsuranceStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
-
-        tvInsurence.setItems(DataTable);
-    }
 
     private void ResetDetails()
     {
@@ -182,11 +175,24 @@ public class Customers implements Initializable {
         if ((index >= 0) && (index < AllClientInsurance.size()))
         {
             ClientInsurance clientInsurance = AllClientInsurance.get(index);
-            clientInsurance.setInsuranceStatus("Approved");
-            tvInsurence.refresh();
 
-            sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '1' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("UPDATE insurances SET " +
+                            "insuranceStatus='%s' WHERE insuranceId='%s'",
+                    Insurance.getInsuranceStatus("Approved"),
+                    clientInsurance.getInsuranceId()));
+
+            if (pass)
+            {
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "Insurance Approved");
+                clientInsurance.setInsuranceStatus("Approved");
+                tvInsurence.refresh();
+            }
+            else
+            {
+                Main.ShowAlert(Alert.AlertType.ERROR,"Cannot update insurance status, please try again later.");
+            }
         }
+
     }
 
     @FXML
@@ -194,10 +200,22 @@ public class Customers implements Initializable {
         int index = AllClientInsurance.indexOf(tvInsurence.getSelectionModel().getSelectedItem());
         if ((index >= 0) && (index < AllClientInsurance.size())) {
             ClientInsurance clientInsurance = AllClientInsurance.get(index);
-            clientInsurance.setInsuranceStatus("Disapprove");
-            tvInsurence.refresh();
 
-            sqlConnection.getInstance().SendQuery("UPDATE [dbo].insurances SET istatus = '2' WHERE ucid= '" + clientInsurance.getUcId() + "'");
+            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("UPDATE insurances SET " +
+                            "insuranceStatus='%s' WHERE insuranceId='%s'",
+                    Insurance.getInsuranceStatus("Disapproved"),
+                    clientInsurance.getInsuranceId()));
+
+            if (pass == true)
+            {
+                loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), "Insurance Disapproved");
+                clientInsurance.setInsuranceStatus("Disapprove");
+                tvInsurence.refresh();
+            }
+            else
+            {
+                Main.ShowAlert(Alert.AlertType.ERROR,"Cannot update insurance status, please try again later.");
+            }
         }
     }
 }

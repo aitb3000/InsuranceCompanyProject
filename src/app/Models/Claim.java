@@ -4,6 +4,23 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Claim {
 
+
+    public static String getClaimStatus(byte id)
+    {
+        if (id == 1)        return "Pending";
+        else if (id == 2)   return "Approved";
+        else if (id == 3)   return "Disapproved";
+        return "None";
+    }
+
+//    public static String getClaimStatus(String status)
+//    {
+//        if (id == 1)        return "Pending";
+//        else if (id == 2)   return "Approved";
+//        else if (id == 3)   return "Disapproved";
+//        return "None";
+//    }
+
     private SimpleStringProperty ClaimId = new SimpleStringProperty(this, "claimId");
     private SimpleStringProperty ClaimName = new SimpleStringProperty(this, "claimName");
     private SimpleStringProperty ClaimType = new SimpleStringProperty(this, "claimType");

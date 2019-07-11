@@ -43,12 +43,13 @@ public class Overview implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         //Get all insurances of a client.
-        if (((CustomerService) Main.AppUser).Claims.isEmpty()) {
-            ((CustomerService) Main.AppUser).Claims = sqlConnection.getInstance().GetDataCustomerServicesClaims("SELECT * FROM claims WHERE claims.customerServiceId ='" + Main.AppUser.getId() + "'");
-        }
+        Main.AppUser.SetClaims(sqlConnection.getInstance().GetDataCustomerServicesClaims(
+                "SELECT * FROM claims WHERE claims.customerServiceId ='" + Main.AppUser.GetCurrentAppUser().getId() + "'"));
 
-        for (Claim claim : ((CustomerService) Main.AppUser).Claims) {
-            if (claim.getClaimStatus().compareTo("Done") == 0)
+
+        for (Claim claim : Main.AppUser.GetClaims())
+        {
+            if (claim.getClaimStatus().compareTo("Approved") == 0)
                 claimsDone++;
             else if (claim.getClaimStatus().compareTo("Pending") == 0)
                 claimsPending++;
