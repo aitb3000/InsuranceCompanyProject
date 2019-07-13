@@ -1,4 +1,4 @@
-package app.Controllers.Client;
+package app.Controllers.CustomerService;
 
 import app.Main;
 import app.Models.Claim;
@@ -22,6 +22,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
+
+import static app.Controllers.CustomerService.Claims.UpdateClaims;
 
 public class Insurances implements Initializable {
 
@@ -62,7 +64,6 @@ public class Insurances implements Initializable {
     private Button btnShowAll;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (!DataTable.isEmpty())
@@ -77,12 +78,12 @@ public class Insurances implements Initializable {
 
         //Get all insurances of a client.
 
-        Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetClientInsurances());
+        Main.AppUser.SetClientInsurances(sqlConnection.getInstance().GetAllInsurances());
 
 
         AllInsurances.addAll(Main.AppUser.GetClientInsurances());
 
-        tciid.setCellValueFactory(cellData -> cellData.getValue().insuranceTypeProperty());
+        tciid.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
         tcType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
         tcStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
         tcClientId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
@@ -135,7 +136,8 @@ public class Insurances implements Initializable {
                 Main.ShowAlert(Alert.AlertType.ERROR,"You already open a claim foShowAllr this Insurance.");
                 return;
             }
-            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO claims VALUES ('%s', '%s', '%s', '%s','%d', '%s' , '%s', '%s', '%s', '%s')",
+            boolean pass = sqlConnection.getInstance().SendQueryExecute(String.format("INSERT INTO claims VALUES " +
+                            "('%s', '%s', '%s', '%s','%d', '%s' , '%s', '%s', '%s', '%s')",
                     Claim.getClaimStatus((byte)1),
                     selectedInsurance.getClientId(),
                     selectedInsurance.getClientFirstName(),
@@ -152,6 +154,7 @@ public class Insurances implements Initializable {
                 Main.ShowAlert(Alert.AlertType.CONFIRMATION, "Claim Opened.");
                 loggerAPI.getInstance().WriteLog(this.getClass().getName(), "System", "New Claim added.");
                 loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(), " Opened a new Claim.");
+                UpdateClaims();
                 tvInsurence.refresh();
             }
             else {
@@ -172,7 +175,6 @@ public class Insurances implements Initializable {
              return true;
          }
         }
-
         return false;
     }
 }

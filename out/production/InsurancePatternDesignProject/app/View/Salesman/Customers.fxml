@@ -96,7 +96,6 @@
                         <Label text="ID:" textFill="#e7e5e5" GridPane.rowIndex="1" />
                         <Label text="First Name:" textFill="#e7e5e5" GridPane.rowIndex="2" />
                         <Label text="Last Name:" textFill="#e7e5e5" GridPane.rowIndex="3" />
-                        <Label text="Status:" textFill="#e7e5e5" GridPane.rowIndex="4" />
                         <Label text="Insurance Type:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Label text="Insurance Name:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                         <Label text="Status:" textFill="#e7e5e5" GridPane.columnIndex="2" GridPane.rowIndex="3" />
@@ -113,7 +112,6 @@
                         <Label fx:id="lblId" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="lblFname" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="lblLname" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="lblCstatus" text="Label" textFill="#e7e5e5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label fx:id="lblInsuranceType" text="Label" textFill="#e7e5e5" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                         <Label fx:id="lblInsuranceName" text="Label" textFill="#e7e5e5" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <Label fx:id="lblInsuranceStatus" text="Label" textFill="#e7e5e5" GridPane.columnIndex="3" GridPane.rowIndex="3" />

@@ -44,6 +44,8 @@ public class UserFactory
     {
         if (Client!=null) Client.ClientInsurances = ClientInsurances;
 
+        if (CustomerService!=null) CustomerService.ClientInsurances = ClientInsurances;
+
         if (Salesman!=null) Salesman.ClientsInsurances = ClientInsurances;
 
     }
@@ -51,6 +53,8 @@ public class UserFactory
     public ArrayList<ClientInsurance> GetClientInsurances()
     {
         if (Client!=null) return Client.ClientInsurances;
+
+        if (CustomerService!=null) return CustomerService.ClientInsurances;
 
         if (Salesman!=null) return Salesman.ClientsInsurances;
 
@@ -61,11 +65,15 @@ public class UserFactory
     {
         if (Client!=null) Client.ClientInsuranceClaim = ClientInsuranceClaim;
 
+        if (CustomerService!=null) CustomerService.ClientInsuranceClaim = ClientInsuranceClaim;
+
     }
 
     public ArrayList<ClientInsuranceClaim> GetClientInsuranceClaim()
     {
         if (Client!=null) return Client.ClientInsuranceClaim;
+
+        if (CustomerService!=null) return CustomerService.ClientInsuranceClaim;
 
         return null;
     }
@@ -88,4 +96,5 @@ public class UserFactory
 
         if (Salesman!=null) Salesman.ClientsInsurances = SalesmanClientInsurances;
     }
+
 }

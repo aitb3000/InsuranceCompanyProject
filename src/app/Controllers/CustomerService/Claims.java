@@ -29,8 +29,8 @@ import java.util.function.Predicate;
 
 public class Claims implements Initializable {
 
-    private ObservableList<ClientInsuranceClaim> AllClientInsuranceClaim = FXCollections.observableArrayList();
-    private FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<>(AllClientInsuranceClaim);
+    private static ObservableList<ClientInsuranceClaim> AllClientInsuranceClaim = FXCollections.observableArrayList();
+    private static FilteredList<ClientInsuranceClaim> DataTable = new FilteredList<>(AllClientInsuranceClaim);
     private final String Approved = "Approved";
     private final String Disapproved = "Disapproved";
 
@@ -133,9 +133,9 @@ public class Claims implements Initializable {
             AllClientInsuranceClaim.clear();
         }
 
+        Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims"));
 
-        ArrayList<ClientInsuranceClaim> results = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims");
-        AllClientInsuranceClaim.addAll(results);
+        AllClientInsuranceClaim.addAll(Main.AppUser.GetClientInsuranceClaim());
 
         tcId.setCellValueFactory(cellData -> cellData.getValue().clientIdProperty());
         tcFname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());
@@ -249,5 +249,22 @@ public class Claims implements Initializable {
     void ShowClientInformationMouseHandler(MouseEvent event)
     {
         UpdateClientInformation();
+    }
+
+
+    public static void UpdateClaims()
+    {
+//        ArrayList<ClientInsuranceClaim> clientInsuranceClaim = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims");
+//
+//        for (ClientInsuranceClaim calim : clientInsuranceClaim)
+//        {
+//            for (ClientInsuranceClaim clientClaim: AllClientInsuranceClaim)
+//            {
+//
+//            }
+//        }
+        Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims"));
+        AllClientInsuranceClaim.clear();
+        AllClientInsuranceClaim.addAll(Main.AppUser.GetClientInsuranceClaim());
     }
 }

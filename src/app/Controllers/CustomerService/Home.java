@@ -21,7 +21,7 @@ public class Home implements Initializable {
     private Pane paneClaims;
     private Pane paneOverview;
     private Pane paneSettings;
-
+    private Pane  paneInsurance;
 
     @FXML
     private Label txtUserFullName;
@@ -44,6 +44,9 @@ public class Home implements Initializable {
     @FXML
     private StackPane spHome;
 
+    @FXML
+    private Button btnInsurences;
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -52,9 +55,10 @@ public class Home implements Initializable {
         try
         {
             paneClaims = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Claims.fxml"));
+            paneInsurance = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Insurances.fxml"));
             paneOverview = FXMLLoader.load(Main.class.getResource("/app/View/CustomerService/Overview.fxml"));
             paneSettings = FXMLLoader.load(Main.class.getResource("/app/View/Settings.fxml"));
-            spHome.getChildren().addAll(paneOverview, paneClaims, paneSettings);
+            spHome.getChildren().addAll(paneOverview, paneInsurance, paneClaims, paneSettings);
             paneOverview.toFront();
         }catch (Exception ex)
         {
@@ -64,6 +68,11 @@ public class Home implements Initializable {
 
 
     public void handleClicks(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == btnInsurences)
+        {
+            paneInsurance.toFront();
+            loggerAPI.getInstance().WriteLog(this.getClass().getName(), Main.AppUser.GetCurrentAppUser().getUserName(),"Enter to his Insurances view.");
+        }
         if (actionEvent.getSource() == btnNewClaim)
         {
             paneClaims.toFront();

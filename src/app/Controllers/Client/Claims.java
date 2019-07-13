@@ -13,12 +13,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class Claims implements Initializable {
 
@@ -82,22 +84,33 @@ public class Claims implements Initializable {
 
 
     @FXML
-    void MouseSearchInsurance(MouseEvent event)
-    {
+    void MouseSearchInsurance(MouseEvent event) {
+        if (event.getEventType() == MouseEvent.MOUSE_CLICKED)
+        {
+            SearchAndShowInsurance(txtSearchInsurance.getText());
+        }
+    }
 
+    private void SearchAndShowInsurance(String insurance)
+    {
+        Predicate<ClientInsuranceClaim> containText = insu -> insu.getInsuranceName().contains(insurance);
+        DataTable.setPredicate(containText);
     }
 
     @FXML
     void SearchInsurance(KeyEvent event)
     {
-
+        if (event.getCode() == KeyCode.ENTER)
+        {
+            SearchAndShowInsurance(txtSearchInsurance.getText());
+        }
     }
-
     @FXML
     void ShowAll(ActionEvent event)
     {
-
+        DataTable.setPredicate(null);
     }
+
 
 
 }

@@ -1,10 +1,8 @@
 package app.Controllers.Salesman;
 
 import app.Main;
-import app.Models.Client;
 import app.Models.ClientInsurance;
 import app.Models.Insurance;
-import app.Models.Salesman;
 import app.connection.loggerAPI;
 import app.connection.sqlConnection;
 import javafx.collections.FXCollections;
@@ -17,7 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -65,9 +62,6 @@ public class Customers implements Initializable {
     private Label lblLname;
 
     @FXML
-    private Label lblCstatus;
-
-    @FXML
     private Label lblInsuranceType;
 
     @FXML
@@ -89,8 +83,8 @@ public class Customers implements Initializable {
         DataTable = new FilteredList<>(AllClientInsurance);
 
         tcId.setCellValueFactory(cellData -> cellData.getValue().insuranceIdProperty());
-        tcFname.setCellValueFactory(cellData -> cellData.getValue().ucLnameProperty());
-        tcLname.setCellValueFactory(cellData -> cellData.getValue().ucFnameProperty());
+        tcFname.setCellValueFactory(cellData -> cellData.getValue().clientLastNameProperty());
+        tcLname.setCellValueFactory(cellData -> cellData.getValue().clientFirstNameProperty());
         tcInsuranceType.setCellValueFactory(cellData -> cellData.getValue().insuranceNameProperty());
         tcInsuranceStatus.setCellValueFactory(cellData -> cellData.getValue().insuranceStatusProperty());
 
@@ -137,7 +131,6 @@ public class Customers implements Initializable {
 
     private void ResetDetails()
     {
-        lblCstatus.setText("");
         lblFname.setText("");
         lblId.setText("");
         lblInsuranceName.setText("");
@@ -148,7 +141,7 @@ public class Customers implements Initializable {
 
     private void SearchAndShowInsurance(String id)
     {
-        Predicate<ClientInsurance> containText = insu -> insu.getUcId().contains(id);
+        Predicate<ClientInsurance> containText = insu -> insu.getClientId().contains(id);
         DataTable.setPredicate(containText);
     }
 
@@ -158,12 +151,11 @@ public class Customers implements Initializable {
         if ((index < AllClientInsurance.size()) && (index >= 0))
         {
             ClientInsurance clientInsurance = AllClientInsurance.get(index);
-            lblCstatus.setText(clientInsurance.getUcStatus());
-            lblFname.setText(clientInsurance.getUcFname());
-            lblId.setText(clientInsurance.getUcId());
+            lblFname.setText(clientInsurance.getClientFirstName());
+            lblId.setText(clientInsurance.getClientId());
             lblInsuranceName.setText(clientInsurance.getInsuranceName());
             lblInsuranceType.setText(clientInsurance.getInsuranceType());
-            lblLname.setText(clientInsurance.getUcLname());
+            lblLname.setText(clientInsurance.getClientLastName());
             lblInsuranceStatus.setText(clientInsurance.getInsuranceStatus());
         }
     }

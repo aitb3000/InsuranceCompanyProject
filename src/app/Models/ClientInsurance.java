@@ -4,23 +4,17 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ClientInsurance
 {
-    public Insurance ClientInsuranceInformation;
-    public Client ClientInformation;
-    public Salesman SalesmanInformation;
 
     private SimpleStringProperty insuranceId = new SimpleStringProperty(this, "insuranceId");
     private SimpleStringProperty insuranceType = new SimpleStringProperty(this, "insuranceName");
     private SimpleStringProperty insuranceName = new SimpleStringProperty(this, "insuranceName");
     private SimpleStringProperty insuranceStatus = new SimpleStringProperty(this, "insuranceName");
-
-
     // User Salesman Id
-    private SimpleStringProperty usId = new SimpleStringProperty(this, "usId");
+    private SimpleStringProperty salesmanId = new SimpleStringProperty(this, "salesmanId");
     // User Client Id
-    private SimpleStringProperty ucId = new SimpleStringProperty(this, "ucid");
-    private SimpleStringProperty ucFname = new SimpleStringProperty(this, "ucid");
-    private SimpleStringProperty ucLname = new SimpleStringProperty(this, "ucid");
-    private SimpleStringProperty ucStatus = new SimpleStringProperty(this, "ucStatus");
+    private SimpleStringProperty clientId = new SimpleStringProperty(this, "ucid");
+    private SimpleStringProperty clientFirstName = new SimpleStringProperty(this, "ucid");
+    private SimpleStringProperty clientLastName = new SimpleStringProperty(this, "ucid");
 
     public String getInsuranceName() {
         return insuranceName.get();
@@ -52,11 +46,11 @@ public class ClientInsurance
 
     public void setInsuranceType(String insuranceType) { this.insuranceType.set(insuranceType); }
 
-    public String getUsId() {        return usId.get();    }
+    public String getSalesmanId() {        return salesmanId.get();    }
 
-    public SimpleStringProperty usIdProperty() {       return usId;    }
+    public SimpleStringProperty salesmanIdProperty() {       return salesmanId;    }
 
-    public void setUsId(String usId) {        this.usId.set(usId);    }
+    public void setSalesmanId(String salesmanId) {        this.salesmanId.set(salesmanId);    }
 
     public String getInsuranceId() {        return insuranceId.get();    }
 
@@ -64,33 +58,22 @@ public class ClientInsurance
 
     public void setInsuranceId(String insuranceId) {        this.insuranceId.set(insuranceId);    }
 
-    public String getUcId() {        return ucId.get();    }
+    public String getClientId() {        return clientId.get();    }
 
-    public SimpleStringProperty ucIdProperty() {        return ucId;    }
+    public SimpleStringProperty clientIdProperty() {        return clientId;    }
 
-    public void setUcId(String ucId) {        this.ucId.set(ucId);    }
+    public void setClientId(String clientId) {        this.clientId.set(clientId);    }
 
-    public String getUcFname() {        return ucFname.get();    }
+    public String getClientFirstName() {        return clientFirstName.get();    }
 
-    public SimpleStringProperty ucFnameProperty() {        return ucFname;    }
+    public SimpleStringProperty clientFirstNameProperty() {        return clientFirstName;    }
 
-    public void setUcFname(String ucFname) {        this.ucFname.set(ucFname);    }
+    public void setClientFirstName(String clientFirstName) {        this.clientFirstName.set(clientFirstName);    }
 
-    public String getUcLname() {        return ucLname.get();    }
+    public String getClientLastName() {        return clientLastName.get();    }
 
-    public SimpleStringProperty ucLnameProperty() {        return ucLname;    }
+    public SimpleStringProperty clientLastNameProperty() {        return clientLastName;    }
 
-    public void setUcLname(String ucLname) {        this.ucLname.set(ucLname);    }
+    public void setClientLastName(String clientLastName) {        this.clientLastName.set(clientLastName);    }
 
-    public String getUcStatus() {
-        return ucStatus.get();
-    }
-
-    public SimpleStringProperty ucStatusProperty() {
-        return ucStatus;
-    }
-
-    public void setUcStatus(String ucStatus) {
-        this.ucStatus.set(ucStatus);
-    }
 }
