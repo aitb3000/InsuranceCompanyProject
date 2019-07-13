@@ -91,9 +91,9 @@ public class Claims implements Initializable {
         }
     }
 
-    private void SearchAndShowInsurance(String insurance)
+    private void SearchAndShowInsurance(String insuranceName)
     {
-        Predicate<ClientInsuranceClaim> containText = insu -> insu.getInsuranceName().contains(insurance);
+        Predicate<ClientInsuranceClaim> containText = insu -> insu.getInsuranceName().contains(insuranceName);
         DataTable.setPredicate(containText);
     }
 

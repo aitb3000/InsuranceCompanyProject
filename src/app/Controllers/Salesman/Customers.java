@@ -139,9 +139,9 @@ public class Customers implements Initializable {
         lblInsuranceStatus.setText("");
     }
 
-    private void SearchAndShowInsurance(String id)
+    private void SearchAndShowInsurance(String clientId)
     {
-        Predicate<ClientInsurance> containText = insu -> insu.getClientId().contains(id);
+        Predicate<ClientInsurance> containText = insu -> insu.getClientId().contains(clientId);
         DataTable.setPredicate(containText);
     }
 

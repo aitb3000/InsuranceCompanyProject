@@ -160,9 +160,9 @@ public class Claims implements Initializable {
         lblInsuranceStatus.setText("");
     }
 
-    private void SearchAndShowInsurance(String id)
+    private void SearchAndShowInsurance(String clientId)
     {
-        Predicate<ClientInsuranceClaim> containText = insu -> insu.getClientId().contains(id);
+        Predicate<ClientInsuranceClaim> containText = insu -> insu.getClientId().contains(clientId);
         DataTable.setPredicate(containText);
     }
 
@@ -254,15 +254,6 @@ public class Claims implements Initializable {
 
     public static void UpdateClaims()
     {
-//        ArrayList<ClientInsuranceClaim> clientInsuranceClaim = sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims");
-//
-//        for (ClientInsuranceClaim calim : clientInsuranceClaim)
-//        {
-//            for (ClientInsuranceClaim clientClaim: AllClientInsuranceClaim)
-//            {
-//
-//            }
-//        }
         Main.AppUser.SetClientInsuranceClaim(sqlConnection.getInstance().GetDataClientInsuranceClaim("SELECT * FROM claims"));
         AllClientInsuranceClaim.clear();
         AllClientInsuranceClaim.addAll(Main.AppUser.GetClientInsuranceClaim());

@@ -109,9 +109,9 @@ public class Insurances implements Initializable {
         }
     }
 
-    private void SearchAndShowInsurance(String insurance)
+    private void SearchAndShowInsurance(String insuranceName)
     {
-        Predicate<ClientInsurance> containText = insu -> insu.getInsuranceName().contains(insurance);
+        Predicate<ClientInsurance> containText = insu -> insu.getInsuranceName().contains(insuranceName);
         DataTable.setPredicate(containText);
     }
 
@@ -163,16 +163,12 @@ public class Insurances implements Initializable {
 
     private boolean CheckInsuranceClaim(ClientInsurance selectedInsurance)
     {
-
         ArrayList<ClientInsuranceClaim> temp = Main.AppUser.GetClientInsuranceClaim();
-        for (ClientInsuranceClaim claim: temp )
-        {
-         if (claim.getInsuranceId().compareTo(selectedInsurance.getInsuranceId()) == 0)
-         {
-             return true;
-         }
+        for (ClientInsuranceClaim claim : temp) {
+            if (claim.getInsuranceId().compareTo(selectedInsurance.getInsuranceId()) == 0) {
+                return true;
+            }
         }
-
         return false;
     }
 }

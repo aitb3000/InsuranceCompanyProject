@@ -1,0 +1,572 @@
+17.06.2019 - 10:31:01 -- app.Controllers.Login	Yosi Dodo Sign out.
+17.06.2019 - 10:31:01 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 11:52:29 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 11:52:29 -- app.Controllers.Client.Home	Yosi Dodo Enter to New Insurance view.
+06.07.2019 - 11:52:29 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+06.07.2019 - 11:52:29 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+06.07.2019 - 11:52:29 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+06.07.2019 - 12:27:08 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 12:27:08 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 12:44:39 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 12:44:39 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 12:47:02 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 12:47:02 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 12:53:33 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 12:53:33 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+06.07.2019 - 12:53:33 -- app.Controllers.Client.Home	Yosi Dodo Enter to New Insurance view.
+06.07.2019 - 12:53:33 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+06.07.2019 - 12:53:33 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+06.07.2019 - 12:56:41 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 12:56:41 -- app.Controllers.Client.Home	Yosi Dodo Enter to New Insurance view.
+06.07.2019 - 12:56:41 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 01:03:51 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+06.07.2019 - 01:03:51 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+06.07.2019 - 01:06:38 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 01:06:38 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+06.07.2019 - 01:09:37 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 01:09:37 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+06.07.2019 - 01:24:44 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 01:24:44 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 01:44:55 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 01:44:55 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+06.07.2019 - 02:24:23 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 02:24:23 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+06.07.2019 - 02:33:17 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 02:33:17 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+06.07.2019 - 02:33:17 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+06.07.2019 - 02:33:17 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+06.07.2019 - 03:02:53 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 03:02:53 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 03:06:42 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 03:06:42 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 03:08:20 -- app.Controllers.Login	Yosi Dodo Sign in.
+06.07.2019 - 03:08:20 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+06.07.2019 - 05:49:43 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 05:49:43 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:12:39 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 06:12:39 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:16:48 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 06:16:48 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:19:29 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 06:19:29 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:37:46 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 06:37:46 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:37:46 -- app.Controllers.Login	Dodo Moshe Sign in.
+06.07.2019 - 06:37:46 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+06.07.2019 - 06:38:50 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 06:38:50 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+06.07.2019 - 06:48:47 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 06:48:47 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+06.07.2019 - 06:48:47 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+06.07.2019 - 07:01:37 -- app.Controllers.Login	Moshe Dodo Sign in.
+06.07.2019 - 07:01:37 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+06.07.2019 - 07:01:37 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+07.07.2019 - 08:54:51 -- app.Controllers.Login	Moshe Dodo Sign in.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+07.07.2019 - 08:54:51 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+07.07.2019 - 09:25:04 -- app.Controllers.Login	Moshe Dodo Sign in.
+07.07.2019 - 09:25:04 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+07.07.2019 - 09:26:03 -- app.Controllers.Login	Moshe Dodo Sign in.
+07.07.2019 - 09:26:03 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+07.07.2019 - 09:31:01 -- app.Controllers.Login	Moshe Dodo Sign in.
+07.07.2019 - 09:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 09:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+07.07.2019 - 09:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Overview view.
+07.07.2019 - 09:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+07.07.2019 - 09:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+07.07.2019 - 09:41:50 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:41:50 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+07.07.2019 - 09:44:19 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:44:19 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+07.07.2019 - 09:49:43 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:49:43 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+07.07.2019 - 09:49:43 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:49:43 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+07.07.2019 - 09:54:07 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:54:07 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+07.07.2019 - 09:54:07 -- app.Controllers.Login	Dodo Moshe Sign in.
+07.07.2019 - 09:54:07 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+07.07.2019 - 09:54:07 -- app.Controllers.Login	Yosi Dodo Sign in.
+07.07.2019 - 09:54:07 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+08.07.2019 - 10:57:16 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 10:57:16 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 10:58:28 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 10:58:28 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:12:59 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 11:12:59 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:18:38 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 11:18:38 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:21:24 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 11:21:24 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:23:26 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 11:23:26 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:24:38 -- app.Controllers.Login	Dodo Moshe Sign in.
+08.07.2019 - 11:24:38 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+08.07.2019 - 11:27:28 -- app.Controllers.Login	Yosi Dodo Sign in.
+08.07.2019 - 11:27:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+08.07.2019 - 11:27:28 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+08.07.2019 - 11:31:57 -- app.Controllers.Login	Yosi Dodo Sign in.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+08.07.2019 - 11:31:57 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+08.07.2019 - 11:53:50 -- app.Controllers.Login	Yosi Dodo Sign in.
+08.07.2019 - 11:53:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+08.07.2019 - 11:53:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+08.07.2019 - 11:53:50 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 12:06:43 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 12:06:43 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 12:10:03 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 12:10:03 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 12:17:21 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+09.07.2019 - 12:17:21 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 12:17:21 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+09.07.2019 - 12:21:19 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 12:21:19 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 12:21:19 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 12:21:19 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+09.07.2019 - 12:21:19 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+09.07.2019 - 12:21:19 -- app.Controllers.Login	Dodo Moshe Sign in.
+09.07.2019 - 12:21:19 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+09.07.2019 - 09:48:38 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 09:48:38 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 09:48:38 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 09:48:38 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+09.07.2019 - 09:48:38 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 09:51:06 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 09:51:06 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 09:51:06 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 11:10:30 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+09.07.2019 - 11:10:30 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+09.07.2019 - 11:11:45 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:11:45 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 11:23:59 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:23:59 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 11:25:16 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:25:16 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 11:35:35 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+09.07.2019 - 11:35:35 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+09.07.2019 - 11:41:02 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:41:02 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+09.07.2019 - 11:41:02 -- app.Controllers.Login	Yosi Dodo Sign in.
+09.07.2019 - 11:41:02 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+09.07.2019 - 11:41:02 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 12:21:15 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 12:21:15 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 12:21:15 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 12:52:24 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 12:52:24 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 12:53:55 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 12:53:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 12:53:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 12:53:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 12:53:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 12:53:55 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 12:55:33 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 12:55:33 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 12:55:33 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 12:55:33 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 05:10:09 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:10:09 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:10:09 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:10:09 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:10:09 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:19:20 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:19:20 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 05:19:20 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 05:19:20 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+10.07.2019 - 05:21:41 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:21:41 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:27:16 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:27:16 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 05:27:16 -- app.Controllers.Login	Moshe Dodo Sign in.
+10.07.2019 - 05:27:16 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Overview view.
+10.07.2019 - 05:27:16 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+10.07.2019 - 05:27:16 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+10.07.2019 - 05:27:16 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+10.07.2019 - 05:27:16 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+10.07.2019 - 05:27:16 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+10.07.2019 - 05:33:42 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:33:42 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:36:03 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:36:03 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:39:05 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:39:05 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:40:33 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:40:33 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:43:36 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:43:36 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:46:04 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:46:04 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:46:52 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:46:52 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:47:50 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:47:50 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:51:55 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:51:55 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:53:56 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:53:56 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:53:56 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:53:56 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:53:56 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:55:04 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:55:04 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 05:56:43 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 05:56:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 05:56:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 05:56:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 05:56:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 05:56:43 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 06:00:25 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 06:00:25 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 06:00:25 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 06:00:25 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 06:00:25 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 06:03:44 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 06:03:44 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 06:03:44 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 06:03:44 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+10.07.2019 - 06:03:44 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 06:03:44 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 06:05:28 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 06:05:28 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 06:07:12 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 06:07:12 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 06:08:14 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 06:08:14 -- app.Controllers.Client.Home	Yosi Dodo Exit from application.
+10.07.2019 - 09:03:43 -- app.Controllers.Login	Yosi Dodo Sign in.
+10.07.2019 - 09:03:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+10.07.2019 - 09:03:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+10.07.2019 - 09:03:43 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+10.07.2019 - 09:03:43 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+10.07.2019 - 09:03:43 -- app.Controllers.Login	Moshe Dodo Sign in.
+10.07.2019 - 09:03:43 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+10.07.2019 - 09:03:43 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Overview view.
+10.07.2019 - 09:03:43 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+10.07.2019 - 09:03:43 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+10.07.2019 - 09:08:02 -- app.Controllers.Login	Moshe Dodo Sign in.
+10.07.2019 - 09:08:02 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+10.07.2019 - 09:08:02 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+10.07.2019 - 09:08:02 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+10.07.2019 - 09:08:02 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 09:08:02 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 09:08:02 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+10.07.2019 - 09:08:02 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 09:08:02 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+10.07.2019 - 09:20:31 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 09:20:31 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 09:20:31 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+10.07.2019 - 09:24:48 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 09:24:48 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 09:24:48 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+10.07.2019 - 09:34:09 -- app.Controllers.Login	Dodo Moshe Sign in.
+10.07.2019 - 09:34:09 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+10.07.2019 - 09:34:09 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+10.07.2019 - 09:34:09 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+10.07.2019 - 09:34:09 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:10:46 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:10:46 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:10:46 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:17:30 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:17:30 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:17:30 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:22:29 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:22:29 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:22:29 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:24:02 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:24:02 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:24:02 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:26:23 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:26:23 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:26:23 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:30:28 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:30:28 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:30:28 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:32:46 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:32:46 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:32:46 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:36:54 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:36:54 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:36:54 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:38:07 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:38:07 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:38:07 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 08:39:30 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 08:39:30 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 08:39:30 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 09:33:57 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 09:33:57 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 09:33:57 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 09:37:53 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 09:37:53 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 09:37:53 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+11.07.2019 - 09:37:53 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 09:37:53 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 09:45:27 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 09:45:27 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 09:45:27 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 10:21:50 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 10:21:50 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:21:50 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 10:29:10 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:29:10 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 10:29:10 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 10:36:29 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:36:29 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 10:36:29 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 10:36:29 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:36:29 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+11.07.2019 - 10:36:29 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 10:36:29 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 10:36:29 -- app.Controllers.Client.Home	Dodo Moshe Exit from application.
+11.07.2019 - 11:00:01 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 11:00:01 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 11:40:36 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 11:40:36 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 03:27:13 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 03:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 03:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 03:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 03:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 03:28:23 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 03:28:23 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 03:28:23 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 03:28:23 -- app.Controllers.Login	Yosi Dodo Sign in.
+11.07.2019 - 03:28:23 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+11.07.2019 - 03:28:23 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 03:28:23 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+11.07.2019 - 03:28:23 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+11.07.2019 - 03:28:23 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+11.07.2019 - 05:30:53 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 05:30:53 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 05:34:52 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 05:34:52 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 05:34:52 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+11.07.2019 - 05:34:52 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 05:34:52 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 05:36:31 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 05:36:31 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 05:38:26 -- app.Controllers.Login	Yosi Dodo Sign in.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to Overview view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+11.07.2019 - 05:38:26 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+11.07.2019 - 05:38:26 -- app.Controllers.Login	Moshe Dodo Sign in.
+11.07.2019 - 05:38:26 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Overview view.
+11.07.2019 - 05:38:26 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 05:38:26 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+11.07.2019 - 06:10:31 -- app.Controllers.Login	Yosi Dodo Sign in.
+11.07.2019 - 06:10:31 -- app.Controllers.Client.Home	Yosi Dodo Enter to Settings view.
+11.07.2019 - 06:10:31 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+11.07.2019 - 06:10:31 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 06:10:31 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+11.07.2019 - 06:10:31 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 06:10:31 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 06:10:31 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 06:15:50 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 06:15:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 06:15:50 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 06:15:50 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 06:24:21 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 06:24:21 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 06:24:21 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 06:24:21 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 06:27:13 -- app.Controllers.Login	Dodo Moshe Sign in.
+11.07.2019 - 06:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 06:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 06:27:13 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 07:02:34 -- app.Controllers.Login	Moshe Dodo Signin.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	System Data Saved.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	Moshe Dodo Approved a Claim
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	System Data Saved.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	Moshe Dodo Disapproved a Claim
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	System Data Saved.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Claims	Moshe Dodo Disapproved a Claim
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Settings view.
+11.07.2019 - 07:02:34 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+11.07.2019 - 07:12:49 -- app.Controllers.Login	Yosi Dodo Signin.
+11.07.2019 - 07:12:49 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 07:12:49 -- app.Controllers.Client.Home	Yosi Dodo Enter to Claims view.
+11.07.2019 - 07:12:49 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+11.07.2019 - 07:12:49 -- app.Controllers.Login	Moshe Dodo Signin.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Overview view.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+11.07.2019 - 07:12:49 -- app.Controllers.Login	Dodo Moshe Signin.
+11.07.2019 - 07:12:49 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Overview view.
+11.07.2019 - 07:12:49 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 07:12:49 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Customer view.
+11.07.2019 - 07:12:49 -- app.Controllers.Salesman.Home	Dodo Moshe Sign out.
+11.07.2019 - 07:12:49 -- app.Controllers.Login	Moshe Dodo Signin.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+11.07.2019 - 07:12:49 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+11.07.2019 - 07:40:33 -- app.Controllers.Login	Dodo Moshe Signin.
+11.07.2019 - 07:40:33 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Settings view.
+11.07.2019 - 07:40:33 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+11.07.2019 - 07:49:41 -- app.Controllers.Login	Yosi Dodo Signin.
+11.07.2019 - 07:49:41 -- app.Controllers.Client.Home	Yosi Dodo Enter to his Insurances view.
+11.07.2019 - 07:49:41 -- app.Controllers.Client.Home	Yosi Dodo Sign out.
+11.07.2019 - 07:49:41 -- app.Controllers.Login	Moshe Dodo Signin.
+11.07.2019 - 07:49:41 -- app.Controllers.CustomerService.Home	Moshe Dodo Sign out.
+11.07.2019 - 07:49:41 -- app.Controllers.Login	Dodo Moshe Signin.
+11.07.2019 - 07:49:41 -- app.Controllers.Salesman.Home	Dodo Moshe Enter to his Insurance view.
+11.07.2019 - 07:49:41 -- app.Controllers.Salesman.Home	Dodo Moshe Exit from application.
+13.07.2019 - 05:15:29 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:15:29 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 05:25:24 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:25:24 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 05:31:01 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Overview view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:31:01 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 05:42:04 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:42:04 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 05:46:05 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:46:05 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 05:52:19 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Insurances	System New Claim added.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Insurances	Moshe Dodo  Opened a new Claim.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 05:52:19 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
+13.07.2019 - 11:51:15 -- app.Controllers.Login	Moshe Dodo Signin.
+13.07.2019 - 11:51:15 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to Claims view.
+13.07.2019 - 11:51:15 -- app.Controllers.CustomerService.Home	Moshe Dodo Enter to his Insurances view.
+13.07.2019 - 11:51:15 -- app.Controllers.CustomerService.Home	Moshe Dodo Exit from application.
